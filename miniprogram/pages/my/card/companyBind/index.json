@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "绑定审核",
+  "enablePullDownRefresh": true
+}

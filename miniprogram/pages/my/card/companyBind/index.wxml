@@ -1,0 +1,24 @@
+<view class="main">
+    <view class="alphabet">
+        <view class="alphabet-list">
+            <view wx:for="{{companyBinds}}" wx:key="unique" class="section-item">
+                    <view class="card_view">
+                        <view class="card" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+                            <image src="{{ item.carte.avatar }}"></image>
+                            <view class="card_text">
+                                <view class="card_title">{{item.carte.name}} <span>{{item.carte.position ? item.carte.position:''}}</span></view>
+                                <view>{{item.carte.company_name}}</view>
+                                <view class="site">{{item.carte.created_at}}</view>
+                            </view>
+                        </view>
+                        <block wx:if="{{ item.status === 0 }}">
+                            <view class="operate">
+                                <view bindtap="bindOperate" data-type="agree" data-id="{{ item.id }}" data-carte_id="{{ item.carte_id }}">同意</view>
+                                <view bindtap="bindOperate" data-type="refuse" data-id="{{ item.id }}" data-carte_id="{{ item.carte_id }}">拒绝</view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+        </view>
+    </view>
+</view>

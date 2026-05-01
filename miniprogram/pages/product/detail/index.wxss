@@ -1,0 +1,494 @@
+/* pages/product/index.wxss */
+page{
+    background: #f5f5f5;
+}
+/* .isRuleShow {
+  display: block;
+}
+ 
+.isRuleHide {
+  display: none;
+} */
+.main{
+    width: 750rpx;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(240,240,240);
+}
+swiper{
+    background: #fff;
+    height: 400rpx;
+    padding: 16rpx 0 10rpx 0;
+    text-align: center;
+}
+.slide-image{
+    width: 750rpx;
+    /* background: #ce3;  */
+    height: 400rpx;
+    margin: 0 auto;
+}
+.main .text{
+    width: 750rpx;
+    height: 100%;
+    background: #fff;
+		padding: 30rpx 0;
+}
+.main .text .title{
+    font-size: 30rpx;
+    color: #333333;
+    width: 670rpx;
+    margin: 0 auto;
+		/* overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical; */
+}
+.main .text .price{
+    display: flex;
+    width: 690rpx;
+    align-items: center;
+    margin: 35rpx auto;
+    position: relative;
+		margin-top: 40rpx;
+
+}
+.main .text .price .p1{
+    font-size: 48rpx;
+    color: rgb(255,25,25);
+}
+.main .text .price .p2{
+    font-size: 34rpx;
+    color: rgb(51,51,51);
+
+}
+.main .text .price .p2{   
+    margin-left: 40rpx;
+}
+.main .text .price .p2 image{
+    width: 77rpx;
+    height: 30rpx;
+		margin-left: 10rpx;
+}
+.main .text .price button i{
+    font-size: 24rpx;
+    height: 100%;
+}
+.main .text .price button::after{
+    border: none;
+}
+.main .text .price button .button_join{
+    width: 74rpx;
+    height: 54rpx;
+    font-size: 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.main .text .price button{
+    position: absolute;
+    top: -15rpx;
+    right: -30rpx;
+    font-size: 24rpx;
+    color: rgb(51,51,51);
+    width: 120rpx;
+    height: 54rpx;
+    border-radius: 27rpx 0 0 27rpx;
+    background: -webkit-linear-gradient(left,rgb(255,227,0),rgb(255,204,0)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, rgb(255,227,0), rgb(255,204,0)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, rgb(255,227,0), rgb(255,204,0)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, rgb(255,227,0) , rgb(255,204,0)); /* 标准的语法 */
+}
+.main .text .text2{
+    width: 680rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    margin-left: 40rpx;
+    color: rgb(136,136,136);
+}
+.main .text .text2 .t1 i{
+    margin-right: 20rpx;
+}
+.main .size1{
+    width: 750rpx;
+    height: 100rpx;
+    background: #fff;
+    margin: 20rpx 0 0 0;
+}
+.main .size1 .size{
+    width: 690rpx;
+    height: 98rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    border-bottom: 1rpx solid rgb(221,221,221);
+}
+.main .size2 .size{
+    width: 690rpx;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+}
+.main .size1 .s1{
+    font-size: 30rpx;
+    color: rgb(136,136,136);
+}
+.main .size1 .s2{
+    margin-left: 21rpx;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+}
+.main .size1 i{
+    position: absolute;
+    right: 0;
+    color: rgb(204,204,204);
+}
+.main .size2{
+    width: 750rpx;
+    height: 100rpx;
+    background: #fff;
+    margin: 0 0 20rpx 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.main .size2 .s1{
+    font-size: 30rpx;
+    color: rgb(136,136,136);
+}
+.main .size2 .s2{
+    margin-left: 21rpx;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+}
+.main .size2 i{
+    position: absolute;
+    right: 0;
+    color: rgb(204,204,204);
+}
+.main .prodetail{
+    margin-top: 20rpx;
+    width: 750rpx;
+    height: 100%;
+    background: #fff;
+    margin-bottom: 98rpx;
+}
+.main .prodetail .tit{
+    font-size: 34rpx;
+    color: rgb(51,51,51);
+    text-align: center;
+    padding-top: 30rpx;
+}
+.main .prodetail .img{
+    width: 750rpx;
+    height: 100%;
+}
+.main .prodetail .img image{
+    width: 750rpx;
+    height: 400rpx;
+}
+.footer{
+    width: 750rpx;
+    height: 98rpx;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.footer .f1{
+    width: 33.3%;
+    height: 98rpx;
+    background: #fff;
+    color: rgb(136,136,136);
+    font-size: 24rpx;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+.footer .f1 .button_join{
+	line-height: 36rpx;
+}
+.footer .f1 .button_join i{
+	font-size: 40rpx;
+}
+.footer .f1 button{
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	font-size: 24rpx;
+	color: rgb(136,136,136);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer .f1 .shou{
+		width: 74rpx;
+		text-align: center;
+		/* line-height: 38rpx; */
+		margin-bottom: 15rpx;
+}
+.footer .f1 .shou :nth-child(1){
+    font-size: 40rpx;
+    text-align: center;
+}
+.footer .f2{
+    width: 33.3%;
+    height: 98rpx;
+    background: rgb(254,191,0);
+    color: #fff;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .f3{
+    width: 33.3%;
+    height: 98rpx;
+    background: rgb(254,155,0);
+    color: #fff;
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*mask*/
+.drawer_screen {
+    width: 670rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 40rpx;
+    background: -webkit-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* 标准语法 (必须在最后) */
+    /* position: fixed;
+    bottom: 40rpx;
+    left: 30rpx;
+    z-index: 1000; */
+    /*margin-top: 160rpx;*/
+    margin-bottom: 30rpx;
+    overflow: hidden;
+}
+/*content*/
+.drawer_attr_box2 {
+    width: 100%;
+    height: 70%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    -webkit-transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    z-index: 2;
+}
+.drawer_attr_box1 {
+    width: 100%;
+    min-height: 600rpx;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    -webkit-transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    z-index: 2;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+    50% {
+        opacity: .3; /*中间状态 透明度为0*/
+    }
+    100% {
+        opacity: .5; /*结尾状态 透明度为1*/
+    }
+}
+
+.mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 1;
+    transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    -webkit-transition: all .2s cubic-bezier(.25,.5,.5,.9);
+
+    -webkit-animation-name: fadeIn; /*动画名称*/
+    -webkit-animation-duration: 1s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+}
+.an{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+
+
+.drawer_content {
+    /* padding: 20rpx 40rpx; */
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+    /* overflow-y: hidden; */
+}
+.drawer_content .c1{
+	height: 100%;
+}
+.drawer_content .c1 .detail{
+    display: flex;
+    margin: 30rpx 30rpx 60rpx 30rpx;
+    position: relative;
+}
+.drawer_content .c1 .detail .img image{
+    width: 160rpx;
+    height: 160rpx;
+}
+.drawer_content .c1 .detail .price{
+    margin-left: 20rpx;
+    line-height: 55rpx;
+}
+.drawer_content .c1 .detail .price .p1{
+    font-size: 34rpx;
+    color: rgb(255,25,25);
+}
+.drawer_content .c1 .detail .price .p2{
+    font-size: 28rpx;
+    color: rgb(51,51,51);
+    display: flex;
+    align-items: center;
+}
+.drawer_content .c1 .detail .price .p2 image{
+    width: 70rpx;
+    height: 28rpx;
+    margin-left: 10rpx;
+}
+.drawer_content .c1 .detail .price .p3{
+    font-size: 24rpx;
+    color: rgb(51,51,51);
+}
+.drawer_content .c1 .detail .del{
+    font-size: 40rpx;
+    position: absolute;
+    right: 0;
+    color: rgb(187,187,187);
+}
+.drawer_content .c2{
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    color: rgb(51,51,51);
+}
+.drawer_content .c2 .list{
+    width: 690rpx;
+    height: 100%;
+    margin:30rpx 0 30rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.drawer_content .c2 .list .l{
+    /* width: 90rpx; */
+    padding: 5rpx 10rpx;
+    margin-bottom: 30rpx;
+    height: 46rpx;
+    background: rgb(239,239,239);
+    font-size: 26rpx;
+    color: rgb(51,51,51);
+    text-align: center;
+    margin-right: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5rpx;
+}
+
+.drawer_content .c2 .list .l.active{
+    background-color: #fef9e9;
+    border: 2rpx solid #febf00;
+    color: #febf00;
+}
+
+
+.drawer_content .c3{
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    color: rgb(51,51,51);
+}
+.drawer_content .c3 .list{
+    width: 690rpx;
+    height: 100%;
+    margin:30rpx 0 30rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.drawer_content .c3 .list .l{
+    /* width: 90rpx; */
+    padding: 5rpx 10rpx;
+    height: 46rpx;
+    margin-bottom: 30rpx;
+    background: rgb(239,239,239);
+    font-size: 26rpx;
+    color: rgb(51,51,51);
+    text-align: center;
+    margin-right: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coupon{
+    width: 690rpx;
+    height: 180rpx;
+    margin: 36rpx auto;
+    background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg3.png) no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+		justify-content: space-between;
+}
+.coupon .left{
+	width: 450rpx;
+	height: 180rpx;
+	padding-left: 40rpx;
+}
+.coupon .left :nth-child(1){
+    font-size: 60rpx;
+    color: rgb(255,111,97);
+}
+.coupon .left :nth-child(2){
+    font-size: 26rpx;
+    color: rgb(255,111,97);
+}
+.coupon .left :nth-child(3){
+    font-size: 26rpx;
+    color: rgb(170,170,170);
+    margin-top: 15rpx;
+}
+.coupon .right{
+		width: 240rpx;
+		height: 180rpx;
+    font-size: 28rpx;
+    color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+}
+.coupon image{
+    width: 690rpx;
+    height: 180rpx;
+}

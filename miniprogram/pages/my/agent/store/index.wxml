@@ -1,0 +1,54 @@
+<view class='main'>
+  <view class='header'>
+    <view>
+      <view  bindtap="UploadImage">
+        <image src='{{ image }}'></image>
+      </view>
+    </view>
+    <view>门店头像</view>
+  </view>
+  <view class='store_content'>
+    <view class='title'>
+      <view class='left'><view class='l'></view>门店信息（不可修改）</view>
+    </view>
+    <view class='name_content'>
+      <view class='name'>
+        <view class='n1'>门店名称</view>
+        <input class='n2' placeholder='{{ store.name }}' disabled='true' placeholder-style='text-align: left;font-size: 30rpx;color: rgb(51,51,51)'></input>
+      </view>
+    </view>
+    <view class='name_content'>
+      <view class='name'>
+        <view class='n1'>所在地区</view>
+        <input class='n2' placeholder='{{ area }}' disabled='true' placeholder-style='text-align: left;font-size: 30rpx;color:rgb(51,51,51)'>女</input>
+      </view>
+    </view>
+    <view class='name_content'>
+      <view class='name'>
+        <view class='n1'>详细地址</view>
+        <input class='n2' placeholder='{{ address }}' disabled='true' placeholder-style='text-align: left;font-size: 30rpx;color: rgb(51,51,51)'></input>
+      </view>
+    </view>
+    <view class='title'>
+      <view class='left'><view class='l'></view>联系人信息</view>
+    </view>
+
+    <form bindsubmit="formSubmit">
+        <view class='name_content'>
+          <view class='name'>
+            <view class='n1'>联系人</view>
+            <input class='n2' value='{{ formData.contact_name }}' name="contact_name" placeholder-style='text-align: left;font-size: 30rpx;color: rgb(136,136,136)'></input>
+          </view>
+        </view>
+        <view class='name_content'>
+          <view class='name'>
+            <view class='n1'>联系方式</view>
+            <input class='n2' value='{{ formData.contact_mobile }}' name="contact_mobile" placeholder-style='text-align: left;font-size: 30rpx;color: rgb(136,136,136)'></input>
+          </view>
+        </view>
+      <view class='btn'>
+        <button form-type="submit">修改联系信息</button>
+      </view>
+    </form>
+  </view>  
+</view>

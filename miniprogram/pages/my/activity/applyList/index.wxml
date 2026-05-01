@@ -1,0 +1,43 @@
+<!--pages/my/activity/applyList/index.wxml-->
+<view class="main">
+  <view class="static_box">
+    <view class="static_view">
+      <view>
+        <view class="num">{{ list.visits }}</view>
+        <view>浏览人数</view>
+      </view>
+      <view class="line">
+      
+      </view>
+      <view>
+        <view  class="num">{{ list.apply.length }}</view>
+        <view>参与人数</view>
+      </view>
+    </view>    
+  </view>
+  <view class="ct_box">
+    <block wx:for="{{ list.apply }}" wx:key="item">
+      <view class="ct" bindtap="navigateToUrl" data-url="../applyDetail/index?id={{ item.id }}">
+        <view class="ct_left">
+          <text wx:if="{{ index < 10 }}">0{{ index + 1 }}</text>
+          <text wx:else>{{ index + 1 }}</text>
+        </view>
+        <view class="ct_right">
+          <view class="ct_right_box">
+            <view class="img">
+              <image src="{{ item.carte.avatar }}"></image>
+            </view>
+            <view class="ct_text">
+              <view class="name">{{ item.name }}</view>
+              <view class="time">{{ item.created_at }}</view>
+            </view>
+          </view>
+          <view class="ct_right_view">
+            <text>{{ item.status_show }}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>  
+</view>
+

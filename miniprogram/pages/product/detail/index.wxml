@@ -1,0 +1,170 @@
+<!--pages/product/index.wxml-->
+<view class="main">
+    <view>
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{responseData.images}}" wx:key="index">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class='text'>
+        <view class='title'>{{responseData.long_title}}</view>
+        <view class='price'>
+            <view class='p1'>￥{{responseData.price}}</view>
+
+            <block wx:if="{{responseData.price != responseData.exclusive_price}}">
+            <view class='p2'>
+                <span>￥{{responseData.exclusive_price}}</span>
+                <image src='../../../images/icon-pro.png'></image>
+            </view>
+            </block>
+
+            <button class='p3' open-type="share">
+                <view class='button_join'>
+                    <i class='icon iconfont iconfenxiang'></i>
+                    <text>分享</text>
+                </view>
+            </button>
+        </view>
+        <view class='text2'>
+            <view class='t1'><i>运费</i><em>免运费</em></view>
+            <view class='t1'><i>销量</i><em>{{responseData.sold_count}}</em></view>
+        </view>
+    </view>
+    <view class='size1'>
+        <view class='size' bindtap="openDrawer" data-type="spec">
+            <view class='s1'>已选</view>
+            <view class='s2'>{{currentCheckedSku.currentSkuData.title}}<i class='icon iconfont iconyou'></i></view>
+        </view>
+    </view>
+    <view class='size2'>
+        <view class='size' bindtap="openDrawer" data-type="coupon">
+            <view class='s1'>优惠</view>
+            <view class='s2'>领券后下单立减<i class='icon iconfont iconyou'></i></view>
+        </view>
+    </view>
+
+    <view class='prodetail'>
+        <view class='tit'>商品详情</view>
+        <view class='img'>
+            <rich-text nodes="{{contentNode}}"></rich-text>
+        </view>
+    </view>
+    <view class='footer'>
+        <view class='f1'>
+						<button class='ke' wx:if='{{collectionStatus}}'  bindtap='clickCollection'style="width:74rpx;">
+                <view class='button_join'>
+                    <i class='icon iconfont iconshoucang1'  style='color:#febf00;'></i>
+                    <view>已收藏</view>
+                </view>
+            </button>
+						<button class='ke' wx:else  bindtap='clickCollection' style="width:74rpx;">
+                <view class='button_join'>
+                    <i class='icon iconfont iconshoucang'></i>
+                    <view>收藏</view>
+                </view>
+            </button>
+            <button class='ke' open-type="contact">
+                <view class='button_join'>
+                    <i class='icon iconfont iconkefu'></i>
+                    <view>客服</view>
+                </view>
+            </button>
+        </view>
+        <view class='f2' bindtap="addToCart">
+            <!--      <view class="btn" bindtap="checkedSpecs" data-statu="open">加入购物车</view>-->
+            <view class="btn"  data-statu="open">加入购物车</view>
+        </view>
+        <view class='f3' bindtap="buyNow">
+            <view>立即购买</view>
+        </view>
+    </view>
+
+
+    <view class='mask' wx:if="{{mask}}" bindtap='closeDrawerBox'></view>
+    <view class='drawer_attr_box1 {{((status == true) && (openType == "spec")) ? "an" : ""}}' >
+        <!--drawer content-->
+        <view class="drawer_content">
+            <view class='c1'>
+                <view class='detail'>
+                    <view class='img'>
+                        <image src='{{responseData.image}}'></image>
+                    </view>
+                    <view class='price'>
+                        <view class='p1'>￥{{responseData.price}}</view>
+                        <view class='p2'>￥{{responseData.exclusive_price}}<image src='../../../images/icon-pro.png'></image></view>
+                        <view class='p3'>已选：{{currentCheckedSku.currentSkuData.title}}</view>
+                    </view>
+                    <view class='icon iconfont iconshanchu del'  bindtap="closeDrawerBox"></view>
+                </view>
+            </view>
+
+            <block wx:for="{{responseData.skus_data}}" wx:key="id" wx:for-item="skusFirst">
+            <view class='c2' data-skutype="{{skusFirst.id}}" bindtap="skuChecked">
+                <view>{{skusFirst.title}}</view>
+                <view class='list'>
+                    <block wx:for="{{skusFirst.sku_arr}}" wx:key="id" wx:for-item="skuData">
+                    <view class="l {{currentCheckedSku['skuData'][skusFirst.id] == skuData.id ? 'active' : ''}}" data-skuid="{{skuData.id}}">{{skuData.title}}</view>
+                    </block>
+                </view>
+            </view>
+            </block>
+
+            <view class="drawer_screen" bindtap="confirmSkuChecked">确定</view>
+        </view>
+    </view>
+
+
+
+
+
+    <!-- 优惠券 -->
+    <view class='drawer_attr_box2 {{((status == true) && (openType == "coupon")) ? "an" : ""}}'>
+        <!--drawer content-->
+        <view class="drawer_content">
+            <view class='c1'>
+                <view class='detail'>
+                    <view style='color:rgb(51,51,51);font-size:28rpx'>领取优惠券</view>
+                    <view class='icon iconfont iconshanchu del'  bindtap="closeDrawerBox"></view>
+                </view>
+
+                <block wx:for="{{responseData.coupons}}" wx:key="id" wx:for-item="couponItem">
+
+                    <block wx:if="{{couponItem.type == 'percent'}}">
+                        <view class='coupon'>
+                            <view class='left'>
+                                <view>{{couponItem.value_title}}</view>
+                                <view>{{couponItem.description}}</view>
+                                <view>有效期至：{{couponItem.not_after}}</view>
+                            </view>
+                            <block wx:if="{{couponItem.has_get == 1}}">
+                                <view class='right'>已领取</view>
+                            </block>
+                            <block wx:else>
+                                <view class='right' bindtap="immediatelyGet" data-id="{{couponItem.id}}">立即领取</view>
+                            </block>
+                        </view>
+                    </block>
+                    <block wx:else >
+                        <view class='coupon'>
+                            <view class='left'>
+                                <view>￥{{couponItem.value_title}}</view>
+                                <view>{{couponItem.description}}</view>
+                                <view>有效期至：{{couponItem.not_after}}</view>
+                            </view>
+                            <block wx:if="{{couponItem.has_get == 1}}">
+                                <view class='right'>已领取</view>
+                            </block>
+                            <block wx:else>
+                                <view class='right' bindtap="immediatelyGet" data-id="{{couponItem.id}}">立即领取</view>
+                            </block>
+                        </view>
+                    </block>
+                </block>
+
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/card/society/index.wxml-->
+<view class="main">
+
+    <view class="search">
+      <view class="search_input">
+        <input placeholder="搜索" bindinput="changeSearch" bindconfirm="searchBtn" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+      </view>
+    </view>
+    <view wx:for="{{ roleCompanyList }}" wx:key="index" wx:key-index='index' wx:key-item='item'>
+      <view class="initial" bindtap="tolists">{{ item.name }}</view>
+
+      <view wx:for="{{ item.society }}" wx:key="index" wx:key-index='sindex'>
+        <view class='movable-area'>
+          <view class='movable-view'>
+            <view class="movable-view-one">
+              <view class="ct" bindtap="navigateToUrl" data-url="/pages/card/companyDetail/index?id={{ item.id }}">
+                <image src="{{ item.logo }}"></image>
+                <view class="text">
+                  <view class="title">{{ item.company_name }}</view>
+                  <view>{{ item.address_title }}</view>
+                </view>
+              </view>
+            
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="initial" bindtap="tolists" wx:if="{{ generalList && generalList.length > 0 }}">普通理事</view>
+    <block wx:for="{{ generalList }}" wx:key="idnex">
+     <view class='movable-area'>
+          <view class='movable-view'>
+            <view >
+              <view class="ct" bindtap="navigateToUrl" data-url="/pages/card/companyDetail/index?id={{ item.id }}">
+                <image src="{{ item.logo }}"></image>
+                <view class="text">
+                  <view class="title">{{ item.company_name }}</view>
+                  <view>{{ item.address_title }}</view>
+                </view>
+              </view>
+            
+            </view>
+          </view>
+        </view>
+    </block>
+</view>

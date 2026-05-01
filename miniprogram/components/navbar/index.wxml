@@ -1,0 +1,14 @@
+<!--components/navbar/index.wxml-->
+<view class="navbar custom-class" style='height:{{navHeight}}px;background-color:{{bgColor}};color:{{color}}'>
+  <view wx:if="{{showNav}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;'>
+      <image class="navbar-action_item"  catchtap="navBack" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%BF%94%E5%9B%9E%20.png"></image>
+      <span class="navbar-action-wrap-span"></span><image class="navbar-action_item last" catchtap="toIndex"  src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/home.png"></image>
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px'>
+    {{pageName}}
+  </view>
+</view>
+<view style="height:{{navHeight}}px;width:100%;" wx:if="{{showZw}}"></view>
+<!-- <view class="navbar custom-class">
+  navBBBAAARRR
+</view> -->

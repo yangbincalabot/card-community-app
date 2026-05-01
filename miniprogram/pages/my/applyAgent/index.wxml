@@ -1,0 +1,74 @@
+<!--pages/dai/becomedai/index.wxml-->
+<view class='main'>
+  <view class='header'>
+  </view>
+  <view class='text'>
+    <view>Hey，亲爱的朋友！</view>
+    <view>  欢迎进入[加盟合作]申请界面，请填写以下信息进行提交，我们会及时和您取得联系！</view>
+    <view>如有问题请电联：{{ contact_number }}</view>
+  </view>
+  <view class='title'>
+    <view class='left'><view class='l'></view>请选择代理商类型</view>
+    <view class='right' bindtap="navigatorToUrl" data-url="introduce/index">查看权益说明<i class='icon iconfont iconyou'></i></view>
+  </view>
+  <view class='dai_content'>
+      <block wx:for="{{ agents }}" wx:key="index">
+        <view class="d_ct {{ formData.agent_id == item.id ? 'active' : '' }}" bindtap="changeAgent"  data-id="{{ item.id }}">
+          <view class='c1'>{{ item.name }}</view>
+          <view class='c2' style="font-size: 31rpx">￥{{ item.price }}</view>
+        </view>
+      </block>
+
+  </view>
+  <view class='title'>
+    <view class='left'><view class='l'></view>申请信息</view>
+  </view>
+  <form bindsubmit="formSubmit">
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>姓名</view>
+          <input class='n2' placeholder='请输入姓名' name="name" placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>
+        </view>
+      </view>
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>手机号</view>
+          <input class='n2' placeholder='请输入手机号' type="number" name="mobile" placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>
+        </view>
+      </view>
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>身份证号</view>
+          <input class='n2' placeholder='请输入身份证号' type="idcard" name="id_card" bindblur="checkIdCard" placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>
+        </view>
+      </view>
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>所在地区</view>
+          <picker mode="region" bindchange="bindRegionChange">
+            <input class='n2' placeholder='所在地区' disabled='true' style="width: 500rpx" value="{{ address }}"  placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>
+          </picker>
+        </view>
+      </view>
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>详细地址</view>
+          <input class='n2' placeholder='请输入详细地址' name="address" placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>
+        </view>
+      </view>
+      <view class='service'>
+          <checkbox-group bindchange="changAgree">
+              <checkbox value="1" checked /><text class="service_info" bindtap="navigatorToUrl" data-url="agreement/index">同意代理加盟服务协议</text>
+          </checkbox-group>
+      </view>
+    <view class="btn">
+        <block wx:if="{{ can_push === true}}">
+            <button form-type="submit">申请提交</button>
+        </block>
+        <block wx:else>
+            <button class="disable_push">{{ button_text }}</button>
+        </block>
+
+    </view>
+  </form>
+</view>

@@ -1,0 +1,71 @@
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;  
+  padding: 30rpx 20rpx;
+}
+.main .title .left{
+  display: flex;  
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+   background:  rgb(255,227,0);
+   margin-right: 20rpx;
+   margin-top: 6rpx;
+}
+.main .title .left i{
+  color: rgb(254,191,0);
+  font-size: 30rpx;
+}
+.main .content{
+  width: 690rpx;
+  height: 160rpx;
+  margin: 0 auto;
+}
+.main .content .c{  
+  display: flex;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/daili_bg.png) no-repeat;
+  background-size: 100%;
+}
+.main .content .c .c-left{
+  display: flex;
+}
+.main .content .c .c-left .img{
+  width: 100rpx;
+  height: 100rpx;
+  /* border: 1rpx solid rgb(255,227,0); */
+  margin: 20rpx 30rpx;
+}
+.main .content .c .c-left image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 90rpx;
+}
+.main .content .c .c-left .text{
+  margin: 36rpx 0;
+
+}
+.main .content .c .c-left .text .names{
+  font-size: 36rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c .c-left .text .date{
+  font-size: 26rpx;
+  color: rgb(136,136,136);
+}
+.main .content .c .c-right{
+  font-size: 32rpx;
+  color: rgb(254,191,0);
+  margin: 66rpx 21rpx 66rpx 40rpx;
+}

@@ -1,0 +1,19 @@
+<!--pages/discover/apply/group/index.wxml-->
+<view class='main'>
+  <view class='content'>
+    <view class='c1' wx:for='{{group}}' wx:key='item' bindtap='checkboxChange' data-remainder='{{item.remainder}}' data-key='{{index}}'>
+      <view class='text'>
+        <view class='t1'>{{item.name}}</view>
+        <view class='t2'>{{item.activity_time}}<i>{{item.day_of_week}}{{item.time_division}}</i></view>
+        <view class='t3' wx:if='{{item.type == 2}}'><i>要求</i>不限制年龄大小，性别</view>
+        <view class='t3' wx:else><i>要求</i>出生日期{{item.birthday}}</view>
+        <view class='t4'><i>剩余</i>{{item.remainder}} 人</view>
+      </view>
+      <radio color='rgb(255,227,0)' checked='{{item.checked}}'></radio>
+    </view>
+    
+    <view class='btn' bindtap='nextStep'>
+      下一步
+    </view>
+  </view>
+</view>

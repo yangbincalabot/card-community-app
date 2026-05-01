@@ -1,0 +1,134 @@
+/* pages/mine/mycoupon/index.wxss */
+
+.main{
+    width: 750rpx;
+    height: 100%;
+    padding-top: 30rpx;
+}
+.main .coupon .c1{
+	width: 690rpx;
+	height: 180rpx;		
+	background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg1.png) no-repeat;
+	background-size: 100%;
+	margin: 20rpx auto;
+	display: flex;
+	align-items: center;
+	/* justify-content: space-between; */
+}
+.main .coupon .c1 .text1{
+		width: 240rpx;
+		height: 180rpx;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+}
+.main .coupon .c1 .text1 .text1_box{
+	/* width: 154rpx; */
+	height: 120rpx;
+	line-height: 70rpx;
+}
+.main .coupon .c1 .text1 :nth-child(1){
+    font-size: 60rpx;
+    color: rgb(255,255,255);
+		text-align: center;
+}
+.main .coupon .c1 .text1 :nth-child(2){
+    font-size: 26rpx;
+    color: rgb(255,255,255);
+}
+.main .coupon .c2{
+    width: 690rpx;
+    height: 180rpx;
+    background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg2.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}
+.main .coupon .c1 .text2{
+    width: 450rpx;
+    height: 180rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+.main .coupon .c1 .text2 .text2_box{
+	width: 400rpx; 
+	height: 140rpx;
+}
+.main .coupon .c1 .text2 .text2_box :nth-child(1){
+    width: 60rpx;
+    height: 20rpx;
+    font-size: 20rpx;
+    color: rgb(255,117,103);
+    border: 1rpx solid rgb(255,117,103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		border-radius: 6rpx;
+		padding: 5rpx 10rpx;
+}
+.main .coupon .c1 .text2 :nth-child(2){
+    font-size: 26rpx;
+    color: rgb(43,43,43);
+    margin: 20rpx 0;
+}
+.main .coupon .c1 .text2 :nth-child(3){
+    font-size: 26rpx;
+    color: rgb(170,170,170);
+}
+/* --------------coupon2CSS----------- */
+.main .coupon .c2{
+    width: 690rpx;
+    height: 180rpx;
+    background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg1.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.main .coupon .c2 .text1{
+    margin: 20rpx 0;
+    text-align: center;
+}
+.main .coupon .c2 .text1 :nth-child(1){
+    font-size: 60rpx;
+    color: rgb(255,255,255);
+    margin-bottom: 15rpx;
+}
+.main .coupon .c2 .text1 :nth-child(2){
+    font-size: 26rpx;
+    color: rgb(255,255,255);
+}
+.main .coupon .c2{
+    width: 690rpx;
+    height: 180rpx;
+    background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg2.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}
+.main .coupon .c2 .text2{
+    width: 330rpx;
+    height: 120rpx;
+    margin: 30rpx;
+}
+.main .coupon .c2 .text2 :nth-child(1){
+    width: 60rpx;
+    height: 20rpx;
+    font-size: 20rpx;
+    color: rgb(146,175,255);
+    border: 1rpx solid rgb(146,175,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .coupon .c2 .text2 :nth-child(2){
+    font-size: 26rpx;
+    color: rgb(43,43,43);
+    margin: 20rpx 0;
+}
+.main .coupon .c2 .text2 :nth-child(3){
+    font-size: 26rpx;
+    color: rgb(170,170,170);
+}

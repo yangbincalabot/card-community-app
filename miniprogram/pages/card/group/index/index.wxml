@@ -1,0 +1,11 @@
+<!--pages/card/group/index/index.wxml-->
+<view class="main">
+    <view class="ct_box">
+        <block wx:for="{{ list }}" wx:key="item">
+            <view class="ct" bindtap="navigateToUrl" data-url="../management/index?id={{ item.id }}">
+                {{ item.title }}({{ item.num }})
+            </view>
+        </block>
+    </view>
+    <button bindtap="navigateToUrl" data-url="../create/index">新建分组</button>
+</view>

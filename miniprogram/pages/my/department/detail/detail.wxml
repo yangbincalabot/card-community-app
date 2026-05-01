@@ -1,0 +1,14 @@
+<view class="main" hidden="{{ hidden }}">
+    <form bindsubmit="formSubmit">
+        <view class="ct_view">
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>部门名称</text>
+                    <input placeholder="请输入部门名称" placeholder-class="placeholder" value="{{ detail.name }}"  name="name"></input>
+                </view>
+            </view>
+        </view>
+        <button class="button" form-type="submit">编辑</button>
+        <button class="button delete-btn" type="warn" bindtap="onDelete" >删除</button>
+    </form>
+</view>

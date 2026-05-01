@@ -1,0 +1,12 @@
+<!--pages/paysuccess/index.wxml-->
+<view class='main'>
+  <view class="pay_box">
+    <view class='pay'>
+      <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/pay_icon.png'></image>
+      <view class='p1'>支付成功</view>
+      <view class='p2'>您已成功开通企业会员，快去完善企业名片吧</view>      
+    </view>
+  </view>
+  <button class='btn1' bindtap="navigatorToUrl" data-url="../companyCard/index">立即完善企业名片</button>
+  <button class='btn2' bindtap="navigatorToUrl" data-url="../../index/index" data-type="tab">返回</button>
+</view>

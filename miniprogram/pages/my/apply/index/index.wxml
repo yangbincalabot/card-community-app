@@ -1,0 +1,77 @@
+<!--pages/my/apply/index/index.wxml-->
+<view class='main' hidden='{{main_hidden}}'>
+    <block wx:if="{{list.length > 0}}">
+
+        <view class='review'>
+            <view class='review_content' wx:for='{{list}}' wx:for-item='item' wx:key='item'>
+                <view class='order'>
+                    <view>订单号：{{item.order_no}}</view>
+                    <view>{{item.status_cn}}</view>
+                </view>
+                <view class='review_content_text'>
+                    <view class='text'>
+                        <view class='title'>
+                            <span>{{item.title}}</span>
+                            <i wx:if="{{item.time_status == 3 || item.time_status == 4}}"
+                               style='color:rgb(253,114,95);border:1rpx solid rgb(253,114,95)'>{{item.time_status_name}}
+                            </i>
+                            <i wx:else>{{item.time_status_name}}</i>
+                        </view>
+                        <view class='date'>
+                            <view style='overflow: hidden;text-overflow: ellipsis;white-space: nowrap;'>报名人：
+                                <i>{{item.applicant_str}}</i>
+                            </view>
+                        </view>
+                        <view class='date'>
+                            <view>活动时间：
+                                <i>{{item.activity_time}}</i>
+                            </view>
+                        </view>
+                        <view class='date'>
+                            <view>活动地址：
+                                <i>{{item.address_title}}{{item.exact_address}}</i>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='opn'>
+                    <view class='btn'>
+                        <view class='btn1' bindtap='playPhone' data-phone='{{item.contact_mobile}}'>联系主办方</view>
+                        <view class='btn2' bindtap='navigatorToUrl' data-url="../detail/index?id={{item.id}}">查看详情</view>
+                        <block wx:if="{{item.status == 2}}">
+                            <view class='btn2' bindtap='navigatorToUrl' data-url="/pages/pay/discover_apply_pay/index?id={{item.id}}">立即支付</view>
+                        </block>
+                        <block wx:elif="{{item.can_refund == 1}}">
+                            <view class='btn2' bindtap='applyRefund' data-id="{{item.id}}">申请退款</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </block>
+    <block wx:else>
+        <view hidden='{{none_hidden}}'>
+            <view class='none'></view>
+            <view class='none_content'>您还没有预约报名哦~</view>
+        </view>
+    </block>
+
+</view>
+
+<view hidden="{{isHidden}}">
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove"></view>
+<view class="modal-dialog" hidden="{{isHidden}}">
+    <view class="modal-title">原因说明</view>
+    <view class="modal-content">
+        <view class="modal-input">
+            <input type="text" bindinput="inputChange" class="input" value="{{promptParam.remark}}" />
+        </view>
+    </view>
+    <view class="modal-footer">
+        <view class="btn-cancel" bindtap="_cancelEvent" data-status="cancel">取消</view>
+        <view class="btn-confirm" bindtap="_confirmEvent" data-status="confirm">确认</view>
+    </view>
+</view>
+</view>
+

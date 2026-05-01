@@ -1,0 +1,45 @@
+<!--pages/my/activity/review/index.wxml-->
+<view class='main'  hidden='{{main_hidden}}'>
+  <block wx:if="{{reviewList.length > 0}}">
+    <view class='review'>
+      <view class='review_content'  wx:for='{{reviewList}}' wx:key='item' wx:for-item='item'>
+        <view class='review_content_text'>
+          <view class='img'>
+            <image src='{{item.cover_image}}'></image>
+          </view>        
+          <view class='text'>
+            <view class='title'>
+              {{item.title}}
+            </view>
+            <view class='date'>
+              创建时间：
+              <i>{{item.created_at}}</i>
+            </view>
+          </view>
+        </view>
+        <view class='opn'>
+          <view wx:if='{{item.type==1}}'>
+            <view class='left' >草稿</view>
+          </view>
+          <view wx:else>
+            <view class='left' wx:if='{{item.status==1}}'  style='color:rgb(254,191,0)'>审核中</view>
+            <view class='left' wx:elif='{{item.status==2}}' style='color:rgb(58,200,253)'>发布成功</view>
+            <view class='left' wx:else  style='color:rgb(255,25,25)'>审核未通过</view>
+          </view>
+          <view class='btn'>
+            <view class='btn1' bindtap='remove' data-id='{{item.id}}'>删除</view>
+            <view class='btn2' wx:if='{{item.type==1}}' bindtap='navigateToUrl' data-url='create/index?id={{item.id}}'>编辑</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view hidden='{{none_hidden}}'>
+			<view  class='none'></view>
+			<view class='none_content'>您还没有发起过活动回顾~</view>
+	</view>
+  <view class='payment' bindtap='navigateToUrl' data-url='create/index'>
+    新建活动回顾
+  </view>
+</view>
+

@@ -1,0 +1,27 @@
+<view class="main">
+    <view class="search">
+        <view class="search_input">
+            <input placeholder="搜索" bindinput="changeSearch" bindconfirm="searchBtn" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+        </view>
+    </view>
+    <view wx:for="{{ list }}" wx:key="item" wx:for-index="index">
+        <view class="initial">{{ item.alphabet }}</view>
+        <view class="ct_box">
+            <block wx:for="{{ item.datas }}" wx:key="sonItem" wx:for-item="sonItem" wx:for-index="sonIndex">
+                <view class="ct_view" bindtap="changeSelected"  data-info_id="{{ sonItem.id }}">
+                    <view class="ct">
+                        <image src="{{ sonItem.avatar }}"></image>
+                        <view class="text">
+                            <view class="title">{{ sonItem.name }}<span>{{ sonItem.position ?sonItem.position:'' }}</span></view>
+                            <view>{{ sonItem.company_name }}</view>
+                        </view>
+                    </view>
+                    <view>
+                        <icon type="{{ sonItem.id == id ? 'success':'circle' }}" ></icon>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <button bindtap="toSubmit">确定</button>
+</view>

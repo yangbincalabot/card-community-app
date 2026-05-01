@@ -1,0 +1,67 @@
+<view class='main'>
+  <view class='header'>
+    <view class='top'>
+      <view class='img'>
+        <image src='{{ agentInfo.avatar }}'></image>
+      </view>
+      <view class='name'>{{ agentInfo.nickname }}</view>
+      <view class='job'><i>{{ agentInfo.agent.name }}</i></view>
+    </view>
+    <view class='money'>
+      <view class='m1'>累计收益（元）</view>
+      <view class='m2'>
+        <view class='income'>{{ agentInfo.balance.total_revenue }}</view>
+        <view class='right' bindtap="navigatorToUrl" data-url="../../spread/reward/index">
+					<view>推广二维码</view>
+					<i class='icon iconfont iconyou'></i>
+				</view>
+      </view>
+      <view class='m3'>
+        <view class='now'>当前余额(元）<i>{{ agentInfo.balance.money }}</i></view>
+        <view class='today'>今日收益<i>{{ agentInfo.todayIncome }}</i></view>
+      </view>
+    </view>
+  </view>
+  <view class='release'>
+    <view class='r' bindtap="navigatorToUrl" data-name="income">
+      <view class='img'>
+        <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_icon1.png'></image>
+      </view>
+      <view>收益明细</view>
+    </view>
+    <block wx:if="{{ agentInfo.type > 2}}">
+        <view class='r' bindtap="navigatorToUrl" data-url="lower/index">
+          <view class='img'>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_icon2.png'></image>
+          </view>
+          <view>我的下级代理</view>
+        </view>
+    </block>
+
+    <block wx:if="{{ agentInfo.type == 2 || agentInfo.type== 4}}">
+        <view class='r' bindtap="navigatorToUrl" data-url="store/index">
+          <view class='img'>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_icon3.png'></image>
+          </view>
+          <view>门店信息</view>
+        </view>
+    </block>
+
+    <block wx:if="{{ agentInfo.type == 4 }}">
+        <view class='r'  bindtap='navigatorToUrl' data-option_type='2' data-url='../activity/index/index'>
+          <view class='img'>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_icon4.png'></image>
+          </view>
+          <view>赛事活动</view>
+        </view>
+        <view class='r' bindtap='navigatorToUrl'  data-option_type='2' data-url='../activity/review/index' >
+          <view class='img'>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_icon5.png'></image>
+          </view>
+          <view>活动回顾</view>
+        </view>
+    </block>
+    <view class='r'>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class='main'>
+    <view class='title'>
+        部门
+    </view>
+    <view class='card'>
+        <block wx:for="{{ departments }}" wx:key="index">
+            <view class='card_content' bindtap="navigateToUrl" data-url="../detail/detail?id={{ item.id }}">
+                <view class='content'>
+                    <view class='bank_title'>{{ item.name }}</view>
+                </view>
+            </view>
+        </block>
+
+    </view>
+    <view class='btn' bindtap="navigateToUrl" data-url="../add/index">
+        添加部门
+    </view>
+</view>

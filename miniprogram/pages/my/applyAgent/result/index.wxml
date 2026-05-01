@@ -1,0 +1,8 @@
+<!--pages/paysuccess/index.wxml-->
+<view class='main'>
+    <view class='pay'>
+        <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/pay_icon.png'></image>
+        <view class='p1'>{{ message }}</view>
+        <view class='back' bindtap="backToUser">返回</view>
+    </view>
+</view>

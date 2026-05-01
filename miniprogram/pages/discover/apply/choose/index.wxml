@@ -1,0 +1,43 @@
+<!--pages/discover/apply/choose/index.wxml-->
+<view class='main'>
+  <view class='title'  bindtap='navigateToUrl' data-url='../addApplicant/index'>
+    <i class='icon iconfont iconjia'></i>
+    添加报名人
+  </view>
+    <view class="product-container">
+      <view class="product-list">
+        <view class="product-item" wx:for="{{list}}" wx:for-index="index" wx:key="{{item.id}}">
+          <movable-area>
+            <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}"
+              inertia="true"
+              data-productIndex="{{index}}"
+              bindtouchstart="handleTouchStart"
+              bindtouchend="handleTouchEnd"
+              bindchange="handleMovableChange">
+              <view class="product-item-wrap">
+                <view class='content'>
+                  <view class='c'>
+                    <view class='icon'  bindtap='checkboxChange' data-id='{{item.id}}' data-key='{{index}}'>
+                      <icon type="success" color="rgb(255,227,0)" wx:if='{{item.checked}}'></icon>
+                      <icon type="circle" wx:else></icon>
+                    </view>
+                    <view class='content_msg'  bindtap='checkboxChange' data-id='{{item.id}}' data-key='{{index}}'>
+                      <view class='m1'>{{item.name}}<i class="icon iconfont {{item.sex==1?'iconnan':'iconnv'}}" style="color:{{item.sex==1?'rgb(117,187,252)':'rgb(252,117,148)'}}"></i>{{item.phone}}</view>
+                      <view class='m2' wx:if='{{item.identity_number}}'>身份证号：{{item.identity_number}}</view>
+                      <view class='m2' wx:else>身份证号：未设置</view>
+                    </view>
+                    <view class='icon iconfont iconiconset0136 content_add'  bindtap='navigateToUrl' data-url='../addApplicant/index?id={{item.id}}'></view>
+                  </view>
+                </view>
+              </view>
+            </movable-view>
+          </movable-area>
+          <view class="delete-btn" data-id="{{item.id}}" bindtap="remove">删除</view>
+        </view>
+        </view>
+      </view>
+  <view class='payment' bindtap="navigateBack">
+    确定
+  </view>
+</view>
+

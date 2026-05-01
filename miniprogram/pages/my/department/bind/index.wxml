@@ -1,0 +1,19 @@
+<view class="main" hidden="{{ hidden }}">
+    <form bindsubmit="formSubmit">
+        <view class="ct_view">
+            <picker mode="selector" value="{{ select_index }}" range="{{ departments }}"   range-key="name" bindchange="changeDepartment">
+                <view class="ct">
+                    <view class="ct_left">
+                        <text><text class="required">*</text>所属部门</text>
+                        <input placeholder="请选择所属" placeholder-class="placeholder" disabled="false" value="{{ select_text }}"></input>
+                    </view>
+                    <view class="ct_right">
+                        <span class="icon iconfont iconyoujiantou"></span>
+                    </view>
+                </view>
+            </picker>
+        </view>
+
+        <button class="button" form-type="submit">保存</button>
+    </form>
+</view>

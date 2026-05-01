@@ -1,0 +1,146 @@
+<!--pages/card/new/index.wxml-->
+<view class='container'>
+    <view class="con-wrap ripple {{cardRightIn?'flipInY':''}} {{cardLeftIn?'fadeInLeft':''}}"  wx:for="{{list}}" wx:if="{{index==currentIndex}}" wx:key="{{item._id}}" >
+        <view class='card-box' bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+            <view wx:if="{{index == 0}}">
+                <view class="main">
+                    <view>
+                        <view class="userCard">
+                            <view class="card_bg">
+                                <view class="card_ct">
+                                    <view class="ct1">{{ cardDetail.company_name }}</view>
+                                    <view class="ct2">{{ cardDetail.name }}<span>{{ cardDetail.position ?cardDetail.position:'未设置' }}</span></view>
+                                    <view class="ct3"><image src="/images/user_icon1.png"></image>{{ cardDetail.phone ? cardDetail.phone : '未设置' }}</view>
+                                    <view class="ct3" bindtap="clipboard" data-value="{{ cardDetail.email ?  cardDetail.email : '' }}"><image src="/images/user_icon3.png"></image>{{ cardDetail.email ?cardDetail.email:'未设置' }}</view>
+                                    <view class="ct3" ><image src="/images/user_icon2.png"></image>{{ cardDetail.company_card.address_title ?cardDetail.company_card.address_title:(cardDetail.address_title ? cardDetail.address_title : '未设置') }}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="user_code">
+                            <view>
+                                <image src="{{ userInfo.qrcode }}"></image>
+                            </view>
+                            <view>扫他人码直接收藏名片</view>
+                            <block wx:if="{{ footHide }}">
+                                <button hover-class="none" wx:if="{{ is_send === false}}" bindtap="sendCard">发名片</button>
+                                <button hover-class="none" wx:else>已递名片</button>
+                            </block>
+
+                            <block wx:else>
+                                <button hover-class="none" open-type="share">转发名片</button>
+                            </block>
+
+                        </view>
+                        <view class="footer" hidden="{{ footHide }}">
+                            <view class="footer_box">
+                                收到的名片
+                                <view class="imgs">
+                                    <block wx:for="{{ offlineBusinessCard }}" wx:key="index">
+                                        <image src="{{ item.avatar }}"></image>
+                                    </block>
+                                </view>
+                                {{ offlineBusinessCard.length }}位
+                                <span class="icon iconfont iconyoujiantou"></span>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{index == 1}}">
+                <view class="main">
+                    <view>
+                        <view class="card">
+                            <view class="card_box">
+                                <view class="card_text">
+                                    <image src="/images/mycode.png"></image>
+                                </view>
+                            </view>
+                            <view class="card_view">
+                                <view class="access">
+                                    <block wx:if="{{ userInfo && userInfo.id !== cardDetail.uid }}">
+                                        <block wx:if="{{ is_collect === false }}">
+                                            <view class="collect_btn" bindtap="clickCollection">收藏</view>
+                                        </block>
+                                        <block wx:else>
+                                            <view class="collect_btn" bindtap="navigatorToUrl">已收藏</view>
+                                        </block>
+                                    </block>
+                                    <view class="num">
+                                        <span class="icon iconfont icondianzanliang"></span>{{ cardDetail.visits }}
+                                    </view>
+                                    <view>访问量</view>
+                                </view>
+                                <view class="msg">
+                                    <view class="msg_box">
+                                        <view class="msg_left">
+                                            <image src="{{ cardDetail.avatar }}"></image>
+                                        </view>
+                                        <view class="msg_right">
+                                            <view>
+                                                <view class="name">{{ cardDetail.name }}<span>{{ cardDetail.position ? cardDetail.position:'未设置'}}</span></view>
+                                                <view>{{ cardDetail.company_name }}</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="msg_view">
+                                        <image src="/images/tel.png"></image>
+                                        <view class="msg_text">
+                                            <view class="msg_ct">{{ cardDetail.phone ? cardDetail.phone : '未设置' }}</view>
+                                        </view>
+                                    </view>
+                                    <view class="msg_view">
+                                        <image src="/images/name.png"></image>
+                                        <view class="msg_text">
+                                            <view class="msg_ct" bindtap="clipboard" data-value="{{ cardDetail.wechat ?  cardDetail.wechat : '' }}">{{ cardDetail.wechat ? cardDetail.wechat: '未设置' }}</view>
+                                        </view>
+                                    </view>
+                                    <view class="msg_view">
+                                        <image src="/images/email.png"></image>
+                                        <view class="msg_text">
+                                            <view class="msg_ct" bindtap="clipboard" data-value="{{ cardDetail.email ?  cardDetail.email : '' }}">{{ cardDetail.email ? cardDetail.email: '未设置' }}</view>
+                                        </view>
+                                    </view>
+                                    <view class="msg_view">
+                                        <image src="/images/site.png"></image>
+                                        <view class="msg_text">
+                                            <view class="msg_ct">{{ userInfo.company_card.address_title ?userInfo.company_card.address_title:(cardDetail.address_title ? cardDetail.address_title : '未设置') }}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="btnAll" wx:if="{{ !footHide }}">
+                                    <button class="btn1"  bindtap="navigatorToUrl" data-url="../../my/card/editCard/index">编辑名片</button>
+                                    <button class="btn2" open-type="share">分享名片</button>
+                                </view>
+                                <view class="btnAll" wx:else>
+                                    <block wx:if="{{ is_send === false }}">
+                                        <button class="btn1"  bindtap="sendCard">发名片</button>
+                                    </block>
+                                    <block wx:else>
+                                        <button class="btn1">已递名片</button>
+                                    </block>
+                                    <button class="btn2" open-type="share">分享名片</button>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="title">
+                            <view class="title_left"></view>
+                            个人介绍
+                        </view>
+                        <view class="introduce">
+                            {{ cardDetail.introduction ? cardDetail.introduction: '未填写' }}
+                        </view>
+                        <view class="title">
+                            <view class="title_left"></view>
+                            相册
+                        </view>
+                        <view class="imgs" >
+                            <block wx:for="{{ cardDetail.images }}" wx:key="item">
+                                <image src="{{ item }}"></image>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,193 @@
+/* pages/my/activity/create/index.wxss */
+@import "/utils/assets/iconfont.wxss";
+page{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 30upx;
+}
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+}
+.placeholderStyle{
+	color: #888888;
+}
+.main .header{
+  width: 750rpx;
+  height: 224rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  padding-top: 10rpx;
+}
+.main .header text{
+  margin: 30rpx;
+}
+.main .header image{
+  width: 116rpx;
+  height: 116rpx;
+  margin: 30rpx;
+}
+.main .text{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  color: #000; 
+  border-bottom: 1rpx solid rgb(229,229,229);
+}
+.main .text text{
+  margin-left: 30rpx;
+}
+.main .text i{
+  color: rgb(204,204,204);
+	margin-left: 10rpx;
+}
+.main .text input{
+  width: 60%;
+  margin-left: 80rpx;
+	text-align: left;
+}
+.main .text picker{
+  width: 60%;
+  margin-left: 80rpx;
+  color: #888888;
+}
+
+.main .text picker i{
+  position: absolute;
+  right: 35rpx;
+}
+
+.main .dual{  
+  width: 750rpx;
+  margin: 20rpx 0;  
+}
+.main .dual .dual_text{
+  width: 750rpx;
+  height: 100rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: #000; 
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgb(229,229,229);
+}
+.main .dual .dual_text text{
+  margin-left: 30rpx;  
+}
+.main .dual .dual_text i{
+  color: rgb(204,204,204);
+	/* margin-left: 15rpx; */
+}
+.main .dual .dual_text input{
+  width: 60%;
+  margin-left: 80rpx;
+}
+
+.main .dual .dual_text picker{
+  width: 60%;
+  margin-left: 22rpx;
+  color: rgb(156,156,156);
+}
+.main .dual .dual_text picker span{
+	color: #888888;
+}
+.main .dual .dual_text picker i{
+  position: absolute;
+  right: 35rpx;
+}
+
+.main .textarea{
+  width: 700rpx;
+	margin-left: 30rpx;
+  background: #fff;
+	padding-bottom: 30upx;
+}
+.text_box{
+	border: 1rpx solid #ccc;
+	border-radius: 10rpx;
+	margin: 20rpx auto;
+	width: 700rpx;
+	min-height: 300rpx;
+	text-align: center;
+	padding-top: 20rpx;
+}
+.main .textarea .t{
+  width: 700rpx;
+  margin: 0 auto; 
+  position: relative;
+  font-size: 30rpx;
+	padding: 30rpx 0;
+	display: flex;	
+	align-items: center;
+	justify-content: space-between;
+}
+.main .textarea .t text{
+  font-size: 30rpx;
+  color: #000;
+}
+.main .textarea textarea{
+  width: 670rpx;
+  height: 520rpx;
+  border: 1rpx solid rgb(204,204,204);
+  border-radius: 1rpx;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+}
+.main .t .btn{
+  width: 136rpx;
+  height: 44rpx;
+  background: rgb(254,191,0);
+  border-radius: 22rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 48rpx;
+
+}
+.main .btn_bottom{
+  display: flex;
+  justify-content: space-around;
+  margin: 60rpx 0;
+}
+.main .btn_bottom .btn1{
+  width: 260rpx;
+  height: 94rpx;
+  border-radius: 10rpx;
+  color: rgb(254,191,0);
+  border: 1rpx solid rgb(254,191,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	line-height: 48rpx;
+}
+.main .btn_bottom .btn2{
+  width: 260rpx;
+  height: 94rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  background: rgb(254,191,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	line-height: 48rpx;
+}
+button::after{ border: none; }
+.xuanzhong{color: #333;}
+.xuanze {
+    float: right;
+    font-size: 28rpx;
+    color: #999;
+}

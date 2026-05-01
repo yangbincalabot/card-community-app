@@ -1,0 +1,33 @@
+<block>
+  <view class="list">
+    <view class="title">{{ item.name }}</view>
+    <view class="item">
+      <view bindtap="switchActive">
+        <image wx:if="{{ item.is_active === true }}" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%AF%B9%20(2).png"></image>
+        <image wx:else src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%9C%AA%E9%80%89.png"></image>
+      </view>
+      <view class="item_r">
+        <view class="cell">地域：
+          <picker mode="multiSelector" range="{{ areas }}" range-key="name" wx:key="{{ item.id + '-area' }}" value="{{ area_index }}" bindcolumnchange="changeAreaColumn" bindchange="changeArea">
+            <view class="text">
+              {{ area_text ? area_text : '请选择'}}
+            </view>
+          </picker>
+        </view>
+        <view class="cell">行业：
+          <picker mode="multiSelector" range="{{ industries }}" wx:key="{{ item.id + '-industry' }}" value="{{ industry_index }}" range-key="name" bindchange="changeIndustry" bindcolumnchange="changeIndustryColumn">
+            <view class="text">
+              {{ industry_text ? industry_text : '请选择'}}
+            </view>
+          </picker>
+        </view>
+        <view class="cell">认证：
+          <view bindtap="switchChange" data-index="{{index}}" class="{{ item.attestation ? '' : 'weirz' }} switch_box">
+            <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/switch_ioc.png"></image>
+            {{ item.attestation ? '已认证': '未认证' }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

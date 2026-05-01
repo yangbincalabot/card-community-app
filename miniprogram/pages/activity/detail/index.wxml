@@ -1,0 +1,205 @@
+<!--pages/activity/detail/index.wxml-->
+<view class="main" hidden="{{ mainHidden }}">
+ <view class="mine_top">
+      <view class="zhanwei" style="height:{{navTop}}px"></view>
+      <view class="mine_top_btn" style="height:{{navHeight}}px">
+         <image bindtap="navBack" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/jtz.png"></image>
+         <span class="mine_top_btn_span"></span>
+         <image bindtap="toIndex" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/zhuye.png"></image>
+      </view>
+  </view>
+ <view class="mask-top"></view>
+  <!-- <view class="back" bindtap="toBack">
+    <span class="icon iconfont iconfanhuix"></span>
+  </view> -->
+  <view class="detail_img">
+    <image src="{{ detail.cover_image }}" bindtap="previewImage"></image>
+  </view>
+  <view class="detail_title">
+    <text>{{ detail.title }}</text>
+  </view>
+  <view class="price_box">
+    <view class="price" wx:if="{{ detail.minPrice != detail.maxPrice }}">
+      <text wx:if="{{ detail.minPrice > 0 }}">￥{{ detail.minPrice }}~￥{{ detail.maxPrice }}</text>
+      <text wx:else>免费~￥{{ detail.maxPrice }}</text>
+    </view>
+    <view class="price" wx:else>
+      <text wx:if="{{ detail.maxPrice > 0 }}">￥{{ detail.maxPrice }}</text>
+      <text wx:else>免费</text>
+    </view>
+    <view class="num">
+      <span>总名额 {{ detail.countStint }}</span>
+      <span> 浏览数 {{ detail.visits }}</span>
+    </view>
+  </view>
+  <view class="time">
+    <span class="icon iconfont iconshijian1"></span>
+    <i>时间：</i>
+    <text>{{ detail.activity_time }}<block wx:if="{{ detail.activity_end_time }}">---{{ detail.activity_end_time }}</block></text>
+  </view>
+  <view class="address">
+    <span class="icon iconfont icondizhi"></span>
+    <i>地点：</i>
+    <view class="adress_new_view">{{ detail.address_title }}</view>
+  </view>
+  <view class="timeEnd">
+    <span></span>
+    <i>主办：</i>
+    <text>{{detail.carte.company_name}}</text>
+  </view>
+  <block wx:for="{{ detail.undertake }}" wx:key="item" wx:for-index="index">
+    <view class="timeEnd">
+      <span></span>
+      <i wx:if="{{ index == 0 }}">承办：</i>
+      <i wx:else></i>
+      <text class="chengban_text">{{item.company}}</text>
+    </view>
+  </block>
+
+  <view class="user" wx:if="{{ detail.apply && detail.apply.length > 0 }}">
+    <view class="user_ct">
+      <view>报名人</view>
+      <view class="more" bindtap="navigateToUrl" data-url="/pages/activity/staff/index?id={{ detail.id }}">更多
+        <span class="icon iconfont iconyoujiantou"></span>
+      </view>
+    </view>
+  </view>
+  <view class="user_box" wx:if="{{ detail.apply && detail.apply.length > 0 }}">
+    <block wx:for="{{ detail.apply }}" wx:key="item" wx:for-index="index">
+      <view class="user_content" wx:if="{{ index<3 }}">
+        <view class="img">
+          <image src="{{ item.carte.avatar }}"></image>
+        </view>
+        <view class="user_text">
+          <view>{{ item.carte.name }}
+            <i>{{ item.carte.position ?item.carte.position:'' }}</i>
+            <!-- <span>主办单位</span><span>主持人</span> -->
+          </view>
+          <view class="firm">{{ item.carte.company_name }}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="line"></view>
+  <view class="active_title">
+    <scroll-view scroll-x="true" class="active-switch">
+      <view class="switch-container">
+        <view class="active-item" class="{{ current == index ? 'focus' : 'active-item'}}" wx:for="{{tabList}}" wx:for-item="item" wx:key="index" bindtap="tabsChange" data-index="{{index}}">
+          <view class="item">
+            {{ item.title }}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="{{current==0 ? 'show':'hidden'}}">
+    <view class="ct_box">
+      <text>{{ detail.content }}</text>
+      <block wx:for="{{ detail.images }}" wx:key="item">
+        <image src="{{ item }}" bindtap="previewImages" data-src="{{item}}" data-index="{{index}}"></image>
+      </block>
+    </view>
+  </view>
+  <view class="{{current==1 ? 'show':'hidden'}}">
+    <view class="ct_box">
+      <view class="name">活动回顾</view>
+      <block wx:for="{{ detail.tricks.images }}" wx:key="item">
+        <image src="{{ item }}" bindtap="previewImages" data-src="{{item}}" data-index="{{index}}"></image>
+      </block>
+      <text>{{ detail.tricks.content }}</text>
+    </view>
+  </view>
+
+
+  <view class="footer">
+    <block wx:if="{{detail.status_type == 3 && applyed}}">
+      <view class="footer_item" wx:for="{{footerList}}" wx:key="item">
+        <button class="shareBtn" wx:if="{{3==index}}" open-type="share"></button>
+        <view class="imgBox" bindtap="navigateToUrl" data-url="{{ item.url }}">
+          <image src="{{item.icon}}"></image>
+        </view>
+        <view class="text">{{item.text}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="footer_left">
+        <button class="btn" open-type="share">
+          <view>
+            <view class="icon iconfont iconfenxiang"></view>
+            <text>分享</text>
+          </view>
+        </button>
+        <button class="btn" bindtap='clickCollection' wx:if="{{collectionStatus}}">
+          <view>
+            <view class="icon iconfont iconshoucang"></view>
+            <text>已收藏</text>
+          </view>
+        </button>
+        <button class="btn" bindtap='clickCollection' wx:else>
+          <view>
+            <view class="icon iconfont iconshoucangweidianji"></view>
+            <text>收藏</text>
+          </view>
+        </button>
+        <button class="btn" bindtap="upService">
+          <view>
+            <view class="icon iconfont icon10"></view>
+            <text>客服</text>
+          </view>
+        </button>
+        <view wx:if="{{options}}">
+          <view class="icon iconfont iconjiangxu"></view>
+          <view class="down">
+            <button class="active" open-type="contact" bindcontact="handleContact">
+              <image src="/images/meeting_icon1.png"></image>
+              在线客服
+            </button>
+            <button bindtap='playPhone' data-phone='{{ detail.carte.phone }}'>
+              <image src="/images/meeting_icon2.png"></image>
+              拨打电话
+            </button>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{ detail.status_type == 1 }}">
+        <button class="now" wx:if="{{ applyed }}">已报名</button>
+        <button class="now" bindtap='showshadow' wx:else>立即报名</button>
+      </block>
+      <block wx:else>
+        <button class="now" wx:if="{{ applyed }}">已报名</button>
+        <button class="now" wx:else>{{ detail.status_show }}</button>
+      </block>
+    </block>
+  </view>
+  <view class="shadow" wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+  <view class='choosen' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+    <view class="container-box">
+      <view class="content_box">
+        <view class="content_top">
+          <image src="{{ detail.cover_image }}"></image>
+          <span wx:if="{{ price>0 }}">￥{{ price }}</span>
+          <span wx:else>免费</span>
+          <span class="places">剩余名额{{ remainder }}人</span>
+          <view class="icon iconfont iconshanchu" bindtap='hideModal'></view>
+        </view>
+        <view class="content_title">选择报名类别</view>
+        <view class="content_status">
+          <block wx:for="{{ detail.specification }}" wx:key="item">
+            <block wx:if="{{ item.remainder == 0 }}">
+              <text class="status statusFull" bindtap="clickFull">
+                            {{ item.title }}
+                          </text>
+            </block>
+            <block wx:else>
+              <text class="status {{ sid == item.id ? 'statusActive':'' }}" bindtap="changeSpe" data-sid="{{ item.id }}" data-price="{{ item.price }}" data-remainder="{{ item.remainder }}">
+                              {{ item.title }}
+                          </text>
+            </block>
+          </block>
+        </view>
+        <button class="success" bindtap="toApply">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

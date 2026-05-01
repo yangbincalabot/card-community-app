@@ -1,0 +1,9 @@
+<!--pages/passport/getPhone/index.wxml-->
+<view class='main'>
+    <view class='pay'>
+        <image src='{{ userInfo.avatar }}'></image>
+        <view class='p1'>需授权手机号后才可以继续操作哦~</view>
+        <button class='back' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >点击授权手机号</button>
+        <view class='check' bindtap="notAuthorized">暂不授权</view>
+    </view>
+</view>

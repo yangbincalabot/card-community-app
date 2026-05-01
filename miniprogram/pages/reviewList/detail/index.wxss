@@ -1,0 +1,39 @@
+/* pages/reviewList/detail/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;  
+  margin: 40rpx auto;
+}
+.main .text{
+  font-size: 36rpx;
+  color: rgb(0,0,0);
+  margin: 20rpx 40rpx;
+}
+.main .date{
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+  margin: 20rpx 40rpx;
+}
+
+.main .img{
+  width: 690rpx;
+  height: 390rpx;
+  margin: 40rpx auto;
+  /* border: 1rpx solid #ccc; */
+}
+.main .img image{
+  width: 690rpx;
+  height: 390rpx;
+}
+.main .content{
+  width: 690rpx;
+  word-wrap: break-word; 
+  word-break: normal;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.content .c{
+  margin-bottom: 50rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/my/accountRecord/accountRecord.wxml-->
+<view class="main">
+  <view class="ct_view">
+    <block wx:for="{{ logs }}" wx:key="index">
+      <view class="ct_box">
+        <view class="ct_left">
+          <view class="title">{{ item.remark }}</view>
+          <view class="time">{{ item.created_at }}</view>
+        </view>
+        <view class="ct_right {{ item.money > 0 ? 'jia' : '' }}">
+          {{ item.money > 0 ? '+' + item.money : item.money }}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

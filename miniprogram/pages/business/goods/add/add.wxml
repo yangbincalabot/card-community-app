@@ -1,0 +1,74 @@
+<view class="main">
+    <form bindsubmit="formSubmit">
+        <view class="ct_view">
+            <view class="ct" bindtap="UploadImage" data-type="avatar">
+                <view class="ct_left">
+                    <text>封面</text>
+                </view>
+                <view class="ct_right">
+                    <image src="{{ image_url }}"></image>
+                    <span class="icon iconfont iconyoujiantou"></span>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>标题</text>
+                    <input placeholder="请输入商品标题" placeholder-class="placeholder" name="title"></input>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>价格</text>
+                    <input placeholder="请输入商品价格" placeholder-class="placeholder" name="price" type="digit"></input>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>详情</text>
+                    <textarea placeholder="请填写商品详情" placeholder-class="placeholder"  name="content"></textarea>
+                </view>
+                <view class="ct_right">
+                    <span class=""></span>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>相册</text>
+                </view>
+            </view>
+            <view>
+                <view class="img">
+                    <view class="img_box">
+                        <block wx:if="{{ formData.images.length < 9 }}">
+                            <span bindtap="UploadImage" data-type="images">
+                                <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'></image>
+                            </span>
+                        </block>
+                        <block wx:for="{{ formData.images }}" wx:key="index">
+                            <span>
+                                <image src='{{ item }}'></image>
+                                <i class="icon iconfont iconshanchu1" data-index="{{ index }}" bindtap="deleteImage"></i>
+                            </span>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address">
+                <text>是否显示</text>
+                <view class="ct_right">
+                    <switch color="#FFC163" bindchange="changeShow" checked="{{ formData.is_show }}" />
+                </view>
+            </view>
+        </view>
+        <view style="height: 90rpx"></view>
+        <cover-view class="coverBtn">
+            <button form-type="submit">保存</button>
+        </cover-view>
+    </form>
+</view>

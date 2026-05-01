@@ -1,0 +1,133 @@
+page{
+  background: #f5f5f5;
+}
+.main .page_row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.main .page_row .search{  
+  width: 600rpx; 
+  height: 60rpx; 
+  padding: 20rpx 0;
+}  
+.main .page_row .search .search_arr placeholderStyle{
+  font-size: 28rpx;
+  color: rgb(178,178,178);
+}
+.main .page_row .search .search_arr {  
+  border: 1px solid rgb(230,230,234);  
+  border-radius: 90rpx;  
+  margin-left: 30rpx;  
+}  
+
+.main .page_row .search .search_arr input{
+  margin-left: 20rpx; 
+  height: 60rpx;  
+  font-size: 28rpx;
+  /* color: rgb(178,178,178); */
+}  
+  
+.sousuo { 
+  width: 88rpx;
+  height: 50rpx; 
+  font-size: 28rpx;
+  color: #ffffff; 
+  margin-right: 28rpx; 
+  background: rgb(80,166,249);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 48rpx;
+} 
+.save{ 
+  width: 88rpx;
+  height: 50rpx; 
+  font-size: 28rpx;
+  color: rgb(80,166,249); 
+  margin-right: 28rpx; 
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 48rpx;
+  border: 1rpx solid rgb(80,166,249);
+} 
+.box_view{
+  width: 750rpx;
+  background: #ffffff;
+}
+.box{
+  width: 698rpx;
+  margin: 20rpx auto;
+}
+.box_content{
+  width: 698rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;  
+  border-bottom: 1rpx solid #f4f4f4;
+  padding: 20rpx 0;
+}
+.add_content{
+  border: initial;
+}
+.box_content image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 45rpx;
+}
+.ct_text{
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 20rpx;
+  line-height: 50rpx;
+}
+.ct_text span{
+  color: #666666;
+  margin-left: 10rpx;
+}
+.name{
+  width: 698rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 20rpx 0;
+  color: #333333;
+  margin: 0 auto;
+}
+.add_fireName{
+  width: 650rpx;
+}
+.btn{
+  /* width: 698rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 20rpx 0;
+}
+.btn button{
+  margin: 0 ;
+  padding: 0;
+  width: 160rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-left: 20rpx;
+}
+.btn1{
+  background: rgb( 80,166,249);
+}
+.btn2{
+  background: rgb(58,131,245);
+}
+.btn3{
+  background: #D71A1C;
+}
+.add_box image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.add_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

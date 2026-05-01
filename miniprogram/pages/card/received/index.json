@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收到的名片",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "received-user": "/components/received/received"
+  }
+}

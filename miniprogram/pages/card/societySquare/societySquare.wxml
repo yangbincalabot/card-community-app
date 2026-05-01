@@ -1,0 +1,76 @@
+<view class="main">
+  <my-navbar  bgColor="{{navBgColor}}"></my-navbar>
+  <view class="mask-top"></view>
+  <block wx:if="{{ is_show }}">
+    <view class="search">
+      <!-- <view class="mask"></view> -->
+      <!-- <view class="top_head" bindtap="back">
+        <span class="icon iconfont iconfanhuix" bindtap="back"></span>
+      </view> -->
+      <view class="search_input">
+        <input bindinput="changeSearch" bindconfirm="searchBtn" placeholder="请输入协会/企业公司名称" placeholder-class="color:#B5B5B5;"></input>
+      </view>
+    </view>
+    <view class="active-switch">
+      <view class="switch-container" hidden="{{ !swithc_val }}">
+        <view class="{{ select_tab_index === 0 ? 'focus' : ''}} active-item">
+          <!--                <picker mode="selector" range="{{ provinces }}" bindchange="setProvince" value="province_index">-->
+          <!--                    <view class="item">-->
+          <!--                        地域-->
+          <!--                        <span class="icon iconfont iconjiangxu"></span>-->
+          <!--                    </view>-->
+          <!--                </picker>-->
+          <my-area items="{{ areasArray }}" range-key="name" bind:changeValue="changeArea"></my-area>
+        </view>
+        <view class="{{ select_tab_index === 1 ? 'focus' : ''}} active-item">
+          <picker mode="multiSelector" range="{{ industries }}" value="{{ industry_index }}" range-key="name" bindchange="changeIndustry" bindcolumnchange="changeIndustryIndex">
+            <view class="item">
+              行业
+              <span class="icon iconfont iconjiangxu"></span>
+            </view>
+          </picker>
+        </view>
+        <!-- <view class="{{ select_tab_index === 2 ? 'focus' : ''}} active-item" bindtap="getLocation">
+          <view class="item">
+            附近
+          </view>
+        </view> -->
+        <!-- <view class="{{ select_tab_index === 3 ? 'focus' : ''}} active-item" bindtap="findAttestation">
+          <view class="item">
+            认证
+          </view>
+        </view> -->
+        <!-- <view class="{{ select_tab_index === 4 ? 'focus' : ''}} active-item" bindtap="setSort" data-sort="latest">
+          <view class="item">
+            最新
+          </view>
+        </view> -->
+      </view>
+    </view>
+    <view>
+      <view class="ct_box">
+        <block wx:for="{{ companies }}" wx:key="index">
+        <!-- societyDetail -->
+          <view class="ct_view" bindtap="navigatorToUrl" data-url="../societyIndex/societyIndex?id={{ item.id }}">
+            <view class="ct">
+              <view class='imgs'>
+                <image src="{{ item.image }}"></image>
+              </view>
+              <view class="text">
+                <view class="title">{{ item.name }}
+                  <span></span>
+                </view>
+                <!-- <view>{{ item.company.company_name }}</view> -->
+                <!-- <block wx:if="{{ item.original_company_name && item.cid > 0 && item.original_company_name !== item.company_name }}"><view>({{ item.original_company_name }})</view></block> -->
+                <text class="label">{{ item.company.industry ? item.company.industry_name : '未填写' }}</text>
+              </view>
+            </view>
+            <view>
+              <span class="icon iconfont iconsousuox"></span>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

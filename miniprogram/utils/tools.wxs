@@ -1,0 +1,32 @@
+function interceptionString(content, length = 20, suffix = '...'){
+    if(!content){
+        return '';
+    }
+
+    var strLen = 0;
+    var s = "";
+    for (var i = 0; i < content.length; i++) {
+        if (content.charCodeAt(i) > 128) {
+            strLen += 2;
+        } else {
+            strLen++;
+        }
+        s += content.charAt(i);
+        if (strLen >= length) {
+            return s + suffix;
+        }
+    }
+    return s;
+}
+
+
+// 处理同个对象引用问题
+function clone(obj){
+    return JSON.parse(JSON.stringify(obj))
+//    return obj
+}
+
+module.exports = {
+    interceptionString: interceptionString,
+    clone: clone
+};

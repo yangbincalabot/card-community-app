@@ -1,0 +1,73 @@
+/* pages/camera/index.wxss */
+.container{
+  width: 100%;
+  /* height: 600px; */
+  position: relative;
+}
+.cameraClass{
+  width: 100%;
+  height: 100%;
+}
+
+.top{
+  position: absolute;
+  top:70px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80%;
+  height: 70rpx;
+  border-radius: 36rpx;
+  z-index: 999;
+  align-items: center;
+  font-size: 26rpx;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  /* line-height: 70rpx; */
+}
+.top .top_text{
+  flex: 1;
+  height: 100%;
+  /* border-radius: 30px 0 0 30px; */
+  line-height: 70rpx;
+}
+.top .left{
+  background: rgba(0,0,0,0.3);
+}
+.top .right{
+  /*background: rgba(0,0,0,0.6);*/
+  background: rgba(0,0,0,0.3);
+}
+
+.top .active{
+  background: rgba(0,0,0,0.6);
+}
+
+.bottom{
+  display: flex;
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 140rpx;
+  z-index: 999;
+  align-items: center;
+  font-size: 26rpx;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  line-height: 140rpx;
+}
+.bottom_text{
+  flex: 1;
+  height: 100%;
+  line-height: 140rpx;
+}
+.bottom cover-image{
+  /* flex: 1; */
+  width: 130rpx;
+  height: 130rpx;
+}

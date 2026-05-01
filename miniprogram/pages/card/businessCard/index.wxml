@@ -1,0 +1,8 @@
+<view class="main">
+  <view class="img">
+    <image src="/images/none.png"></image>
+  </view>
+  <view>您还没有名片～</view>
+  <button class="btn1" bindtap="navigatorToUrl" data-url="../../my/card/editCard/index">创建自己的名片</button>
+  <button class="btn2" bindtap="code">ocr扫描纸质名片</button>
+</view>

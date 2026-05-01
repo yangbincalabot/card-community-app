@@ -1,0 +1,83 @@
+<view class='main'>
+    <view class='page_row'>
+        <view class="search">
+            <view class="df search_arr">
+                <input class="" placeholder="搜索商品" value="{{searchKey}}" bindinput="setSearchInputValue"
+                       placeholder-style='font-size:28rpx;color:rgb(178,178,178);text-align:center' style='text-align:center'></input>
+            </view>
+        </view>
+        <view class='sousuo' bindtap="confirmSearch">搜索</view>
+    </view>
+    <view class="scroll_box">
+        <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;padding-left:40rpx;height:" bindtap="changeCategory">
+            <view class="item_list">
+                <view class="item_book_text {{(filtersData.category_id == 0) ? 'active' : ''}}" data-type="0">全部</view>
+            </view>
+
+            <block wx:for="{{categoryData}}" wx:key="index" wx:for-item="categoryItem">
+                <view class="item_list">
+                    <view class="item_book_text {{(categoryItem.id == filtersData.category_id) ? 'active' : ''}}" data-type="{{categoryItem.id}}">{{categoryItem.name}}</view>
+                </view>
+            </block>
+
+        </scroll-view>
+    </view>
+    <view class='scroll'>
+        <view>
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+                    duration="{{duration}}">
+                <block wx:for="{{bannersData}}" wx:key="id" wx:for-item="bannerData">
+                    <swiper-item>
+                        <view class='imgs'>
+                            <image src="{{bannerData.image}}" class="slide-image"/>
+                        </view>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+
+    <view class="scroll_box_two " bindtap="changeOrder">
+        <view class="item_list_two {{(filtersData.order == 'default') ? 'active_two' : ''}}">
+            <view class="item_book_text" data-type="default">默认排序</view>
+        </view>
+        <view class="item_list_two {{(filtersData.order == 'sold_count_desc') ? 'active_two' : ''}}">
+            <view class="item_book_text" data-type="sold_count_desc">销量</view>
+        </view>
+        <view class="item_list_two {{(filtersData.order == 'price_desc' || filtersData.order == 'price_asc') ? 'active_two' : ''}}">
+            <view class="item_book_text" style='display:flex;' data-type="price_desc">价格
+                <view class='price_box'>
+                    <i class='icon iconfont iconshengxu' style="font-size:15rpx"></i>
+                    <i class='icon iconfont iconjiangxu' style="font-size:15rpx"></i>
+                </view>
+            </view>
+        </view>
+        <view class="item_list_two {{(filtersData.order == 'created_at_desc') ? 'active_two' : ''}}">
+            <view class="item_book_text" data-type="created_at_desc">发售时间</view>
+        </view>
+    </view>
+    <view class='product'>
+
+        <block wx:if="{{listsData.length > 0}}">
+            <block wx:for="{{listsData}}" wx:key="id" wx:for-item="itemData">
+                <view class='pro' data-url="/pages/product/detail/index?id={{itemData.id}}" bindtap="navigatorToUrl">
+                    <view class='img'>
+                        <image src='{{itemData.image}}'></image>
+                    </view>
+                    <view class='text'>{{itemData.title}}</view>
+                    <view class='price'>
+                        <view><i>￥</i>{{itemData.price}}
+                        </view>
+                        <view>销量{{itemData.sold_count}}</view>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <block wx:else>
+            <view style="margin:0 auto">
+                <view class='none'></view>
+                <view class='none_content'>空空如也~</view>
+            </view>
+        </block>
+    </view>
+</view>

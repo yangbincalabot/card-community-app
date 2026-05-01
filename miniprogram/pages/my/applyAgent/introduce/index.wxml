@@ -1,0 +1,20 @@
+<wxs src="capital.wxs" module="tools" />
+<view class='main'>
+  <view class='header'></view>
+  <view class='vip_content'>
+      <block wx:for="{{ agents }}" wx:key="index">
+          <view class='vip_ct'>
+            <view class='title'>
+              <view class='left'><view class='l'></view>{{ item.name }}<i>{{ item.price }}元</i></view>
+            </view>
+            <block wx:for="{{ tools.IntroducesItems(item.introduce) }}" wx:key="index">
+                <view class='content'>
+                  <view class='c1'>权益{{ tools.Uppercase(index + 1) }}</view>
+                  <view class='c2'>{{ item }}</view>
+                </view>
+            </block>
+
+          </view>
+      </block>
+  </view>
+</view>

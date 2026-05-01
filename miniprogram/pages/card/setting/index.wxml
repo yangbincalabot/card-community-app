@@ -1,0 +1,9 @@
+<view class="container" wx:if="{{ is_show }}">
+    <block  wx:for="{{ userScreen }}" wx:key="unique">
+        <search bind:changeSearch="changeSearchItem" data-index="{{ index }}" item="{{ item }}" industries="{{ industries }}" wx:key="unique" industryArray="{{ industryArray }}" areasArray="{{ areasArray }}" ></search>
+    </block>
+    <view></view>
+    <view class='btn' bindtap="back">
+        搜索
+    </view>
+</view>

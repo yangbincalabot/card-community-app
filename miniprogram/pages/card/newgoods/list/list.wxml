@@ -1,0 +1,43 @@
+<!--pages/commoditybox/commodityList/index.wxml-->
+<view class="container">
+   <view class="commodityList-box">
+         <view class="searchInput">
+            <input class="type" type="text" value="{{ keywords }}" bindconfirm="onSearch"  bindinput="changeKeyword" confirm-type="search" placeholder="请输入商品名"></input>
+         </view>
+        <view class="commodityList-nav">
+            <scroll-view class="scroll-box" enable-flex="{{true}}" scroll-x="{{true}}">
+               <block wx:for="{{goodsTypes}}" wx:item="item" wx:index="index" wx:key="index">
+                 <view class="{{twoNavIndex==index?'active':''}}" data-index="{{index}}" data-goods-type-id="{{item.id}}" bindtap="changeClick">{{item.name}}</view>
+               </block>
+            </scroll-view>
+        </view>
+        <view class="filter-box">
+            <view data-index="0" bindtap="filterClick" class="filter-box-view {{filterIndex=='0'?'action':''}}">默认推荐</view>
+            <view data-index="1" bindtap="filterClick" class="filter-box-view {{filterIndex=='1'?'action':''}}">销量</view>
+            <view data-index="2" bindtap="filterClick" class="filter-box-view filter-box-jg {{filterIndex=='2'?'action':''}}">
+                价格
+                <view class="icon iconfont icon-arrLeft-fill {{filterIndex=='2'&&priceSize?'coloraction':''}}"></view>
+                <view class="icon iconfont icon-arrUp-fill-copy {{filterIndex=='2'&&!priceSize?'coloraction':''}}"></view>
+            </view>
+        </view>
+        <view class="commodity-list-box">
+           <view class="commodity-list">
+            <block wx:for="{{goods}}" wx:key="index">
+               <view class="commodity-list-tab" data-goods-id="{{item.id}}" bindtap="commodityDetailsJump">
+                 <view class="commodity-list-tab-ing" style="position: relative;">
+                    <image src="{{item.image}}"></image>
+                    <view wx:if="{{item.saleStatus==='PRE_SALE'}}" class="commodity-tab-img-tip">预售</view></view>
+                 <view class="commodity-list-tab-text">{{item.title}}</view>
+                 <view class="commodity-list-tab-bottom">
+                    <view class="commodity-list-tab-bottom-left"><text>¥{{item.price}}</text><text>销量{{item.sales}}</text></view>
+                    <view  data-price-id="{{item.priceId}}"  catchtap="saveShopcart" class="icon iconfont icon-gou_wu_che2"></view>
+                 </view>
+              </view>
+            </block>
+              
+              
+              
+           </view>
+        </view>
+    </view>
+</view>

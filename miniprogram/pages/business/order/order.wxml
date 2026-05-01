@@ -1,0 +1,45 @@
+<view class='main'>
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+        <scroll-view class='order_content'>
+            <block wx:for="{{ orders }}" wx:key="index">
+                <view class='o_ct'>
+                    <view class='title'>
+                        <view class='time'>{{ item.created_at }}</view>
+                        <view class='payment'>交易成功</view>
+                    </view>
+                    <navigator hover-class="none" url="/pages/card/goodsDetail/goodsDetail?id={{ item.goods.id }}">
+                        <view class='product'>
+                        <view class='pro'>
+                            <view class='imgs'>
+                                <image src='{{ item.goods.image }}'></image>
+                            </view>
+                            <view class='text'>
+                                <view class='title'>{{ item.goods.title }}</view>
+                                <text class='color'>昵称：{{ item.user.nickname }}</text>
+                                <view class='price'>￥{{ item.goods.price }}</view>
+                            </view>
+                            <!-- <view class='size'>
+                                <text> × 2</text>
+                            </view> -->
+                        </view>
+                    </view>
+                    </navigator>
+                    
+                    <view class='service'>
+                        <!-- <view class='s'>
+                            <view class='s1'>价格：</view>
+                            <view class='s2'>￥1528.00</view>
+                        </view> -->
+                        <view class='btn'>
+                            <navigator hover-class="none" url="/pages/card/other/index?id={{ item.user.carte.id }}">
+                                <view class='btn1'>查看名片</view>
+                            </navigator>
+                            <view class='btn2' bindtap="phoneCall" data-phone="{{ item.phone }}">联系买家</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+        </scroll-view>
+    </view>
+</view>

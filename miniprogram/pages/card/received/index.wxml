@@ -1,0 +1,50 @@
+<view class="main">
+    <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">线下扫码</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">分享</view>
+        <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">名片广场</view>
+    </view>
+    <view class="{{currentTab==0 ? 'show':'hidden'}}">
+        <view class="time">
+            <view class="time_title" wx:if="{{ within_three_days.length > 0 }}">近三天</view>
+            <block wx:for="{{ within_three_days }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+
+        </view>
+        <view class="time">
+            <view class="time_title" wx:if="{{ three_days_ago.length > 0 }}">三天前</view>
+            <block wx:for="{{ three_days_ago }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+        </view>
+    </view>
+    <view class="{{currentTab==1 ? 'show':'hidden'}}">
+        <view class="time">
+            <view class="time_title" wx:if="{{ within_three_days.length > 0 }}">近三天</view>
+            <block wx:for="{{ within_three_days }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+        </view>
+        <view class="time">
+            <view class="time_title" wx:if="{{ three_days_ago.length > 0 }}">三天前</view>
+            <block wx:for="{{ three_days_ago }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+        </view>
+    </view>
+    <view class="{{currentTab==2 ? 'show':'hidden'}}">
+        <view class="time">
+            <view class="time_title" wx:if="{{ within_three_days.length > 0 }}">近三天</view>
+            <block wx:for="{{ within_three_days }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+        </view>
+        <view class="time">
+            <view class="time_title" wx:if="{{ three_days_ago.length > 0 }}">三天前</view>
+            <block wx:for="{{ three_days_ago }}" wx:key="index">
+                <received-user item="{{ item }}" bind:click="accept" bind:jump="navigatorToUrl"></received-user>
+            </block>
+        </view>
+    </view>
+</view>

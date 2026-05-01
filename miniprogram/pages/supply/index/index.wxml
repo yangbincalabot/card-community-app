@@ -1,0 +1,50 @@
+<!--pages/supply/index/index.wxml-->
+<view class="main">
+    <view class="search">
+        <view class="search_input">
+            <input placeholder="请输入姓名/职位/公司名称"  bindinput="changeSearch" bindconfirm="searchBtn" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+        </view>
+        <view class="all" bindtap="all">
+            <text>{{ type_title }}</text>
+            <span class="icon iconfont iconjiangxu"></span>
+        </view>
+    </view>
+    <view wx:if="{{options}}">
+        <view class="icon iconfont iconshengxu"></view>
+        <view class="down">
+            <view class="{{ type == 0? 'active':'' }}" bindtap="changeType" data-type="0">全部</view>
+            <block wx:for="{{ typeArr }}" wx:key="item">
+                <view bindtap="changeType" class="{{ type == item.id? 'active':'' }}" data-type="{{ item.id }}" data-index="{{ index }}" >{{ item.title }}</view>
+            </block>
+        </view>
+    </view>
+    <view class="ct_box">
+        <view class="ct" wx:for="{{ list }}" wx:key="item" wx:index = "index">
+            <view class="ct_left" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+                <image src="{{ item.carte.avatar }}"></image>
+            </view>
+            <view class="ct_right">
+                <view class="name" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+                    {{ item.carte.name }}
+                    <span>{{ item.type_name }}</span>
+                </view>
+                <view class="msg">
+                <span wx:if="{{ item.carte.position }}">{{ item.carte.position }} | </span>
+                {{ item.carte.company_name }}</view>
+                <view class="text" bindtap="navigateToUrl" data-url="../detail/index?id={{ item.id }}" >{{ item.content }}</view>
+                <view class="imgs"  bindtap="navigateToUrl" data-url="../detail/index?id={{ item.id }}">
+                    <block wx:for="{{ item.images }}" wx:key="item">
+                       <image src="{{ item }}"></image>
+                    </block>
+                </view>
+                <view class="trivia">
+                    <view>{{ item.visits }}查看</view>
+                    <view class="btn">
+                        <view class="btn1" bindtap="changeLike" data-index="{{ index }}" data-id="{{ item.id }}"><i class="icon iconfont {{ item.likeStatus ? 'icondianzan1':'icondianzan' }}"></i>{{ item.likes }}</view>
+                        <view class="btn2"  bindtap='playPhone' data-phone='{{ item.carte.phone }}' >联系Ta</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

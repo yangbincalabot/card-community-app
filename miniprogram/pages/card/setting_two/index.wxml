@@ -1,0 +1,73 @@
+<!--pages/card/setting_two/index.wxml-->
+<view class="container">
+    <view class="box">
+        <view class="select">
+            <view class="title">区域</view>
+            <view class="list">
+                <block wx:for="{{ provinces }}" wx:key="index">
+                    <view class="item" bindtap="choiceProvince" data-province="{{item.label}}">{{item.label}}</view>
+                </block>
+            </view>
+        </view>
+
+        <view class="resulte">
+            <view class="title">已选择</view>
+            <view class="list">
+                <block wx:for="{{citys_selected}}" wx:key="index">
+                    <view class="item">{{item.label}}
+                        <image bindtap="onDelete" data-type="area" data-index="{{ index }}"  class="closeImg" src="../../../images/delet.png"></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="select">
+            <view class="title">行业</view>
+            <view class="list">
+                <block wx:for="{{industry}}" wx:key="index">
+                    <view class="item" bindtap="choiseParentIndustry" data-name="{{item.label}}">{{item.label}}</view>
+                </block>
+            </view>
+        </view>
+
+        <view class="resulte">
+            <view class="title">已选择</view>
+            <view class="list">
+                <block wx:for="{{industry_selected}}" wx:key="index">
+                    <view class="item">{{item.label}}
+                        <image class="closeImg" bindtap="onDelete" data-type="industry" data-index="{{ index }}"   src="../../../images/delet.png"></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{cityShow}}" class="cityPup">
+        <view class="mask"></view>
+        <view class="content">
+            <view class="title">{{ selectText }}
+                <image class="closePup" bindtap="closePup" src="../../../images/delet2.png"></image>
+            </view>
+            <view class="selects">
+                <view>{{ parentText }}</view>
+                <view wx:if="{{ childText }}">{{ childText }}</view>
+            </view>
+            <view class="citys">
+                <block wx:for="{{ childData }}" wx:key="index">
+                    <view class="item" bindtap="choiceChild" data-name="{{ item }}">{{item}}</view>
+                </block>
+            </view>
+            <view class="btns">
+                <view class="btn" bindtap="confirm">确定</view>
+            </view>
+        </view>
+    </view>
+
+    <view></view>
+    <view class="cityPup">
+        <view class="btns">
+            <view class="btn" bindtap="search">搜索</view>
+        </view>
+    </view>
+</view>

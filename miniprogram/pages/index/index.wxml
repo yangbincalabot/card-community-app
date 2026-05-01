@@ -1,0 +1,146 @@
+<view class="main">
+  <view class="swiperX">
+  <view class="mask-top"></view>
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" indicator-active-color="#ffffff">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{ item.image }}" class="slide-image" bindtap="navigateToUrl" data-url="{{ item.url ? item.url : '#' }}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="msg">
+    <view bindtap="navigateToUrl" data-url="../card/cardSquare/index">
+      <view>
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BA%BA%E8%84%89.png"></image>
+      </view>
+      <view>发现人脉</view>
+    </view>
+    <view bindtap="navigateToUrl" data-url="../card/received/index">
+      <view class="msg_imgBox">
+        <view class="{{new_carte_num>99?'number_tip_big':''}} number_tip" wx:if="{{ is_login == 1 && new_carte_num > 0 }}">{{ new_carte_num }}</view>
+
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%90%8D%E7%89%87.png"></image>
+      </view>
+      <view>收到的名片</view>
+    </view>
+    <view bindtap="navigateToUrl" data-url="/pages/my/activity/index/index">
+      <view class="msg_imgBox">
+        <view class="number_tip" wx:if="{{ is_login == 1 && activity_num > 0 }}">{{ activity_num }}</view>
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%B4%BB%E5%8A%A8.png"></image>
+      </view>
+      <view>我的活动</view>
+    </view>
+    <view bindtap="navigateToUrl" data-url="/pages/supply/index/index">
+      <view class="msg_imgBox">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BE%9B%E9%9C%80.png"></image>
+      </view>
+      <view>供需</view>
+    </view>
+  </view>
+  <view class="swiper_box">
+    <view class="swiper-msg">
+      <view class="icon iconfont iconlabax"></view>
+      <swiper autoplay="true" circular="true" interval="3000" bindchange="changeCommunalIndex">
+        <swiper-item wx:for="{{msg}}" wx:key="index">
+          <view class="down" bindtap="navigateToUrl" data-url="../communal/communalDetail/index?id={{ item.id }}">{{item.title}}</view>
+        </swiper-item>
+      </swiper>
+      <view bindtap="communalDetail">详情</view>
+    </view>
+  </view>
+  <view class="active_title">推荐活动</view>
+  <view class="ct_box">
+    <view class="ct" wx:for="{{ activitylist }}" wx:key="item">
+      <view class="ct_msg" bindtap="toDetail" data-type="{{ item.type }}" data-id="{{ item.id }}">
+        <view class="msg_left  {{ item.type == 2 ? 'meeting':'' }}">
+          <image src="{{ item.cover_image }}"></image>
+          <text>{{ item.type_show }}{{ item.status_show }}</text>
+        </view>
+        <view class="msg_right">
+          <view class="msg_title">{{ item.title }}</view>
+          <view class="msg_text">
+            <span class="icon iconfont iconshijian"></span>
+            <text>{{ item.activity_time }}</text>
+          </view>
+          <view class="msg_text">
+            <span class="icon iconfont iconlocation"></span>
+            <text>{{ item.address_title }}</text>
+          </view>
+        </view>
+      </view>
+      <view class="all">
+        <view class="imgs" wx:if="{{ item.apply.length }}">
+          <block wx:for="{{ item.apply }}" wx:key="item">
+            <image src="{{ item.carte.avatar }}"></image>
+          </block>
+        </view>
+        <text>{{ item.apply.length }}人已报名</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="tabbar">
+    <view data-index='one' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="/images/icon_1.png"></image>
+      </view>
+      <view class="tabbar-item-text">我的名片</view>
+    </view>
+    <view data-index='two' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="/images/icon_2.png"></image>
+      </view>
+      <view class="tabbar-item-text">名片夹</view>
+    </view>
+    <view data-index='three' bindtap="bind_tabbar" class="tabbar_item">
+      <!-- 箭头 -->
+
+      <!-- 创建弹出层 -->
+      <view class="mask-box" wx:if="{{showMask}}" bindtap="maskClick"></view>
+      <view wx:if="{{menu_show}}" class="create">
+        <view class="item" bindtap="navigateToUrl" data-url="/pages/card/camera/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/OCR.png"></image>
+          <view>OCR</view>
+        </view>
+        <view class="item" bindtap="navigateToUrl" data-url="/pages/card/create/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%88%9B%E5%BB%BA%E5%90%8D%E7%89%87.png"></image>
+          <view>创建名片</view>
+        </view>
+        <view class="item" style="position:relative;" bindtap="navigateToUrl" data-url="/pages/card/group/index/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%88%9B%E5%BB%BA%E7%BE%A4%E7%BB%84.png"></image>
+          <view>创建群组</view>
+          <view class="sanjiao"></view>
+        </view>
+      </view>
+      
+      <view class="imgBox">
+        <image class="addImg" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%8C%89%E9%92%AE.png"></image>
+      </view>
+    </view>
+    <view data-index='four' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="/images/icon_3.png"></image>
+      </view>
+      <view class="tabbar-item-text">活动</view>
+    </view>
+    <view data-index='five' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="/images/icon_4.png"></image>
+      </view>
+      <view class="tabbar-item-text">我的</view>
+    </view>
+  </view>
+  <view wx:if="{{nowanshanShow}}" class="wanshanPop">
+    <!-- <view class="mask" bindtap="closeWanshan"></view> -->
+    <view class="content" >
+      未完善
+    </view>
+  </view>  
+  <view class="change" bindtap="redirectToUrl" data-url="/pages/scenarioIndex/scenarioIndex">
+    <view>
+      <image src="../../images/sChange.png"></image>
+      <view>场景</view> 
+    </view>  
+  </view>
+</view>

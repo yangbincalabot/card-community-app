@@ -1,0 +1,9 @@
+<!--pages/discover/apply/success/index.wxml-->
+<view class='main'>
+  <view class='pay'>
+    <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/pay_icon.png'></image>
+    <view class='p1'>报名成功</view>
+    <view class='back'   bindtap='switchTabUrl' data-url='../../index/index'>返回</view>
+    <view class='check' bindtap='navigateToUrl' data-url="../../../my/apply/detail/index?id={{id}}" >查看报名</view>
+  </view>
+</view>

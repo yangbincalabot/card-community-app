@@ -1,0 +1,68 @@
+/* pages/reward/index.wxss */
+page{
+  background:#f64841;
+}
+.main{
+  width: 750rpx;
+  /* min-height: 1000rpx; */
+  /* height: auto; */
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/reward_bg.png) no-repeat;
+  background-size:cover;
+  margin-top: -128rpx;
+  overflow: hidden;
+}
+.main .content{
+  width: 750rpx;
+  height: 720rpx;
+  padding-top: 614rpx;
+}
+.main .content .ct{
+  width: 670rpx;
+  height: 578rpx;
+  margin: 0 auto;
+  margin-bottom: 106rpx;
+}
+.main .content .ct .btn{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 234rpx;
+}
+.main .content .ct .btn button{
+  width: 220rpx;
+  height: 66rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(246,72,65);
+  background: rgb(253,218,217);
+  opacity: 0.9;
+}
+.main .content .text{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 190rpx;
+}
+.main .content .text .left{
+  text-align: center;
+}
+.main .content .text .left :nth-child(1){
+  color: rgb(246,72,65);
+  font-size: 44rpx;
+}
+.main .content .text .left :nth-child(2){
+  color: rgb(246,72,65);
+  font-size: 28rpx;
+}
+.main .content .text .right{
+  text-align: center;
+}
+.main .content .text .right :nth-child(1){
+  color: rgb(246,72,65);
+  font-size: 44rpx;
+}
+.main .content .text .right :nth-child(2){
+  color: rgb(246,72,65);
+  font-size: 28rpx;
+}

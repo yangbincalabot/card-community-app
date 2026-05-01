@@ -1,0 +1,12 @@
+<view class='main'>
+  <view class='text'>{{ info.title }}</view>
+  <view class='date'>{{ info.created_at }}</view>
+  <view class='img'>
+    <image src='{{ info.image }}'></image>
+  </view>
+  <view class='content'>
+    <view class='c'>
+      <rich-text nodes="{{ info.content }}"> </rich-text>
+    </view>
+  </view>
+</view>

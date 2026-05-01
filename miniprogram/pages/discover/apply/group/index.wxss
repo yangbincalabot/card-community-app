@@ -1,0 +1,262 @@
+/* pages/discover/apply/group/index.wxss */
+page{
+  background: #f5f5f5;
+}
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 30rpx;
+}
+.main .content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 98rpx;
+}
+.main .content .c1{
+  width: 690rpx;
+  height: 230rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/en_bg1.png) no-repeat;
+  background-size: 100%;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.main .content .c2{
+  width: 690rpx;
+  height: 230rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/en_bg2.png) no-repeat;
+  background-size: 100%;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.main .content .c3{
+  width: 690rpx;
+  height: 230rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/en_bg3.png) no-repeat;
+  background-size: 100%;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.main .content .c4{
+  width: 690rpx;
+  height: 230rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/en_bg4.png) no-repeat;
+  background-size: 100%;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.main .content .btn{
+  width: 750rpx;
+  height: 98rpx;
+  background: rgb(254,191,0);
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+/* ----------content1------------ */
+.main .content .c1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c1 .text{
+  margin-left: 30rpx;
+  line-height: 55rpx;
+}
+.main .content .c1 .text .t1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c1 .text .t2{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c1 .text .t2 i{
+  margin-left: 20rpx;
+}
+.main .content .c1 .text .t3{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c1 .text .t3 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(254,191,0);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c1 .text .t4{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c1 .text .t4 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(253,114,95);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c1 radio{
+  margin-right: 20rpx;
+}
+/* ----------content2------------ */
+.main .content .c2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c2 .text{
+  margin-left: 30rpx;
+  line-height: 55rpx;
+}
+.main .content .c2 .text .t1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c2 .text .t2{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c2 .text .t2 i{
+  margin-left: 20rpx;
+}
+.main .content .c2 .text .t3{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c2 .text .t3 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(254,191,0);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c2 .text .t4{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c2 .text .t4 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(253,114,95);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c2 radio{
+  margin-right: 20rpx;
+}
+/* ----------content3------------ */
+.main .content .c3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c3 .text{
+  margin-left: 30rpx;
+  line-height: 55rpx;
+}
+.main .content .c3 .text .t1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c3 .text .t2{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c3 .text .t2 i{
+  margin-left: 20rpx;
+}
+.main .content .c3 .text .t3{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c3 .text .t3 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(254,191,0);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c3 .text .t4{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c3 .text .t4 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(253,114,95);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c3 radio{
+  margin-right: 20rpx;
+}
+/* ----------content2------------ */
+.main .content .c4{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c4 .text{
+  margin-left: 30rpx;
+  line-height: 55rpx;
+}
+.main .content .c4 .text .t1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c4 .text .t2{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c4 .text .t2 i{
+  margin-left: 20rpx;
+}
+.main .content .c4 .text .t3{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c4 .text .t3 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(254,191,0);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c4 .text .t4{
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c4 .text .t4 i{
+  width: 70rpx;
+  height: 36rpx;
+  background: rgb(253,114,95);
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.main .content .c4 radio{
+  margin-right: 20rpx;
+}

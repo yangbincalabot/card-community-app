@@ -1,0 +1,114 @@
+
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+}
+.main .header{
+  width: 100%;
+  height: 490rpx;
+  background: #fff;
+}
+.main .header .top{
+  display: flex;
+  align-items: center;
+}
+.main .header .top .img{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 30rpx;
+}
+.main .header .top .img image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 90rpx;
+}
+.main .header .top .name{
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+}
+.main .header .top .job{
+  width: 156rpx;
+  height: 34rpx;
+  font-size: 20rpx;
+  color: rgb(254,254,255);
+  margin-left: 20rpx;
+  text-align: center;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/center_top.png) no-repeat;
+  background-size: 100%;
+}
+.main .header .top .job i{
+  margin-left: 20rpx;
+	line-height: 36rpx;
+}
+.main .header .money{
+  width: 690rpx;
+  height: 290rpx;
+  margin: 0 auto;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/daicenter_bg.png) no-repeat;
+  background-size: 100%;
+  line-height: 80rpx;
+}
+.main .header .money .m1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  margin-left: 30rpx;
+}
+.main .header .money .m2{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+.main .header .money .m2 .income{
+  font-size: 76rpx;
+  color: rgb(51,51,51);
+  margin-top: 25rpx;
+}
+.main .header .money .m2 .right{
+  font-size: 30rpx;
+	color: #ffffff; 
+	padding-top: 5rpx;
+	display: flex;
+}
+.main .header .money .m3{
+  display: flex;
+  margin-left: 30rpx;
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  margin-top: 25rpx;
+}
+.main .header .money .m3 .now{
+  margin-right: 60rpx;
+}
+.main .header .money .m3 i{
+  margin-left: 20rpx;
+}
+.main .release{
+  width: 100%;
+  height: 410rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .release .r{
+  width: 248rpx;
+  height: 204rpx;
+  border-right: 2rpx solid rgb(246,246,246);
+  border-bottom: 2rpx solid rgb(246,246,246);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  line-height: 85rpx;
+}
+.main .release .r .img{
+  width: 48rpx;
+  height: 40rpx;
+}
+.main .release .r .img image{
+  width: 48rpx;
+  height: 40rpx;
+}

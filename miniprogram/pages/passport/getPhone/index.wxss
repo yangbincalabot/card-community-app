@@ -1,0 +1,47 @@
+/* pages/passport/getPhone/index.wxss */
+.main{
+    width: 750rpx;
+    height: 100%;
+    padding-top: 120rpx;
+}
+.main .pay{
+    width: 590rpx;
+    height: 835rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+.main .pay image{
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 90rpx;
+}
+.main .pay .p1{
+    font-size: 28rpx;
+    color: #878787;
+    margin: 42rpx 0;
+}
+.main .pay .back{
+    width:590rpx;
+    height:90rpx;
+    background:rgba(29,173,25,1);
+    border-radius:14rpx;
+    font-size: 28rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300rpx;
+}
+.main .pay .check{
+    width:590rpx;
+    height:90rpx;
+    border-radius:14rpx;
+    border:2rpx solid rgba(29,173,25,1);
+    background: #fff;
+    font-size: 28rpx;
+    color: #1DAD19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40rpx;
+}

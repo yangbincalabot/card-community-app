@@ -1,0 +1,12 @@
+<!--pages/reviewList/detail/index.wxml-->
+<view class='main'>
+  <view class='text'>{{ reviewDetail.title }}</view>
+  <view class='date'>{{ reviewDetail.created_at }} <i wx:if='{{reviewDetail.store_name}}'>{{ reviewDetail.store_name }}</i></view>
+  <!-- <view class='img'>
+    <image src='{{ info.images }}'></image>
+  </view> -->
+  <view class='content'>
+    <rich-text nodes="{{contentNode}}"></rich-text>
+  </view>
+</view>
+

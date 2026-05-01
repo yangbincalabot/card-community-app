@@ -1,0 +1,101 @@
+/* pages/my/activity/applyDetail/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5
+}
+.top{
+  width: 100%;
+  height:64rpx;
+  background:#48C247;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.msg{
+  width: 690rpx;
+  padding: 20rpx 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.msg image{
+  width: 142rpx;
+  height: 142rpx;
+  border-radius: 90rpx;
+}
+.text{
+  width: 500rpx;
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text button{
+  width:166rpx;
+  height:54rpx;
+  background:linear-gradient(180deg,rgba(133,133,133,1) 0%,rgba(0,0,0,1) 100%);
+  border-radius:14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+.text_title{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #000000;
+}
+.price_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 44rpx;
+  color: #FF9300;
+  margin-top: 24rpx;
+}
+.price_box text{
+  height:54rpx;
+  border-radius:14rpx;
+  font-size: 28rpx;
+  color: #FF9300;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #FF9300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ct_box{
+  width: 100%;
+  background: #ffffff;
+  margin: 0 auto;
+}
+.ct{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #000000;
+}
+.ct_left{
+  width: 120rpx;
+  color: #989898;
+}
+.ct_right{
+  margin-left: 60rpx;
+}
+input{
+  width: 510rpx;
+}

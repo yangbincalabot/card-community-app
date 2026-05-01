@@ -1,0 +1,455 @@
+page{
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+view{
+  margin: 0;
+  padding: 0;
+}
+/* 企业名片有 */
+.top_head{
+  width: 100%;
+  height: 176rpx;
+  background: rgba(255, 255, 255,0);
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  line-height: 40rpx;
+}
+.iconfanhuix{
+  margin-left: 10rpx;
+}
+.top_head .title{
+  width: 90%;
+  height: 176rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top_box{
+  width: 100%;
+  height: 374rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/editFirm.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.top_msg{
+  width: 100%;
+  height: 158rpx;
+  position: absolute;
+  bottom: 0;
+  /* background:rgba(19,19,19,.5); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  text-shadow: 5rpx 5rpx 10rpx #000000;
+}
+.top_msg .title{
+  font-size: 44rpx;
+}
+.viewCard{
+  width: 100%;
+  height: 216rpx;
+  background: #FFFFFF;
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #F88213;
+  text-align: center;
+  line-height: 40rpx;
+}
+.viewCard .img{
+  width: 144rpx;
+  height: 144rpx;
+  margin: 0 auto;
+  border-radius: 90rpx;
+  margin-bottom: 26rpx;
+}
+.viewCard .img image{
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 90rpx;
+}
+.ct_box{
+  width: 100%;
+  background: #FFFFFF;
+  margin: 0rpx auto;
+  margin-bottom: 20rpx;
+}
+.ct{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #EEEEEE;
+  padding: 25rpx 0;
+}
+.ct_left{
+  width: 120rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.ct_right{
+  width: 510rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 60rpx;
+  justify-content: space-between;
+}
+.ct_right input{
+  width: 410rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.ct_right textarea{
+  width: 410rpx;
+  font-size: 28rpx;
+  color: #2F2F2F;
+}
+.placeholder{
+  font-size: 28rpx;
+  color: #A1A1A1;
+}
+.iconyoujiantou{
+  color: #AAAAAA;
+}
+.ct_introduce .edit{
+  font-size: 32rpx;
+  color: #FFC163;
+}
+.ct_introduce{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25rpx 0;
+}
+.ct_textarea{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.ct_textarea textarea{
+  width: 690rpx;
+  font-size: 28rpx;
+  color: #2F2F2F;
+}
+.btn1{
+  width:610rpx;
+  height:90rpx;
+  background:linear-gradient(180deg,rgba(132,132,132,1) 0%,rgba(0,0,0,1) 100%);
+  border-radius:14rpx;
+  margin: 76rpx auto;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgs{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+}
+.imgs_box{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.imgs image{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx 25rpx;
+}
+.imgs_box span{
+  position: relative;
+}
+.imgs_box i{
+  position: absolute;
+  right: 10rpx;
+}
+.iconshanchu1{
+  color: #cdcdcd;
+}
+/* 企业名片无 */
+.header{
+  width: 100%;
+  height: 130rpx;
+  background: #F7F7F7;
+}
+.header_box{
+  height: 50rpx;
+  width: 710rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-top: 60rpx;
+  margin-left: 10rpx;
+  font-size: 26rpx;
+  color: #000000;
+  line-height: 40rpx;
+}
+.header_box .title{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.vip{
+  width: 100%;
+  background: #ffffff;
+  padding: 14rpx 0 24rpx 0;
+}
+.vip_box{
+  width: 712rpx;
+  height: 382rpx;
+  background: url(http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/vip_bg.png) no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+.vip_text{
+  width: 450rpx;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 262rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.vip_money{
+  width:712rpx;
+  height:162rpx;
+  background:linear-gradient(180deg,rgba(255,201,118,1) 0%,rgba(255,158,11,1) 100%);
+  border-radius:14rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 64rpx;
+}
+.vip_money text{
+  font-size: 32rpx;
+  margin-left: 38rpx;
+}
+.vip_money span{
+  font-size: 32rpx;
+  margin-left: 104rpx;
+}
+.pay{
+  width: 712rpx;
+  margin: 10rpx auto;
+  font-size: 32rpx;
+  color: #A1A1A1;
+}
+.pay_box{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.pay_view{
+  width: 712rpx;
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx auto;
+}
+.pay_view .pay_left{
+  font-size: 32rpx;
+  color: #1F1F1F;
+  display: flex;
+  align-items: center;
+}
+.pay_view .pay_left .iconweixin{
+  font-size: 56rpx;
+  color: #19CE4C;
+  margin-right: 20rpx;
+}
+.iconxuanzhongx{
+  font-size: 46rpx;
+  color: linear-gradient(180deg,rgba(132,132,132,1) 0%,rgba(0,0,0,1) 100%);
+}
+/* 提现秘密css */
+.pwd_box{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  background:rgb(0,0,0,0.5);
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+.pwd_six_title{
+  width: 690rpx;
+  display: flex;
+  margin: 20rpx auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #1e1e1e;
+  position: relative;
+}
+.pwd_six_title .icon{
+  position: absolute;
+  left: 0;
+}
+.pwd_six_box{
+  display: flex;
+  width: 710rpx;
+  justify-content: center;
+  margin:5% auto;
+  text-align: center;
+}
+.box{
+  /* flex: 1; */
+}
+.box_border{
+  width: 110rpx;
+  height: 80rpx;
+  border: 1px solid #bfbfbf;
+  border-right:0;
+  margin: auto;
+  /* line-height:1; */
+}
+.pwd_hide{
+  height: 80rpx;
+  font-size:50rpx;
+  display: flex;
+  line-height: 40rpx;
+  align-items: center;
+  justify-content: center;
+}
+.number{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.password{
+  width: 25%;
+  flex-grow:1;
+  padding: 3%;
+  font-size:40rpx;
+  border: 1px solid #eee;
+  border-bottom: 0;
+  border-right: 0;
+
+}
+
+.password:active{
+  background: #eee;
+}
+/* 密码框 */
+.masks{
+  bottom:0%;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  transition:.5s;
+}
+.bot{bottom: 0;}
+
+
+
+.icondizhi1,.iconyoujiantou,.iconicontianjiatupian{
+  color: #50A6F9;
+}
+.addImg{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #A1A1A1;
+}
+.button_box{
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  /* padding: 30rpx 0; */
+}
+.button_box button{
+  /*width: 230rpx;*/
+  /* width: 80%; */
+  /* height: 80rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  flex-direction: column;
+  flex:1;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  color: #cdcdcd;
+}
+.coverBtn{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  height: 100rpx;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+}
+.main{
+  margin-bottom: 130rpx;
+}
+.coverBtn image{
+  width: 50rpx;
+  height: 55rpx;
+  margin-top: 5rpx;
+  /* margin-bottom: 5rpx; */
+}
+.coverBtn button{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  line-height: 100rpx;
+  font-size: 16px;
+  border-radius: 0;
+  display: block;
+  height: 100rpx;
+}
+.coverBtn button:nth-of-type(1){
+  background: rgb(80,166,249);
+}
+.coverBtn button:nth-of-type(2){
+  background: #FFC163;
+}
+
+.btn_submit{
+  background: #ffffff;
+  color: #50A6F9;
+  border: 1rpx solid #50A6F9;
+}
+.btn_view{
+  background: #50A6F9;
+  color: #ffffff;
+}
+.required{
+  color:red;
+  position:absolute;
+  left: 15rpx
+}

@@ -1,0 +1,28 @@
+<!--pages/offline/index.wxml-->
+<view class='main'>
+    <view class='money'>
+        <view class='ct'>
+            <view class='c1'>订单金额</view>
+            <view class='c2'><i>￥{{totalAmount}}</i>元</view>
+        </view>
+    </view>
+    <view class='content'>
+        <view class='c1'>请向公司账户进行转账，完成后请点击“通知我们”</view>
+        <view class='wx'>
+            <view>开户名称</view>
+            <view>{{bankInfo.BANK_ACCOUNT_NAME}}</view>
+        </view>
+        <view class='offline'>
+            <view>开户行</view>
+            <view>{{bankInfo.BANK_DEPOSIT}}</view>
+        </view>
+        <view class='zhang'>
+            <view>账号</view>
+            <view>{{bankInfo.BANK_ACCOUNT}}</view>
+        </view>
+    </view>
+    <view class='note'>为了识别您的款项，请在“备注”中填写您的手机号</view>
+    <view class='payment' bindtap="remindPaid">
+        通知我们
+    </view>
+</view>

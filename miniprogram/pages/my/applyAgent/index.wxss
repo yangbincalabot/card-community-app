@@ -1,0 +1,128 @@
+/* pages/dai/becomedai/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  width: 750rpx;
+  height: 560rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/become_bg.png) no-repeat;
+  background-size: 100%;
+}
+.main .text{
+  width: 661rpx;
+  height: 174rpx;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 45rpx;
+}
+.main .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;  
+  padding: 30rpx 20rpx;
+}
+.main .title .left{
+  display: flex;  
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+   background:  rgb(255,227,0);
+   margin-right: 20rpx;
+   margin-top: 6rpx;
+}
+.main .title .right{
+  font-size: 28rpx;
+  color: rgb(254,191,0);
+}
+.main .dai_content{
+  width: 750rpx;
+  padding: 45rpx 0;
+  display: flex;
+}
+.main .d_ct{
+  width: 210rpx;
+  height: 180rpx;
+  border: 1rpx solid rgb(255,227,0);
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+  /* text-align: center; */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.main .dai_content .active{
+  background: rgb(255,227,0);
+}
+.main .dai_content .active .c1{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .dai_content .active .c2{
+  font-size: 40rpx;
+  color: rgb(242,96,36);
+}
+.main .d_ct .c1{
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+}
+.main .d_ct .c2{
+  font-size: 40rpx;
+  color: rgb(51,51,51);
+}
+.main .name_content{
+  width: 100%;
+  background: rgb(255,255,255);
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .name .n1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .name input{
+  width: 75%;
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.btn button{
+  margin-top: 90rpx;
+  background-color: rgb(254,191,0);
+  color: #fff;
+  width: 560rpx;
+  margin-bottom: 100rpx;
+}
+
+.n2{
+  text-align: right;
+}
+.service{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.service_info{
+  color: rgb(254,191,0);
+}
+.disable_push{
+  background-color: rgb(136,136,136) !important;
+}

@@ -1,0 +1,25 @@
+<view class="main">
+    <view class="show">
+        <view class="time">
+            <block wx:for="{{ applications }}" wx:key="index">
+                <view class="user">
+                    <view class="user_ct">
+                        <view class="user_img" bindtap="navigatorToUrl">
+                            <view class="user_image">
+                                <image src="{{ item.avatar ? item.avatar : (item.user.carte && item.user.carte.avatar ? item.user.carte.avatar : item.user.avatar) }}"></image>
+                            </view>
+                            <view class="user_name">
+                                <view class="name">{{ item.user.company_card && item.user.company_card.company_name ? item.user.company_card.company_name : item.user.nickname }} (姓名:{{ item.user.carte && item.user.carte.name ? item.user.carte.name : item.user.nickname }})</view>
+                                <view class="add_time">{{ item.user.company_card ? item.user.company_card.industry_name : '行业未设置' }}</view>
+                                <view class="add_time">{{ item.created_at }}</view>
+                            </view>
+                        </view>
+                        <view class="add_user" wx:if="{{ item.status === 2 }}">已通过</view>
+                        <view class="add_user" wx:elif="{{ item.status === 1 }}">未通过</view>
+                        <view class="add_user accept" wx:if="{{ item.status === 0 }}" bindtap="verify" data-company="{{ item.user.company_card.company_name }}" data-reason="{{ item.reason }}" data-id="{{ item.id }}">审核</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

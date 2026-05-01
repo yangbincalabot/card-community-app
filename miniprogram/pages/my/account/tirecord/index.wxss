@@ -1,0 +1,45 @@
+/* pages/mine/myaccount/tirecord/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  width: 750rpx;
+  height: 350rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/ti_record.png) no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .header .text{
+  color: rgb(51,51,51);
+  text-align: center;
+}
+.main .header .text :nth-child(1){
+  font-size: 36rpx;
+}
+.main .header .text :nth-child(2){
+  font-size: 60rpx;
+  margin-top: 30rpx;
+}
+.main .record .record_content{
+  width: 690rpx;
+  height: 132rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.main .record .record_content .r_ct_1{
+  font-size: 30rpx;
+  color: rgb(83,83,83);
+  display: flex;
+  justify-content: space-between;
+}
+.main .record .record_content .r_ct_2{
+  font-size: 26rpx;
+  color: rgb(136,136,136);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}

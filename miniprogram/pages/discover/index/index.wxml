@@ -1,0 +1,63 @@
+<!--pages/discover/index/index.wxml-->
+<view class='main'>
+  <view class='page_row' >  
+    <view class="search">  
+      <view class="df search_arr">   
+        <input class="" placeholder="搜索活动" value="{{searchValue}}"  bindinput='changeKey'  placeholder-style='font-size:28rpx;color:rgb(178,178,178);text-align:center' bindconfirm="realSearch"></input>  
+      </view>  
+    </view>  
+    <view class='sousuo' bindtap='realSearch'>搜索</view>  
+  </view>
+  <view class="scroll_box">
+    <view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;">
+      <view class='tab'>
+        <view data-current="1" bindtap="clickTab" class="t  {{currentTab==1?'active':''}}">
+          <picker bindchange="bindTypeChange" value="{{index}}" range="{{typeArr}}" range-key='title'>
+            <view class="picker">
+              {{default_type_title}}<i class='icon iconfont icontriangle-bottom'></i>
+            </view>
+          </picker>
+        </view>
+        <view data-current="2" bindtap="clickTab" class="t  {{currentTab==2?'active':''}}">
+          <picker bindchange="bindTimeChange" value="{{index}}" range="{{time_typeArr}}" range-key='title'>
+            <view class="picker">
+              {{default_time_title}}<i class='icon iconfont icontriangle-bottom'></i>
+            </view>
+          </picker>
+        </view>
+        <view data-current="3" bindtap="clickTab" class="t  {{currentTab==3?'active':''}}">
+         <picker bindchange="bindPriceChange" value="{{index}}" range="{{price_typeArr}}" range-key='title'>
+            <view class="picker">
+              {{default_price_title}}<i class='icon iconfont icontriangle-bottom'></i>
+            </view>
+          </picker>
+        </view>
+      </view>      
+    </view>
+  </view>
+  <view class='content'>
+    <view class='c' wx:for='{{listsData}}' wx:key="item">
+      <view bindtap='navigateToUrl' data-url='../detail/index?id={{item.id}}'>
+          <view class='c1' >
+            <view class='img'>
+              <image src='{{item.cover_image}}'></image>
+            </view>
+            <view class='text'>
+              <view class='t1'>{{item.title}}</view>
+              <view class='t2'>{{item.activity_time}}<i wx:if='{{item.address_name}}'>{{item.address_name}}</i></view>
+              <view class='t3' wx:if='{{item.activity_condition.status==5}}' style='color:rgb(58,200,253);border: 1rpx solid rgb(58,200,253);'>{{item.activity_condition.msg}}</view>
+              <view class='t3' wx:elif='{{item.activity_condition.status==6 || item.activity_condition.status==7}}' >{{item.activity_condition.msg}}</view>
+              <view class='t3' wx:else  style='color:rgb(254,191,0);border: 1rpx solid rgb(254,191,0);'>{{item.activity_condition.msg}}</view>
+            </view>
+          </view>
+          <view class='footer'>
+            <view class='f1'>#{{item.type_name}}</view>
+            <view class='f2' wx:if='{{item.fee>0}}'>￥{{item.fee}}</view>
+            <view class='f2' wx:else>免费</view>
+          </view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+

@@ -1,0 +1,55 @@
+<!--pages/address/index.wxml-->
+<view class='main'>
+
+
+		<view class="content">
+			<block wx:if="{{userAddress.length > 0}}">
+			<block wx:for="{{ userAddress }}" wx:key="index">
+				<view class="address_content">
+					<view class="add_name_phone">
+						<view>
+							<view class="name">{{ item.contact_name }}
+								<span class="phone">{{ item.contact_phone }}</span>
+							</view>
+							<view class="address">{{ item.full_address }}</view>
+						</view>
+
+						<block wx:if="{{currentType.length > 0}}">
+							<view class='icon' bindtap="checkedAddress" data-id="{{item.id}}">
+								<icon wx:if="{{currentDefaultCheckedId == item.id}}" type="success" color="rgb(255,227,0)"/>
+								<icon wx:else type="circle"/>
+							</view>
+						</block>
+					</view>
+					<view class="operation">
+						<view class="left">
+							<block wx:if="{{ item.is_default == false }}">
+								<view bindtap="setDefaultAddress" data-id="{{ item.id }}">设为默认地址</view>
+							</block>
+						</view>
+						<view class="right">
+							<view class="btn1" bindtap="navigatorToUrl" data-url="edit/index" data-id="{{ item.id }}">编辑</view>
+							<view class="btn2" bindtap="deleteUserAddress" data-id="{{ item.id }}">删除</view>
+						</view>
+					</view>
+				</view>
+			</block>
+			<view class="bottom"></view>
+
+			</block>
+			<block wx:else>
+				<view>
+					<view  class='none'></view>
+					<view class='none_content'>点击下面按钮去添加地址吧~</view>
+				</view>
+
+			</block>
+
+			<view class="btn" bindtap="navigatorToUrl" data-url="add/index" data-id="">新增收货地址</view>
+		</view>
+
+
+
+
+
+</view>

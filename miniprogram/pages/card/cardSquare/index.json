@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "名片广场",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "my-area": "/components/picker/picker",
+    "my-navbar": "/components/navbar/index"
+  }
+}

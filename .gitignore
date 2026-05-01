@@ -1,0 +1,11 @@
+﻿# 敏感配置文件
+backend/config/sms.php
+backend/config/database.php
+.env
+*.env
+# 其他忽略文件
+/vendor
+/node_modules
+/storage
+*.log
+.DS_Store

@@ -1,0 +1,68 @@
+/* pages/enroll/enrolldetail/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  text-align: center;
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  margin-bottom: 60rpx;
+}
+.main .header image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 40rpx 0;
+}
+.main .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;  
+  padding: 30rpx 20rpx;
+}
+.main .title .left{
+  display: flex;  
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+   background:  rgb(255,227,0);
+   margin-right: 20rpx;
+   margin-top: 6rpx;
+}
+.main .name_content{
+  width: 100%;
+  background: rgb(255,255,255);
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .name .n1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .name input{
+  width: 70%;
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+
+.btn button{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+  margin-top: 90rpx;
+  background-color: rgb(254,191,0);
+  color: #fff;
+	border-radius: 0;
+}

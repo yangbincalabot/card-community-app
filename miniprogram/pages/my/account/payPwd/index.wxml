@@ -1,0 +1,29 @@
+<!--pages/mine/myaccount/tixian/index.wxml-->
+<view class='main'>
+  <view class='title'>
+    手机号：{{ userInfo.phone }}
+  </view>
+  <form bindsubmit="formSubmit">
+  <block wx-if="{{ sms_switch === 1}}">
+      <view class='name_content'>
+        <view class='name'>
+          <input class='n2' name="sms_code" placeholder='请输入验证码' placeholder-style='placeholder' type="number"></input>
+          <i bindtap="sendMsg">获取验证码</i>
+        </view>
+      </view>
+  </block>
+  <view class='name_content'>
+    <view class='name'>
+      <input password class='n2' name="cash_password" placeholder='请输入6位新密码' placeholder-style='placeholder' type="number"></input>
+    </view>
+  </view>
+  <view class='name_content'>
+    <view class='name'>
+      <input password class='n2' name="cash_password_confirmation" placeholder='确认新密码' placeholder-style='placeholder' type="number"></input>
+    </view>
+  </view>
+  <view>
+    <button form-type="submit" class='btn'>确认修改</button>
+  </view>
+  </form>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/camera/index.wxml-->
+<view class="container">
+    <navbar show-zw="{{showZw}}" bg-color="rgba(#fff,0)" page-name=""></navbar>
+    <camera device-position="back" flash="off" binderror="error" class="cameraClass" style="height:{{windowHeight}}px;"></camera>
+    <cover-view class="top">
+        <cover-view class="top_text left {{ type === 'self' ? 'active' : '' }}" bindtap="changeType" data-type="self">为自己创建</cover-view>
+        <cover-view class="top_text right {{ type === 'other' ? 'active' : '' }}" bindtap="changeType" data-type="other">保存他人名片</cover-view>
+    </cover-view>
+    <cover-view class="bottom">
+        <cover-view class="bottom_text" bindtap="takePhoto">相册</cover-view>
+        <cover-image bindtap="onCamera" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%90%8C%E5%BF%83%E5%9C%86%E5%9B%BE.png"></cover-image>
+        <cover-view class="bottom_text" bindtap="navigateToUrl" data-url="/pages/card/create/index">手动添加</cover-view>
+    </cover-view>
+</view>

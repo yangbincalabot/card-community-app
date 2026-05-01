@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "企业名片",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "my-navbar": "/components/navbar/index"
+  }
+}

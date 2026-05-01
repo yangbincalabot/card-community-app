@@ -1,0 +1,21 @@
+<!--pages/reward/index.wxml-->
+<view class='main'>
+  <view class='content'>
+    <view class='ct'>
+      <view class='btn'>
+        <view class='btn1'><button bindtap="navigateToUrl" data-url="../erweima/index">分享二维码</button></view>
+        <view class='btn2'><button open-type="share">立即推荐</button></view>
+      </view>
+      <view class='text'>
+        <view class='left'>
+          <view>{{ userInfo.awarded_bonuses }}元</view>
+          <view>已获奖金</view>
+        </view>
+        <view class='right'>
+          <view>{{ userInfo.lower_count }}人</view>
+          <view>成功推荐</view>
+        </view>
+      </view>
+    </view>    
+  </view>  
+</view>

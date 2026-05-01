@@ -1,0 +1,34 @@
+<!--pages/sales/index.wxml-->
+<view class='main'>
+    <view class='bg'>
+        <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/salepro_banner.png'></image>
+    </view>
+    <view class='content'>
+        <view class='search'>
+            <view class='search_in'>
+                <form bindsubmit="searchSubmit">
+                    <view class="text_box">
+                        <input id="keyword" name="keyword" type="text" placeholder="搜索商品" class="keyword text" value="{{searchKey}}" bindinput="setSearchInputValue" placeholder-style='text-align:center;color:#ccc'></input>
+                        <view class='suo' bindtap="confirmSearch">搜索</view>
+                    </view>
+                </form>
+            </view>
+        </view>
+        <view class='product'>
+
+            <block wx:for="{{listsData}}" wx:key="id" wx:for-item="itemData">
+                <view class='pro' data-url="/pages/product/detail/index?id={{itemData.id}}" bindtap="navigatorToUrl">
+                    <view class='img'>
+                        <image src='{{itemData.image}}'></image>
+                    </view>
+                    <view class='text'>{{itemData.title}}</view>
+                    <view class='price'>
+                        <view><i>￥</i>{{itemData.price}}</view>
+                        <view>￥{{itemData.original_price}}</view>
+                    </view>
+                </view>
+            </block>
+
+        </view>
+    </view>
+</view>

@@ -1,0 +1,74 @@
+<!--pages/my/apply/detail/index.wxml-->
+<view class='main'>
+    <view class='title1'>活动信息</view>
+    <view class='content'>
+        <view class='c'>
+            <view class='c1'>
+                <view class='img'>
+                    <image src='{{detail.cover_image}}'></image>
+                </view>
+                <view class='text'>
+                    <view class='t1'>{{detail.title}}</view>
+                    <view class='t2'>{{detail.activity_time}}<i>{{detail.day_of_week}}{{detail.time_division}}</i></view>
+                    <view class='t3'>{{detail.address_title}}{{detail.exact_address}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='ct'>
+        <view class='amount'>
+            报名人信息<i>共{{detail.total_people}}人（男{{detail.man_num}}人，女{{detail.woman_num}}人）</i>
+        </view>
+        <view class='amount_content' wx:for='{{group}}' wx:key='item' wx:for-item='item'>
+            <view class='c1'>{{item.name}}
+                <i class='i1' wx:if='{{detail.fee>0}}'>￥{{detail.fee}}</i>
+                <i class='i1' wx:else>免费</i>
+                <i class='i2'>X{{item.total_num}}人</i></view>
+            <view class='people'>
+                <view class='title'>报名人</view>
+                <view class='people_msg'>
+                    <view class='m' wx:for='{{item.applicant}}' wx:key='iv' wx:for-item='iv' >{{iv.name}} <i class="icon iconfont {{iv.sex==1?'iconnan i1':'iconnv i2'}} "></i>{{iv.phone}}</view>
+                </view>
+            </view>
+        </view>
+        <view class='pay_c'>
+            <view class='pay' wx:if="{{detail.total_price > 0}}" >合计金额：<i>{{detail.total_price}}</i>元</view>
+            <view class='pay' wx:else ><i>免费</i></view>
+        </view>
+    </view>
+    <view class='name_content'>
+        <view class='name'>
+            <view class='n1'>紧急联系人：</view>
+            <text class='n2'> {{detail.urgent_contact}}</text>
+        </view>
+    </view>
+    <view class='phone_content'>
+        <view class='phone'>
+            <view class='p1'>联系人手机：</view>
+            <text class='p2'>{{detail.phone}}</text>
+        </view>
+    </view>
+    <view class='footer'>
+        <view class='name_content'>
+            <view class='name'>
+                <view class='n1'>订单号：</view>
+                <text class='n2'> {{detail.order_no}}</text>
+            </view>
+        </view>
+        <view class='phone_content'>
+            <block wx:if="{{detail.status == 2}}">
+                <view class='pay_time'>
+                    <view class='p1'>报名时间：</view>
+                    <text class='p2'>{{detail.created_at}}</text>
+                </view>
+            </block>
+            <block wx:elif="{{detail.status == 1}}">
+                <view class='pay_time'>
+                    <view class='p1'>支付时间：</view>
+                    <text class='p2'>{{detail.paid_at || detail.created_at}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+
+</view>

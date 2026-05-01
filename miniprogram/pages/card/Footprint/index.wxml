@@ -1,0 +1,28 @@
+<!--pages/card/Footprint/index.wxml-->
+<view class='main'>
+   <view class="Footprint-box">
+      <view class="ct_box">
+        <block wx:for="{{ list }}" wx:key="index">
+        <!-- societyDetail -->
+          <view class="ct_view" bindtap="navigatorToUrl" data-url="../societyIndex/societyIndex?id={{ item.aid }}">
+            <view class="ct">
+              <view class='imgs'>
+                <image src="{{ item.association.image }}"></image>
+              </view>
+              <view class="text">
+                <view class="title">{{ item.association.name }}
+                  <span></span>
+                </view>
+                <!-- <view>{{ item.company.company_name }}</view> -->
+                <!-- <block wx:if="{{ item.original_company_name && item.cid > 0 && item.original_company_name !== item.company_name }}"><view>({{ item.original_company_name }})</view></block> -->
+                <text class="label">{{ item.company.industry ? item.company.industry_name : '未填写' }}</text>
+              </view>
+            </view>
+            <view>
+              <span class="icon iconfont iconsousuox"></span>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+</view>

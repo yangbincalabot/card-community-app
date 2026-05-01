@@ -1,0 +1,30 @@
+<!--pages/card/special/index.wxml-->
+<view class="card_box" wx:for="{{list}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+  <movable-area>
+    <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}" inertia="true" data-index="{{index}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindchange="handleMovableChange">
+      <view class="card_view">
+        <view class="card" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+          <image src="{{item.carte.avatar}}"></image>
+          <view class="card_text">
+            <view class="card_title">
+              <view>{{item.carte.name ?item.carte.name:''}}
+                <span>{{item.carte.position ?item.carte.position:''}}</span>
+              </view>
+            </view>
+            <view>{{item.carte.company_name}}</view>
+            <view class="site">{{item.special_at ? item.special_at:''}}
+              <span wx:if='{{ item.exchange_type == 1}}'>源自名片广场</span>
+              <span wx:elif='{{ item.exchange_type == 4}}'>源自手动添加</span>
+              <span wx:else>源自名片交换</span>
+            </view>
+          </view>
+        </view>
+        <view class="icon iconfont icontel" bindtap='playPhone' data-cid="{{ item.carte.id }}" data-phone='{{ item.carte.phone }}'>
+        </view>
+
+      </view>
+
+    </movable-view>
+  </movable-area>
+  <view class="delete-btn" bindtap="deleteBtn" data-cid="{{ item.carte.id }}">删除</view>
+</view>

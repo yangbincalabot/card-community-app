@@ -1,0 +1,163 @@
+page{
+  background: #f5f5f5;
+}
+.header {
+  background-color: #f5f5f5;
+  width: 100%;
+  position: relative;
+  height: 3rem;
+  display: flex;
+  background: #ffffff;
+
+}
+
+.back {
+  vertical-align: middle;
+  position:absolute;
+  top:0;left:0;height:3rem;
+  line-height:3rem;width:4rem;
+  text-align: center;
+  font-size: 28rpx;color:#666;
+}
+.back_a{
+  height:3rem;
+  width:3.5rem;
+  display:block;
+  background-image:url(../images/back.png);
+  background-repeat:no-repeat;
+  background-size:1.05rem 1.05rem;
+  background-position:center center;
+}
+.back i{
+  color:#666;
+}
+.main .page_row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-left: 100rpx;
+}
+.main .page_row .search{
+  width: 540rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+.main .page_row .search .search_arr placeholderStyle{
+  font-size: 28rpx;
+  color: rgb(178,178,178);
+}
+.main .page_row .search .search_arr {
+  border: 1px solid rgb(230,230,234);
+  border-radius: 90rpx;
+  margin-left: 30rpx;
+}
+
+.main .page_row .search .search_arr input{
+	text-align: center;
+  margin-left: 20rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: rgb(178,178,178);
+}
+
+.sousuo {
+  font-size: 28rpx;
+  color: rgb(254,191,0);
+}
+.main .near{
+  margin-top: 20rpx;
+  background: #fff;
+}
+.main .near .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+}
+.main .near .title .left{
+  display: flex;
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+}
+.main .near .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+  background:  rgb(255,227,0);
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.main .near .title .right{
+  font-size: 24rpx;
+  color: rgb(153,153,153);
+}
+.main .near .content{
+	padding: 5rpx 0 30rpx 0;
+}
+.main .near .content .c{
+  width: 680rpx;
+  height: 152rpx;
+  display: flex;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #ccc;
+  margin-top: 30rpx;
+}
+.main .near .content .c .img{
+  width: 120rpx;
+  height: 120rpx;
+}
+.main .near .content .c .img image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5rpx;
+}
+.main .near .content .c .text{
+  margin-left: 20rpx;
+  line-height: 45rpx;
+}
+.main .near .content .c .text .text_content{	
+	/* width: 450rpx; */
+	display: flex;
+}
+.main .near .content .c .text_content :nth-child(1){
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.main .near .content .c .text :nth-child(1) i{
+	min-width: 75rpx;
+	height: 34rpx;
+  border: 1rpx solid rgb(254,167,0);
+  font-size: 24rpx;
+  color: rgb(254,167,0);
+  border-radius: 5rpx;
+  margin-left: 10rpx;
+	padding: 0 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.main .near .content .c .text :nth-child(2){
+  font-size: 24rpx;
+  color: rgb(102,102,102);	
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.main .near .content .c .text :nth-child(3){
+  font-size: 22rpx;
+  color: rgb(102,102,102);
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,109 @@
+/* pages/scenarioIndex/scenarioIndex.wxss */
+page{
+  background: #f5f5f5;
+}
+swiper,swiper{
+  width: 750rpx;
+  height: 400rpx;
+  margin: 28rpx 0; 
+  /* margin: 28rpx auto;  */
+}
+.sCard{
+  width: 698rpx;
+  height:400rpx;
+  border-radius: 14rpx;
+  margin: 0 auto; 
+  position: relative;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/scenario_bg.png) no-repeat;
+  background-size: 100% 100%;
+  color: #ffffff;
+}
+.sCard .sCard_code{
+  width: 212rpx;
+  height: 212rpx;
+  border-radius: 106rpx;
+  position: absolute;
+  top: 34rpx;
+  right: 43rpx;
+}
+.sCard_text{
+  margin-left: 40rpx;
+  padding-top: 20rpx;
+}
+.sCard_firm{
+  font-size: 30rpx;
+  margin: 25rpx 0;
+}
+.sCard_user{
+  font-size: 30rpx;
+  margin: 30rpx 0;
+}
+.sCard_user span{
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+.sCard_tel,.sCard_email,.sCard_site{
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.sCard_tel image,.sCard_email image,.sCard_site image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 20rpx;
+}
+.sContent{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sContent_box{
+  width: 336rpx;
+  height: 240rpx;
+  border-radius: 14rpx;
+  margin: 0 0 26rpx 26rpx;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.sContent_box image{
+  width: 74rpx;
+  height: 74rpx;
+}
+.blue{
+  background:linear-gradient(162deg,rgba(33,146,247,1) 0%,rgba(6,111,239,1) 100%);
+}
+.green{
+  background:linear-gradient(162deg,rgba(4,232,180,1) 0%,rgba(0,202,185,1) 100%);
+}
+.sContact{
+  font-size: 34rpx;
+  line-height: 60rpx;
+}
+.sContactInfo{
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+.change{
+  width:94rpx;
+  height:94rpx;
+  background:linear-gradient(0deg,rgba(1,110,255,1) 0%,rgba(113,113,255,1) 100%);
+  box-shadow:3rpx 3rpx 14rpx 0rpx rgba(1,110,255,0.54);
+  border-radius:50%;
+  position: fixed;
+  bottom: 180rpx;
+  right: 27rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.change image{
+  width: 30rpx;
+  height: 30rpx;
+}

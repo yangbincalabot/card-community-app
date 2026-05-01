@@ -1,0 +1,61 @@
+/* pages/mine/myaccount/tixian/index.wxss */
+page{
+  background: #f5f5f5;
+}
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 30rpx;
+}
+.main .title{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+  margin-bottom: 20rpx;
+}
+.main .name_content{
+  width: 100%;
+  background: rgb(255,255,255);
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+.main .name .n1{
+  width: 218rpx;
+  font-size: 30rpx;
+  color: rgb(102,102,102);
+}
+.main .name i{
+  position: absolute;
+  right: 0;
+}
+.main .name input{
+  width: 70%;
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 29rpx;
+}
+.main .btn{
+  width: 590rpx;
+  height: 94rpx;
+  background: rgb(80,166,249);
+  border-radius: 10rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 90rpx;
+}
+.placeholder{
+  font-size: 30rpx;
+  color: rgb(153,153,153);
+}

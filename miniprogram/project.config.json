@@ -1,0 +1,388 @@
+{
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": true,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "useMultiFrameRuntime": false,
+        "useApiHook": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "useIsolateContext": true,
+        "useCompilerModule": true,
+        "userConfirmedUseCompilerModuleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.8.3",
+    "appid": "wx06a4882e2b358fe1",
+    "projectname": "%E5%8D%8F%E4%BC%9A%E5%90%8D%E7%89%87",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": 0,
+                    "name": "我的账户",
+                    "pathName": "pages/my/account/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "提现",
+                    "pathName": "pages/my/account/cashOut/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "银行卡列表",
+                    "pathName": "pages/my/account/bank/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "名片码",
+                    "pathName": "pages/my/cardCode/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 4,
+                    "name": "扫描名片码-分享",
+                    "pathName": "pages/my/cardCode/cardCodeHandle/index",
+                    "query": "scene=user_id@148|exchange_type@3",
+                    "scene": null
+                },
+                {
+                    "id": 5,
+                    "name": "扫描名片码",
+                    "pathName": "pages/my/cardCode/cardCodeHandle/index",
+                    "query": "scene=user_id@148",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "个人中心",
+                    "pathName": "pages/my/index/index",
+                    "query": "scene=user_id@139",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "编辑名片",
+                    "pathName": "pages/my/card/editCard/index",
+                    "query": "scene=user_id@138",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "企业名片",
+                    "pathName": "pages/my/card/companyCard/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "收到的名片",
+                    "pathName": "pages/card/received/index",
+                    "query": "scene=user_id@138",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的公司",
+                    "pathName": "pages/my/company/index",
+                    "query": "scene=user_id@138",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "企业详情",
+                    "pathName": "pages/card/companyDetail/index",
+                    "query": "id=139scene=user_id@138",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "名片夹",
+                    "pathName": "pages/card/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 13,
+                    "name": "名片广场",
+                    "pathName": "pages/card/cardSquare/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 14,
+                    "name": "名片详情",
+                    "pathName": "pages/card/myCard/index",
+                    "query": "id=139",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "谁看过我",
+                    "pathName": "pages/my/viewed/index",
+                    "query": "id=139",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "当前",
+                    "pathName": "pages/card/companyDetail/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 17,
+                    "name": "扫描名片码",
+                    "pathName": "pages/my/cardCode/cardCodeHandle/index",
+                    "query": "scene=user_id@161",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "支付密码",
+                    "pathName": "pages/my/account/payPwd/index",
+                    "query": "scene=user_id@140",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "名片广场",
+                    "pathName": "pages/card/cardSquare/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "个人中心",
+                    "pathName": "pages/my/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 21,
+                    "name": "新-我的名片",
+                    "pathName": "pages/card/new/index",
+                    "query": "id=160",
+                    "scene": null
+                },
+                {
+                    "id": 22,
+                    "name": "ceshi",
+                    "pathName": "pages/card/myCard/index",
+                    "query": "id=164",
+                    "scene": null
+                },
+                {
+                    "id": 23,
+                    "name": "OCR",
+                    "pathName": "pages/card/camera/index",
+                    "query": "type=other",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "手动创建名片",
+                    "pathName": "pages/card/create/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "编辑手动添加到名片",
+                    "pathName": "pages/card/create/index",
+                    "query": "id=159",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "企业绑定申请",
+                    "pathName": "pages/my/card/companyBind/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的名字-最新",
+                    "pathName": "pages/card/myCard/index",
+                    "query": "id=159",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "绑定部门列表",
+                    "pathName": "pages/my/department/bind/index",
+                    "query": "carte_id=156",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "部门列表",
+                    "pathName": "pages/my/department/list/list",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "定制搜索",
+                    "pathName": "pages/card/setting/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "名片夹地图",
+                    "pathName": "pages/card/map/map",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "商家管理商品",
+                    "pathName": "pages/business/goods/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "商品列表",
+                    "pathName": "pages/card/goods/goods",
+                    "query": "cid=155",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "协会列表",
+                    "pathName": "pages/my/society/list/list",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "创建协会",
+                    "pathName": "pages/my/society/create/create",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "协会编辑列表",
+                    "pathName": "pages/my/society/assort/index",
+                    "query": "id=2&aid=5",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "协会广场",
+                    "pathName": "pages/card/societySquare/societySquare",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的协会",
+                    "pathName": "pages/card/societyIndex/societyIndex",
+                    "query": "id=5",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "个人中心协会",
+                    "pathName": "pages/my/society/list/list",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "协会简介",
+                    "pathName": "pages/card/societyIndex/societyIndex",
+                    "query": "id=16",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "新入会申请",
+                    "pathName": "pages/card/applyJoin/index",
+                    "query": "id=5",
+                    "scene": null
+                },
+                {
+                    "name": "足迹",
+                    "pathName": "pages/card/Footprint/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "新商城",
+                    "pathName": "pages/card/other/index",
+                    "query": "id=210",
+                    "scene": null
+                },
+                {
+                    "name": "新商城列表",
+                    "pathName": "pages/card/newgoods/list/list",
+                    "query": "cid=164",
+                    "scene": null
+                },
+                {
+                    "name": "新商品详情",
+                    "pathName": "pages/card/newgoods/detail/detail",
+                    "query": "id=7",
+                    "scene": null
+                },
+                {
+                    "name": "111",
+                    "pathName": "pages/card/myCard/index",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

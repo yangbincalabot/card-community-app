@@ -1,0 +1,40 @@
+<view class="main">
+    <form bindsubmit="formSubmit">
+    <view class="active_msg">
+        <view class="active_box">
+            <view class="title">协会信息</view>
+        </view>
+        <view class="msg">
+            <view class="img">
+                <image src="{{ application.image }}"></image>
+            </view>
+            <view class="text">
+                <view class="text_title">{{ application.name }}</view>
+                <view class="price_box">
+                    <text>申请入会</text>
+                </view>
+                <view class="price">￥{{ application.fee }}</view>
+            </view>
+        </view>
+    </view>
+    <view class="ct_box">
+        <view class="ct">
+            申请理由
+        </view>
+        <view class="ct_input">
+            <view class="ct_left">理由</view>
+            <view class="ct_right">
+                <!-- <input placeholder="请输入理由" name="reason" ></input> -->
+                <textarea placeholder="请输入理由" maxlength="350" name="reason"></textarea>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="footer_left">
+            应付金额：{{ application.fee }}
+        </view>
+        <!--  data-url="../signUpSuccess/signUpSuccess" 当支付金额等于0 -->
+        <button class="now" formType="submit" >立即申请</button>
+    </view>
+    </form>
+</view>

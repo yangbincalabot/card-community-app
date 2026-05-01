@@ -1,0 +1,35 @@
+<!--pages/my/supply/create/index.wxml-->
+<view class="main">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="text">
+        <textarea placeholder="请描述您的详细供需信息..." maxlength="-1" name="content" value="{{detail.content}}"></textarea>
+      </view>
+      <view class="img">
+        <view class="img_box">
+          <span>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'  bindtap="UploadImage" ></image>
+          </span>
+          <block wx:for="{{images}}" wx:key="imageKey" wx:for-index="imageKey">
+              <span>
+                <image src="{{item}}"></image>
+                <i class="icon iconfont iconshanchu1" data-id="{{imageKey}}" bindtap="DeleteImage"></i>
+              </span>
+          </block>
+        </view>
+      </view>
+      <view class="ct_view">
+        <view class="ct">
+          <view class="ct_left">
+            <text>供需分类</text>
+          </view>
+          <view class="ct_right">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArr}}" range-key="title" value="{{typeIndex}}">
+                <text>{{type_title}}</text>
+                <span class="icon iconfont iconyoujiantou"></span>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <button formType="submit" >确认发布</button>
+  </form>
+</view>

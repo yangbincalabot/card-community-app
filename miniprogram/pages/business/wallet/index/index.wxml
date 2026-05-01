@@ -1,0 +1,22 @@
+<view class='main'>
+    <view class='header'>
+        <view class='text'>
+            <view class='text1'>商品收益</view>
+            <view class='text2'>{{ money }}</view>
+        </view>
+    </view>
+    <view class='account_content'>
+        <navigator url="/pages/my/account/cashOut/index" hover-class="none">
+            <view class='a_ct'>
+                <view>提现</view>
+                <text class='icon iconfont iconyoujiantou'></text>
+            </view>
+        </navigator>
+        <navigator url="../detail/detail" hover-class="none">
+            <view class='a_ct'>
+                <view>收益明细</view>
+                <text class='icon iconfont iconyoujiantou'></text>
+            </view>
+        </navigator>
+    </view>
+</view>

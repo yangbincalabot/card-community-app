@@ -1,0 +1,20 @@
+<view class='main'>
+  <view class='header'>
+    <view class='text'>
+      <view>累计提现金额</view>
+      <view>{{ total_withdraw }}</view>
+    </view>
+  </view>
+  <view class='record'>
+    <block wx:for="{{ withdraws }}" wx:key="index">
+      <view class='record_content'>
+        <view class='r_ct_1'>提现金额：￥{{ item.money }}
+          <i style='color:rgb(49,178,116)' wx:if="{{ item.status == 1 }}">提现成功</i>
+          <i style='color:rgb(153,153,153)' wx:elif="{{ item.status == 2 }}">提现中</i>
+          <i style='color:rgb(255,68,68)' wx:elif="{{ item.status == 3 }}">提现失败</i>
+        </view>
+        <view class='r_ct_2'>{{ item.bank.name }}（尾号{{ item.card_tail }}）<i>{{ item.created_at }}</i></view>
+      </view>
+    </block>
+  </view>
+</view>

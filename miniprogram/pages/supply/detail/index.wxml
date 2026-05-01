@@ -1,0 +1,57 @@
+<!--pages/supply/detail/index.wxml-->
+<view class="main" hidden="{{ mainHidden }}">
+    <view class="ct_box">
+        <view class="ct" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ detail.carte.id }}">
+            <view class="ct_left">
+                <image src="{{ detail.carte.avatar }}"></image>
+            </view>
+            <view class="ct_right">
+                <view class="name">
+                    {{ detail.carte.name }}
+                    <span>{{ detail.type_name }}</span>
+                </view>
+                <view class="msg"> 
+                <span wx:if="{{ detail.carte.position }}">{{ detail.carte.position }} | </span>
+                {{ detail.carte.company_name }}</view>
+            </view>
+        </view>
+    </view>
+    <view class="about">{{ detail.content }}</view>
+    <view class="imgs">
+        <block wx:for="{{ detail.images }}" wx:key="item">
+          <image src="{{ item }}" bindtap="previewImages" data-src="{{item}}" data-index="{{index}}"></image>
+        </block>
+    </view>
+    <view class="trivia">
+        <view>{{ detail.created_at }}</view>
+        <view class="btn">
+            <view>{{ detail.visits }}查看</view>
+            <view class="btn1"  bindtap="changeLike" ><i class="icon iconfont {{ likeStatus?'icondianzan1':'icondianzan' }}"></i>{{ detail.likes }}</view>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="footer_left">
+            <button class="btn" open-type="share">
+                <view>
+                    <view class="icon iconfont iconfenxiang"></view>
+                    <text>分享</text>
+                </view>
+            </button>
+            <button class="btn" bindtap='clickCollection' wx:if="{{collectionStatus}}">
+                <view class="shoucang">
+                    <view class="icon iconfont iconshoucang"></view>
+                    <text>已收藏</text>
+                </view>
+            </button>
+            <button class="btn" bindtap='clickCollection' wx:else>
+                <view>
+                    <view class="icon iconfont iconshoucangweidianji"></view>
+                    <text>收藏</text>
+                </view>
+            </button>
+
+        </view>
+        <button class="now" bindtap='playPhone' data-phone='{{ detail.carte.phone }}'>立即联系</button>
+    </view>
+</view>
+

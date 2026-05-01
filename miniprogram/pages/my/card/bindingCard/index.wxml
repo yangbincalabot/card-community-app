@@ -1,0 +1,24 @@
+<view class="main" hidden="{{ hidden }}">
+    <view class="search">
+        <view class="search_input">
+            <input bindinput="changeSearch" bindconfirm="searchBtn" placeholder="请输入公司名称" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+        </view>
+        <button bindtap="searchBtn">搜索</button>
+    </view>
+    <block>
+        <view class="ct_box" wx:for="{{ companies }}" wx:key="index">
+            <view class="ct_view">
+                <view class="ct">
+                    <image src="{{ item.logo }}"></image>
+                    <view class="text">
+                        <view class="title">{{ item.company_name }}</view>
+                        <view>{{ item.address_title }}</view>
+                    </view>
+                </view>
+                <view class="right" bindtap="toBind" data-index="{{ index }}">
+                    关联
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

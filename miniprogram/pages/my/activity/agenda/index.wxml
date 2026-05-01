@@ -1,0 +1,63 @@
+<!--pages/my/activity/agenda/index.wxml-->
+<view class="main">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="ct_view">
+        <view class="ct">
+            <view class="ct_left">
+                <text>议程开始时间</text>
+            </view>
+            <!-- <picker mode="time" value="{{formParams.start_time}}"  bindchange="changeStartTime">
+                <view class="picker">
+                    <span wx:if="{{formParams.start_time}}">{{formParams.start_time}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker> -->
+             <picker mode="multiSelector" value="{{dateTime_1}}" data-type='1'  bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_1}}" style='margin-left: 80rpx;'>
+                <view class="tui-picker-detail ct_right">
+                    <span wx:if='{{formParams.start_time}}'>{{dateTimeArray_1[0][dateTime_1[0]]}}:{{dateTimeArray_1[1][dateTime_1[1]]}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker>
+        </view>
+        <view class="ct">
+            <view class="ct_left">
+                <text>议程结束时间</text>
+            </view>
+            <!-- <picker mode="time" value="{{formParams.end_time}}"  bindchange="changeEndTime">
+                <view class="picker">
+                    <span wx:if="{{formParams.end_time}}">{{formParams.end_time}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker> -->
+             <picker mode="multiSelector" value="{{dateTime_2}}" data-type='2' bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_2}}">
+                <view class="tui-picker-detail ct_right">
+                    <span wx:if='{{formParams.end_time}}'>{{dateTimeArray_2[0][dateTime_2[0]]}}:{{dateTimeArray_2[1][dateTime_2[1]]}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker>
+        </view>
+        <view class="ct">
+            <view class="ct_left">
+                <text>主讲人</text>
+            </view>
+            <view class="ct_right"  bindtap="navigateToUrl" data-url="../presenter/index?id={{ formParams.presenter_id }}">
+                <!-- <input placeholder="请输入主讲人" name="presenter" value="{{ detail.presenter }}" placeholder-class="placeholder" ></input> -->
+                <span>{{ formParams.presenter ? formParams.presenter:'请选择' }}</span>
+                <i class='icon iconfont iconyoujiantou'></i>
+            </view>
+        </view>
+        <view class="ct_text">
+            <view>主旨议题</view>
+            <view>
+                <textarea maxlength="-1"  placeholder="请输入主旨议题"  name="title" value="{{ detail.title }}" placeholder-class="placeholder"></textarea>
+            </view>
+        </view>
+    </view>
+    <button class="btn1" formType="submit">保存</button>
+    <button class="btn2" wx:if="{{ formParams.id }}" bindtap="deleteAgenda">删除</button>
+    </form>
+</view>

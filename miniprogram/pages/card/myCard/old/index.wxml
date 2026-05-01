@@ -1,0 +1,118 @@
+<view class="main" hidden="{{ hidden }}">
+    <view class="back" bindtap="toBack">
+        <span class="icon iconfont iconfanhuix"></span>
+    </view>
+    <view class="card">
+        <view class="card_box">
+            <view class="card_text">
+                <block wx:if="{{ userInfo && userInfo.id === cardDetail.uid }}" >
+                    <view class="btn" bindtap="navigatorToUrl" data-url="../../my/card/editCard/index">编辑名片</view>
+                </block>
+                <block wx:else>
+                    <block wx:if="{{ is_collect === false }}">
+                        <view class="collect_btn" bindtap="clickCollection">收藏</view>
+                    </block>
+                    <block wx:else>
+                        <view class="collect_btn" bindtap="clickCollection">已收藏</view>
+                    </block>
+                </block>
+                <image src="{{ cardDetail.avatar ? cardDetail.avatar : cardDetail.user.avatar }}"></image>
+            </view>
+        </view>
+        <view class="card_view">
+            <view class="access">
+                <view class="num"><span class="icon iconfont icondianzanliang"></span>{{ cardDetail.visits }}</view>
+                <view>访问量</view>
+            </view>
+            <view class="msg">
+                <view class="msg_box">
+                    <view class="msg_left">
+                        <image src="{{ cardDetail.avatar ? cardDetail.avatar : cardDetail.user.avatar }}"></image>
+                    </view>
+                    <view class="msg_right">
+                        <view class="line"></view>
+                        <view>
+                            <view class="name">{{ cardDetail.name }}<span>{{ cardDetail.position?cardDetail.position:'' }}</span></view>
+                            <view>{{ cardDetail.company_name }}</view>
+                            <!--如果有绑定公司，把原名片公司显示-->
+                            <!-- <block wx:if="{{ cardDetail.original_company_name && cardDetail.cid > 0 && cardDetail.original_company_name !== cardDetail.company_name}}">
+                                <view>
+                                    {{ cardDetail.original_company_name }}
+                                </view>
+                            </block> -->
+                        </view>
+                    </view>
+                </view>
+                <view class="msg_view">
+                    <view class="icon iconfont iconshouji"></view>
+                    <view class="msg_text">
+
+                        <view class="msg_ct">{{ cardDetail.phone ? cardDetail.phone : '未填写' }}</view>
+                    </view>
+                </view>
+                <view class="msg_view">
+                    <view class="icon iconfont iconweixin"></view>
+                    <view class="msg_text">
+
+                        <view class="msg_ct">{{ cardDetail.wechat ? cardDetail.wechat : '未填写' }}</view>
+                    </view>
+                </view>
+                <view class="msg_view">
+                    <view class="icon iconfont iconyouxiang"></view>
+                    <view class="msg_text">
+
+                        <view class="msg_ct email">{{ cardDetail.email ? cardDetail.email : '未填写' }}</view>
+                    </view>
+                </view>
+                <view class="msg_view">
+                    <view class="icon iconfont iconlocation"></view>
+                    <view class="msg_text">
+
+                        <view class="msg_ct add">{{ cardDetail.address_title ? cardDetail.address_title : '未填写' }}</view>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{ userInfo && userInfo.id === cardDetail.uid }}" >
+                <button open-type="share">分享此名片</button>
+            </block>
+            <block wx:else>
+                <block wx:if="{{ is_send === false}}">
+                    <button bindtap="sendCard">向对方发名片</button>
+                </block>
+                <block wx:else>
+                    <button>已递名片</button>
+                </block>
+
+                <button class="share" open-type="share">分享此名片</button>
+            </block>
+        </view>
+    </view>
+    <block wx:if="{{ cardDetail.company_card && cardDetail.company_card.status === 1 }}">
+        <view class="title">
+            <view class="title_left"></view>
+            ta的企业名片
+        </view>
+        <view class="firmCard" bindtap="navigatorToUrl" data-url="../companyDetail/index?id={{ cardDetail.company_card.id }}">
+            <view>
+                <view>{{ cardDetail.company_card.company_name }}</view>
+                <view>查看详情</view>
+            </view>
+        </view>
+    </block>
+    <view class="title">
+        <view class="title_left"></view>
+        个人介绍
+    </view>
+    <view class="introduce">
+        {{ cardDetail.introduction ? cardDetail.introduction : '' }}
+    </view>
+    <view class="title">
+        <view class="title_left"></view>
+        相册
+    </view>
+    <view class="imgs">
+        <block wx:for="{{ cardDetail.images }}" wx:key="index">
+            <image src="{{ item }}"></image>
+        </block>
+    </view>
+</view>

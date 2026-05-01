@@ -1,0 +1,69 @@
+<!--pages/my/collection/index.wxml-->
+<view class="main">
+    <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">需求</view>
+        <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">活动</view>
+    </view>
+    <view class="{{currentTab==1 ? 'show':'hidden'}}">
+        <view class='demand'>
+            <view>
+                <view class="product-container">
+                    <view class="product-list">
+                        <view class="product-item" wx:for="{{supplyList}}" wx:key="item" >
+                            <movable-area>
+                                <movable-view out-of-bounds="true" direction="horizontal"  inertia="true" >
+                                    <view class="product-item-wrap">
+                                        <view class="demand_box" >
+                                            <view class="demand_title" bindtap="navigateToUrl" data-url="../../supply/detail/index?id={{ item.supply.id }}">
+                                                {{ item.supply.content }}
+                                            </view>
+                                            <view class="demand_msg" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.supply.carte.id }}">
+                                                <view class="demand_img">
+                                                    <image src="{{ item.supply.carte.avatar }}"></image>
+                                                </view>
+                                                <view class="msg">{{ item.supply.carte.name }}</view>
+                                                <view class="line"></view>
+                                                <view class="msg">{{ item.supply.carte.company_name }}</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </movable-view>
+                            </movable-area>
+                            <view class="delete-btn" bindtap="changeStatus" data-info_id="{{ item.supply.id }}" data-type="2">取消收藏</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{currentTab==2 ? 'show':'hidden'}}">
+        <view class='activation'>
+            <view>
+                <view class="product-container">
+                    <view class="product-list">
+                        <view class="product-item" wx:for="{{activityList}}" wx:key="item">
+                            <movable-area>
+                                <movable-view out-of-bounds="true" direction="horizontal" inertia="true" >
+                                    <view class="product-item-wrap">
+                                        <view class="activation_box" bindtap="navigateToUrl" data-url="../../activity/detail/index?id={{ item.activity.id }}">
+                                            <view class="activation_img">
+                                                <image src="{{ item.activity.cover_image }}"></image>
+                                            </view>
+                                            <view class="activation_text">
+                                                <view class="activation_title">
+                                                    {{ item.activity.title }}
+                                                </view>
+                                                <text class="btn">{{ item.activity.status_show }}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </movable-view>
+                            </movable-area>
+                            <view class="delete-btn" bindtap="changeStatus" data-info_id="{{ item.activity.id }}" data-type="3">取消收藏</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/address/addaddress/index.wxml-->
+<view class='main'>
+  <form bindsubmit="formSubmit">
+			<view class="name">
+				<view class="title">收货人：</view>
+				<input maxlength="25" name="contact_name" placeholder="请填写收货人姓名" placeholder-class="placeholderStyle"  />
+			</view>
+			<view class="name">
+				<view class="title">手机号码：</view>
+				<input maxlength="11" type="number" name="contact_phone" placeholder="请填写收货人手机号" placeholder-class="placeholderStyle"  />
+			</view>
+			<view class="name">
+				<view class="title">所在地区：</view>
+				<picker mode="region" bindchange="bindRegionChange">
+					<input placeholder="选择所在地区" disabled="true" value="{{ address }}" placeholder-class="placeholderStyle"  />
+				</picker>
+			</view>
+			<view class="address">
+				<view class="title">详细地址：</view>
+				<input placeholder="街道、楼牌号等" placeholder-class="placeholderStyle" name="address" />
+			</view>
+			<view class="address_on-off">
+				<view>设为默认地址：</view>
+				<switch bindchange="switchIsDefault" />
+			</view>
+			<view class="btn">
+				<button form-type="submit">完成</button>
+			</view>
+		</form>
+</view>

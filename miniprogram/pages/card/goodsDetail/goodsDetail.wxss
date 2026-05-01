@@ -1,0 +1,361 @@
+page{
+  background: #f5f5f5;
+}
+/* .isRuleShow {
+  display: block;
+}
+ 
+.isRuleHide {
+  display: none;
+} */
+.main{
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(240,240,240);
+}
+swiper{ 
+  background: #fff;
+   height: 400rpx; 
+   padding: 16rpx 0 10rpx 0; 
+   text-align: center;
+}
+.slide-image{ 
+  width: 750rpx; 
+  /* background: #ce3;  */
+  height: 400rpx; 
+  margin: 0 auto; 
+}
+.main .text{
+  width: 750rpx;
+  background: #fff;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+.main .text .title{
+  font-size: 30rpx;
+  color: #333333;
+  width: 670rpx;
+  margin: 0 auto;
+}
+.main .text .price{  
+  display: flex;
+  width: 700rpx;
+  align-items: center;
+  margin: 20rpx 0 20rpx 30rpx;
+  
+}
+.main .text .price .p1{
+  font-size: 46rpx;
+  color: rgb(255,25,25);
+}
+.main .text .price .p2{
+  font-size: 34rpx;  
+  color: rgb(51,51,51);
+  
+}
+.main .text .price .p2{
+  position: relative;
+  margin-left: 40rpx;
+}
+.main .text .price .p2 image{
+  width: 77rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 8rpx;
+  margin-left:10rpx;
+}
+.main .text .price button i{
+  font-size: 24rpx;
+  height: 100%;
+}
+.main .text .price button::after{
+  border: none;
+}
+.main .text .price button .button_join{
+  width: 74rpx;
+  height: 54rpx;
+  font-size: 25rpx;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+
+}
+.main .text .price button{
+  position: absolute;
+  top: 76rpx;
+  right: 0;
+  font-size: 24rpx;
+  color: #ffffff;  
+  width: 120rpx;
+  height: 54rpx;
+  border-radius: 27rpx 0 0 27rpx;
+  background: linear-gradient(45deg,rgba(1,110,255,1) 0%,rgba(113,113,255,1) 100%);
+}
+.main .text .text2{
+  width: 680rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-left: 40rpx;
+  color: rgb(136,136,136);
+}
+.main .text .text2 .t1 i{
+  margin-right: 20rpx;
+}
+.main .size1{
+  width: 750rpx;
+  height: 100rpx;
+  background: #fff;
+  margin: 20rpx 0 0 0;  
+}
+.main .size1 .size{
+  width: 690rpx;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  border-bottom: 1rpx solid rgb(221,221,221);
+}
+.main .size2 .size{
+  width: 690rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+}
+.main .size1 .s1{
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.main .size1 .s2{
+  margin-left: 21rpx;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .size1 i{
+  position: absolute;
+  right: 0;
+  color: rgb(204,204,204);
+}
+.main .size2{
+  width: 750rpx;
+  height: 100rpx;
+  background: #fff;
+  margin: 0 0 20rpx 0;  
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main .size2 .s1{
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.main .size2 .s2{
+  margin-left: 21rpx;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .size2 i{
+  position: absolute;
+  right: 0;
+  color: rgb(204,204,204);
+}
+.main .prodetail{
+  margin-top: 20rpx;
+  width: 750rpx;
+  height: 100%;
+  background: #fff;  
+  margin-bottom: 100rpx;
+  padding-bottom: 20rpx;
+}
+.main .prodetail .tit{
+  font-size: 34rpx;
+  color: rgb(51,51,51);
+  text-align: center;
+  padding-top: 30rpx;
+}
+.main .prodetail .imgs{
+  width: 750rpx;
+}
+.main .prodetail .img image{
+  width: 750rpx;
+}
+.footer{
+  width: 750rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background: rgb(80,166,249);
+  z-index: 1;
+  color: #ffffff;
+  line-height: 98rpx;
+  font-size: 30rpx;
+}
+
+/*mask*/
+.drawer_screen {
+  width: 670rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 40rpx;
+  background: -webkit-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* Firefox 3.6 to 15 */
+  background: linear-gradient(rgb(254,203,0),rgb(254,192,21),rgb(254,181,41)); /* 标准语法 (必须在最后) */
+  /* position: fixed;
+  bottom: 40rpx;
+  left: 30rpx;
+  z-index: 1000; */
+  margin-top: 160rpx;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+/*content*/
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background: #fff;
+}
+.drawer_content {
+  /* padding: 20rpx 40rpx; */ 
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #fff;
+  /* overflow-y: hidden; */
+}
+.drawer_content .c1 .detail{
+  display: flex;
+  margin: 30rpx 30rpx 60rpx 30rpx;
+  position: relative;
+}
+.drawer_content .c1 .detail .img image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.drawer_content .c1 .detail .price{  
+  margin-left: 20rpx;
+  line-height: 55rpx;
+}
+.drawer_content .c1 .detail .price .p1{  
+  font-size: 34rpx;
+  color: rgb(255,25,25);
+}
+.drawer_content .c1 .detail .price .p2{  
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+  display: flex;
+  align-items: center;
+}
+.drawer_content .c1 .detail .price .p2 image{  
+  width: 70rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.drawer_content .c1 .detail .price .p3{  
+  font-size: 24rpx;
+  color: rgb(51,51,51);
+}
+.drawer_content .c1 .detail .del{
+  font-size: 40rpx;
+  position: absolute;
+  right: 0;
+  color: rgb(187,187,187);
+}
+.drawer_content .c2{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(51,51,51); 
+}
+.drawer_content .c2 .list{
+  width: 690rpx;
+  height: 100%;
+  margin:30rpx 0 30rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.drawer_content .c2 .list .l{
+  /* width: 90rpx; */
+  padding: 5rpx 10rpx;
+  margin-bottom: 30rpx;
+  height: 46rpx;
+  background: rgb(239,239,239);
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  text-align: center;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drawer_content .c3{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(51,51,51); 
+}
+.drawer_content .c3 .list{
+  width: 690rpx;
+  height: 100%;
+  margin:30rpx 0 30rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.drawer_content .c3 .list .l{
+  /* width: 90rpx; */
+  padding: 5rpx 10rpx;
+  height: 46rpx;
+  margin-bottom: 30rpx;
+  background: rgb(239,239,239);
+  font-size: 26rpx;
+  color: rgb(51,51,51);
+  text-align: center;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coupon{
+  width: 690rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/coupon_bg3.png) no-repeat;
+  background-size: 100%;
+  margin-bottom: 36rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.coupon .left :nth-child(1){
+  font-size: 60rpx;
+  color: rgb(255,111,97);
+}
+.coupon .left :nth-child(2){
+  font-size: 26rpx;
+  color: rgb(255,111,97);
+}
+.coupon .left :nth-child(3){
+  font-size: 26rpx;
+  color: rgb(170,170,170);
+  margin-top: 15rpx;
+}
+.coupon .right{
+  font-size: 28rpx;
+  color: #fff;
+}
+.coupon image{
+  width: 690rpx;
+  height: 180rpx;
+}

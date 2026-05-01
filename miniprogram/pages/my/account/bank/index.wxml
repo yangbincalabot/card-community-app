@@ -1,0 +1,25 @@
+<!--pages/mine/myaccount/tixian/index.wxml-->
+<view class='main'>
+  <view class='title'>
+    请选择提现银行卡
+  </view>
+  <view class='card'>
+    <block wx:for="{{userBanks}}" wx:key="index">
+      <view class='card_content' bindtap="navigatorToUrl" data-index="{{ index }}">
+      <view class='logo'>
+        <image src='{{ item.bank.image ? item.bank.image : "https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/bank_icon.png" }}'></image>
+      </view>
+      <view class='content'>
+        <view class='bank_title'>
+          <view>{{item.bank.name}}</view>
+          <view catchtap="navigatorToUrl"  data-url="../bankDetail/index?id={{ item.id }}" class="icon iconfont iconbianji"></view>
+        </view>
+        <view class='name_account'>{{item.card_name}}<i>{{item.card_tail}}</i></view>
+      </view>
+    </view>
+    </block>
+  </view>
+  <button class='btn' bindtap="navigatorToUrl" data-url="../addBank/index">
+    添加银行卡
+  </button>
+</view>

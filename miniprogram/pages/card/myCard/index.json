@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "名片",
+  "onReachBottomDistance": 0,
+  "navigationBarBackgroundColor":"#252525",
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "my-rate": "/components/rate/rate"
+  }
+}

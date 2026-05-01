@@ -1,0 +1,263 @@
+<!--pages/mine/index.wxml-->
+<view class="main">
+  <view class="mine_top">
+      <view class="zhanwei" style="height:{{navTop}}px"></view>
+      <view class="mine_top_btn" style="height:{{navHeight}}px">
+         <image bindtap="navBack" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/jtz.png"></image>
+         <span class="mine_top_btn_span"></span>
+         <image bindtap="toIndex" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/zhuye.png"></image>
+      </view>
+  </view>
+  <view class="mine_bg">
+    <view class="top_ct">
+      <view class="img">
+        <image src="{{ userInfo.avatar }}"></image>
+      </view>
+      <view class="ct_right">
+        <view>
+          <image style="width:35rpx;height:35rpx;margin-right:14rpx;" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BC%9A%E5%91%98%E5%9B%BE%E6%A0%87.png"></image>
+          <text>{{ userInfo.name }}</text>
+          <i>{{ userInfo.position?userInfo.position:'' }}</i>
+          <span wx:if="{{ userInfo.companyCardStatus }}">{{ userInfo.type_show }}</span>
+        </view>
+        <view wx:if="{{ userInfo.company_name }}">{{ userInfo.company_name }}</view>
+        <view wx:else>请先创建个人名片</view>
+      </view>
+    </view>
+  </view>
+  <view class="mine_content">
+    <view class="ct_box" bindtap="navigateToUrl" data-url="../card/editCard/index">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E7%BC%96%E8%BE%91%E5%90%8D%E7%89%87.png"></image>
+      </view>
+      <view class="ct_title">编辑名片</view>
+    </view>
+    <view bindtap="checkCompanyStatus" class="ct_box">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E5%85%AC%E5%8F%B8.png"></image>
+      </view>
+      <view class="ct_title">我的公司</view>
+    </view>
+    <view class="ct_box" bindtap="navigateToUrl" data-url="../cardCode/index">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%90%8D%E7%89%87%E7%A0%81.png"></image>
+      </view>
+      <view class="ct_title">名片码</view>
+    </view>
+  </view>
+  <view class="mine_ct">
+    <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%B8%AA%E4%BA%BA%E7%89%88.png"></image>
+    <view class="tip">
+      个人
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="/pages/my/changeUser/index">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E6%B4%BB%E5%8A%A8.png"></image>
+      </view>
+      <view class="ct_title">切换名片</view>
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="/pages/my/activity/index/index" data-to_type="2">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E6%B4%BB%E5%8A%A8.png"></image>
+      </view>
+      <view class="ct_title">我的活动</view>
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="/pages/my/supply/index/index" data-to_type="2">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E4%BE%9B%E9%9C%80-1.png"></image>
+      </view>
+      <view class="ct_title">我的供需</view>
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="../collection/index">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F.png"></image>
+      </view>
+      <view class="ct_title">我的收藏</view>
+    </view>
+    <view bindtap="navigateToUrl" data-url="../viewed/index" class="ct_view">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%B0%81%E7%9C%8B%E8%BF%87%E6%88%91.png"></image>
+      </view>
+      <view class="ct_title">谁看过我</view>
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="../account/index">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E9%92%B1%E5%8C%85.png"></image>
+      </view>
+      <view class="ct_title">我的钱包</view>
+    </view>
+    <view class="ct_view" bindtap="navigateToUrl" data-url="../orders/list/list">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%88%91%E7%9A%84%E4%BE%9B%E9%9C%80.png"></image>
+      </view>
+      <view class="ct_title">我的订单</view>
+    </view>
+
+
+
+    <button class="ct_view" open-type="contact" bindcontact="handleContact">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%81%94%E7%B3%BB%E5%AE%A2%E6%9C%8D.png"></image>
+      </view>
+      <view class="ct_title">联系客服</view>
+    </button>
+  </view>
+
+<block wx:if="{{ userInfo.companyCardStatus === true }}">
+  <view class="mine_ct">
+    <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%B8%AA%E4%BA%BA%E7%89%88.png"></image>
+    <view class="tip">
+      企业
+    </view>
+    <view class="ct_view" data-url="../card/companyCard/index" class="ct_view" bindtap="navigateToUrl">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%85%AC%E5%8F%B8%E5%90%8D%E7%89%87%20(1).png"></image>
+      </view>
+      <view class="ct_title">公司名片</view>
+    </view>
+
+    <view class="ct_view" data-url="../card/companyBind/index" class="ct_view" bindtap="navigateToUrl">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E7%BB%91%E5%AE%9A%E5%AE%A1%E6%A0%B8(1).png"></image>
+      </view>
+      <view class="ct_title">绑定审核</view>
+    </view>
+    <view class="ct_view" data-url="../department/list/list" class="ct_view" bindtap="navigateToUrl">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%83%A8%E9%97%A8%E7%AE%A1%E7%90%86(1).png"></image>
+      </view>
+      <view class="ct_title">部门管理</view>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="mine_ct">
+    <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BC%81%E4%B8%9A%E7%89%88.png"></image>
+    <view class="tip">
+      企业
+    </view>
+    <view class="ct_view" bindtap="upgradeCompanyStatus">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%85%AC%E5%8F%B8%E5%90%8D%E7%89%87.png"></image>
+      </view>
+      <view class="ct_title">公司名片</view>
+    </view>
+
+    <view class="ct_view" bindtap="upgradeCompanyStatus">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E7%BB%91%E5%AE%9A%E5%AE%A1%E6%A0%B8.png"></image>
+      </view>
+      <view class="ct_title">绑定审核</view>
+    </view>
+    <view class="ct_view" bindtap="upgradeCompanyStatus">
+      <view class="img">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%83%A8%E9%97%A8%E7%AE%A1%E7%90%86.png"></image>
+      </view>
+      <view class="ct_title">部门管理</view>
+    </view>
+  </view>
+</block>
+
+  <block wx:if="{{ userInfo.companyCardStatus === true }}">
+    <view class="mine_ct">
+      <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%B8%AA%E4%BA%BA%E7%89%88.png"></image>
+      <view class="tip">
+        店铺
+      </view>
+      <view class="ct_view" data-url="/pages/business/goods/index/index" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E7%AE%A1%E7%90%86%20(1).png"></image>
+        </view>
+        <view class="ct_title">商铺管理</view>
+      </view>
+
+      <view class="ct_view" data-url="/pages/business/wallet/index/index" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E9%92%B1%E5%8C%85.png"></image>
+        </view>
+        <view class="ct_title">商铺钱包</view>
+      </view>
+      <view class="ct_view" data-url="/pages/business/order/order" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86.png"></image>
+        </view>
+        <view class="ct_title">订单管理</view>
+      </view>
+      <view class="ct_view" data-url="/pages/business/user/user" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86.png"></image>
+        </view>
+        <view class="ct_title">客户管理</view>
+      </view>
+    </view>
+  </block>
+
+   <block wx:else>
+    <view class="mine_ct">
+      <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BC%81%E4%B8%9A%E7%89%88.png"></image>
+      <view class="tip">
+        店铺
+      </view>
+      <view class="ct_view" bindtap="upgradeCompanyStatus">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E7%AE%A1%E7%90%86.png"></image>
+        </view>
+        <view class="ct_title">商铺管理</view>
+      </view>
+
+      <view class="ct_view" bindtap="upgradeCompanyStatus">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E9%92%B1%E5%8C%85(1).png"></image>
+        </view>
+        <view class="ct_title">商铺钱包</view>
+      </view>
+      <view class="ct_view" bindtap="upgradeCompanyStatus">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86(1).png"></image>
+        </view>
+        <view class="ct_title">订单管理</view>
+      </view>
+      <view class="ct_view" bindtap="upgradeCompanyStatus">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86(1).png"></image>
+        </view>
+        <view class="ct_title">客户管理</view>
+      </view>
+    </view>
+  </block>
+
+
+    
+    <block wx:if="{{ userInfo.companyCardStatus || userInfo.is_admin }}">
+    <view class="mine_ct">
+      <image class="tipImg" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%B8%AA%E4%BA%BA%E7%89%88.png"></image>
+      <view class="tip">
+        协会
+      </view>
+
+        <!-- 企业管理自己的协会 -->
+      <view wx:if="{{ userInfo.companyCardStatus  }}" class="ct_view" data-url="/pages/my/society/list/list" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E7%AE%A1%E7%90%86%20(1).png"></image>
+        </view>
+        <view class="ct_title">协会管理</view>
+      </view>
+
+        <!-- 管理员管理平台协会 -->
+      <view wx:if="{{ userInfo.is_admin }}" class="ct_view" data-url="/pages/my/society/update/update?id={{ userInfo.default_aid }}" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E7%AE%A1%E7%90%86%20(1).png"></image>
+        </view>
+        <view class="ct_title">编辑平台</view>
+      </view>
+
+      <view wx:if="{{ userInfo.is_admin }}" class="ct_view" data-url="/pages/my/society/role/index?aid={{ userInfo.default_aid }}" class="ct_view" bindtap="navigateToUrl">
+        <view class="img">
+          <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%95%86%E9%93%BA%E7%AE%A1%E7%90%86%20(1).png"></image>
+        </view>
+        <view class="ct_title">平台角色</view>
+      </view>
+    </view>
+  </block>
+</view>

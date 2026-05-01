@@ -1,0 +1,32 @@
+/* pages/myBusinessCard/myBusinessCard.wxss */
+page{
+  text-align: center;
+}
+.main{
+  font-size: 36rpx;
+  color: #A7A7A7;
+}
+.img{
+  width: 424rpx;
+  height: 392rpx;  
+  margin: 90rpx auto;
+}
+.img image{
+  width: 424rpx;
+  height: 392rpx;
+}
+button{
+  width:486rpx;
+  height:90rpx;
+  border-radius:14rpx;
+  margin: 48rpx auto;
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+.btn1{
+  background:linear-gradient(180deg,rgba(255,203,125,1) 0%,rgba(255,154,1,1) 100%);
+  margin-top: 124rpx;
+}
+.btn2{
+  background:linear-gradient(180deg,rgba(132,132,132,1) 0%,rgba(0,0,0,1) 100%);
+}

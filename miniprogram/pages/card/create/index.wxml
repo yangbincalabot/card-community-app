@@ -1,0 +1,140 @@
+<view class="main" hidden="{{ hidden }}">
+<!--    <view class="ct_box" bindtap="takePhoto">-->
+<!--        <span class="icon iconfont iconpaizhao"></span>-->
+<!--        <view>拍照识别</view>-->
+<!--    </view>-->
+    <form bindsubmit="formSubmit">
+        <view class="ct_view">
+            <view class="ct" bindtap="UploadImage" data-type="avatar">
+                <view class="ct_left">
+                    <text>头像</text>
+                </view>
+                <view class="ct_right">
+                    <image src="{{ avatar_url }}"></image>
+                    <span class="icon iconfont iconyoujiantou"></span>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>姓名</text>
+                    <input placeholder="请输入姓名" placeholder-class="placeholder" value="{{ formData.name ? formData.name : ''}}" name="name"></input>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>公司</text>
+                    <input placeholder="请输入公司名称" placeholder-class="placeholder" value="{{ formData.company_name ? formData.company_name : ''}}" name="company_name"></input>
+                </view>
+            </view>
+            <picker mode="multiSelector" range="{{ industries }}" value="{{ industry_index }}"  range-key="name" bindchange="changeIndustry" bindcolumnchange="changeIndustryIndex">
+                <view class="ct">
+                    <view class="ct_left">
+                        <text><text class="required">*</text>行业</text>
+                            <input placeholder="请选择所在行业" value="{{ industry_text }}" placeholder-class="placeholder" disabled="false"></input>
+                    </view>
+                    <view class="ct_right">
+                        <span class="icon iconfont iconyoujiantou"></span>
+                    </view>
+                </view>
+            </picker>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>职务</text>
+                    <input placeholder="请输入职位名称" placeholder-class="placeholder" value="{{ formData.position ? formData.position : ''}}" name="position"></input>
+                </view>
+                <view class="ct_right">
+                    <span class=""></span>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text><text class="required">*</text>手机</text>
+                    <input placeholder="请获取手机号" placeholder-class="placeholder" value="{{ formData.phone }}" name="phone"></input>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct">
+                <view class="ct_left">
+                    <text>微信</text>
+                    <input placeholder="请输入微信号" placeholder-class="placeholder" value="{{ formData.wechat ? formData.wechat : ''}}" name="wechat"></input>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text>邮箱</text>
+                    <input placeholder="请输入邮箱号" placeholder-class="placeholder" value="{{ formData.email ? formData.email : ''}}" name="email"></input>
+                </view>
+            </view>
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>地址</text>
+                    <textarea placeholder="请完善地址" placeholder-class="placeholder" value="{{ formData.address_title ? formData.address_title : ''}}" bindinput="changeAddressTitle" name="address_title" auto-height></textarea>
+                </view>
+                <view class="ct_right" bindtap="getChooseLocation">
+                    <span class="icon iconfont iconla"></span>
+                </view>
+            </view>
+
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>标签</text>
+                    <textarea placeholder="添加个人印象标签" bindinput="changeTag" placeholder-class="placeholder" name="tags" auto-height></textarea>
+                </view>
+                <view class="ct_right" bindtap="addTag">
+                    <span class="icon iconfont"></span>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>简介</text>
+                    <textarea placeholder="请填写个人简介" placeholder-class="placeholder" value="{{ formData.introduction ? formData.introduction : ''}}" name="introduction"></textarea>
+                </view>
+                <view class="ct_right">
+                    <span class=""></span>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address">
+                <view class="ct_left">
+                    <text>相册</text>
+                </view>
+            </view>
+            <view>
+                <view class="img">
+                    <view class="img_box">
+                        <block wx:if="{{ formData.images.length < 9 }}">
+                <span bindtap="UploadImage" data-type="images">
+                <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'></image>
+                </span>
+                        </block>
+                        <block wx:for="{{ formData.images }}" wx:key="index">
+              <span>
+            <image src='{{ item }}'></image>
+            <i class="icon iconfont iconshanchu1" data-index="{{ index }}" bindtap="deleteImage"></i>
+          </span>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ct_view">
+            <view class="ct address" bindtap="bindingCard">
+                <text>绑定企业名片</text>
+                <view class="ct_right width_auto">
+                    <block wx:if="{{ bind_company_name }}">
+                        {{ bind_company_name }}
+                    </block>
+                    <block wx:else>
+                        请选择
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view style="height: 100rpx"></view>
+        <button class="button" form-type="submit">保存</button>
+    </form>
+</view>

@@ -1,0 +1,15 @@
+<view class="main" hidden="{{ hidden }}">
+  <view class="code">
+    <view class="code_view">
+      <view class="name">{{ carte.name }}</view>
+      <view class="company">{{ carte.company_name }}</view>
+      <view class="code_box" bindtap="getQrcode" data-type="reset">
+        <image src="{{ qrcode }}"></image>
+      </view>
+    </view>    
+  </view>
+  <view class="btn">
+    <button class="btn1" open-type="share">分享名片</button>
+    <button class="btn2" bindtap="downloadFile">保存名片码</button>
+  </view>
+</view>

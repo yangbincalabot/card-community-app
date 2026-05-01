@@ -1,0 +1,40 @@
+<view class="main">
+    <view class="ct_box">
+        <view class="ct">
+            <view class="ct_left">
+                <view class="img">
+                    <image src="{{ from_user_carte.avatar }}"></image>
+                    <span class="to_perfect" wx:if="{{ detail.from_user.perfect > 1 }}">待完善</span>
+                </view>
+                <view class="text">
+                    <view class="name">
+                        {{ from_user_carte.name ? from_user_carte.name : '' }}
+                    </view>
+                    <view>{{ from_user_carte.phone ? from_user_carte.phone : '' }}</view>
+                </view>
+            </view>
+        </view>
+        <view class="ctBox">
+            <view class="ct_change">
+                <view class="change_left">
+                    <span class="icon iconfont iconlocation"></span>
+                </view>
+                <view class="time">来自名片广场-互换名片</view>
+            </view>
+        </view>
+        <view class="introduce">
+            <view class="ct_introduce">
+                <view class="ct_left">
+                    标记名片
+                </view>
+                <view class="edit" bindtap="changeTag">
+                    <span class="icon iconfont icontianxie"></span>
+                </view>
+            </view>
+            <view class="ct_textarea">
+                <textarea placeholder="{{ tag_title ? '' : '暂无标记内容' }}" bindinput="inputTag" placeholder-class="placeholder"  value="{{ tag_title }}"></textarea>
+            </view>
+        </view>
+    </view>
+    <button class="dibubutton" bindtap="navigatorToUrl" data-url="../../other/index?id={{ from_user_carte.id }}">查看名片</button>
+</view>

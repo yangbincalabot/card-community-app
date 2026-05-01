@@ -1,0 +1,10 @@
+/* components/rate/rate.wxss */
+.rate{
+  display: flex;
+  align-items: center;
+}
+.rate image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}

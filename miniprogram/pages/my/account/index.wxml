@@ -1,0 +1,26 @@
+<!--pages/mine/myaccount/index.wxml-->
+<view class="main">
+  <view class="wallet_box">
+    <view class="account_view">
+      <view class="account_box">
+        <view class="account_title">账户余额（元）</view>
+        <view class="account">{{ userInfo.balance.money }}</view>
+      </view>
+      <navigator url="./cashOut/index" class="cashOut">提现</navigator>
+    </view>
+  </view>
+  <view class="ct_view">
+    <navigator url="./accountRecord/index" class="ct_box" hover-class="none">
+      <view class="title">资金记录</view>
+      <view class="icon iconfont iconyoujiantou"></view>
+    </navigator>
+    <navigator url="./bank/index" view class="ct_box" hover-class="none">
+      <view class="title">银行卡</view>
+      <view class="icon iconfont iconyoujiantou"></view>
+    </navigator>
+    <navigator url="./payPwd/index" view class="ct_box" hover-class="none">
+      <view class="title">支付密码管理</view>
+      <view class="icon iconfont iconyoujiantou"></view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="main">
+    <view class="ct_box">
+        <block wx:for="{{ visitors }}" wx:key="index">
+            <view class="ct" bindtap="navigatorToUrl" data-url="../../card/other/index?id={{ item.user.carte.id }}">
+                <view class="img">
+                    <image src="{{ (item.user.carte && item.user.carte.avatar) ? item.user.carte.avatar : item.user.avatar }}"></image>
+                </view>
+                <view class="text">
+                    <view class="name">
+                        {{ (item.user.carte && item.user.carte.name) ? item.user.carte.name : item.user.nickname }}
+                        <span wx:if="{{ item.user.carte && item.user.carte.position }}">{{ (item.user.carte && item.user.carte.position) ? item.user.carte.position : '' }}</span>
+                    </view>
+                    <view>{{ (item.user.carte && item.user.carte.position) ? item.user.carte.company_name : '' }}</view>
+                    <view>浏览时间：{{ item.last_view_time }}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

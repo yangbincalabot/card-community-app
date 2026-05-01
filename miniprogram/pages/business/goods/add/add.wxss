@@ -1,0 +1,193 @@
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+}
+
+.ct_box {
+    width: 100%;
+    height: 150rpx;
+    background: #fff;
+    font-size: 36rpx;
+    color: #ffc163;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ct_view {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin: 20rpx auto;
+}
+
+.ct {
+    width: 690rpx;
+    height: 100rpx;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #000;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.ct_left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.ct_left text {
+    width: 80rpx;
+}
+
+.placeholder {
+    font-size: 32rpx;
+    color: #ccc;
+}
+
+.ct_left input {
+    width: 470rpx;
+    color: #1e1e1e;
+    font-size: 32rpx;
+    margin-left: 20rpx;
+}
+
+.ct_right {
+    display: flex;
+    align-items: center;
+    color: #b5b5b5;
+    width: 120rpx;
+    justify-content: flex-end;
+}
+
+.ct_right image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 90rpx;
+    margin-right: 20rpx;
+}
+
+.ct_right text {
+    font-size: 28rpx;
+    color: #ffc163;
+}
+
+.address {
+    height: 100%;
+    padding: 30rpx 0;
+}
+
+.address textarea {
+    width: 500rpx;
+    margin-left: 20rpx;
+}
+
+.button {
+    width: 100%;
+    height: 90rpx;
+    background: #ffc163;
+    font-size: 32rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.text {
+    width: 690rpx;
+    margin: 20rpx auto;
+    font-size: 28rpx;
+    color: #b5b5b5;
+    margin-bottom: 120rpx;
+}
+
+.iconpaizhao {
+    font-size: 64rpx;
+    margin-right: 20rpx;
+}
+
+.iconjinzhi {
+    color: #f00;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: center;
+}
+
+.img_box {
+    width: 690rpx;
+    margin: 0 auto;
+}
+
+.img image {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 10rpx 25rpx;
+}
+
+.img_box span {
+    position: relative;
+}
+
+.img_box i {
+    position: absolute;
+    right: 10rpx;
+}
+
+.iconshanchu1 {
+    color: #cdcdcd;
+}
+
+.sms_button {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.required {
+    color: red;
+    position: absolute;
+    left: -15rpx;
+}
+
+.width_auto {
+    width: auto;
+}
+
+.coverBtn {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
+    height: 90rpx;
+    left: 0;
+    right: 0;
+    background: #ffc163;
+}
+
+.coverBtn button {
+    background: #ffc163;
+    color: #fff;
+}
+
+.btn_box {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    height: 90rpx;
+}

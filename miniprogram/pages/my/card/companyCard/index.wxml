@@ -1,0 +1,226 @@
+<view class="main" hidden="{{ hidden }}">
+    <my-navbar pageName="企业名片" bgColor="{{navBgColor}}"></my-navbar>
+    <block wx:if="{{ companyCardStatus === true }}">
+        <form bindsubmit="formSubmit">
+            <view class="firmCard">
+                <view class="top_box">
+                    <!-- <view class="top_head">
+                        <span class="icon iconfont iconfanhuix" bindtap="navigatoBack"></span>
+                        <text class="title">企业名片</text>
+                    </view> -->
+                    <view class="top_msg">
+                        <view>
+                            <view>到期时间：{{ userInfo.enterprise_at }}</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class="viewCard">
+                    <view>
+                        <view class="img" bindtap="UploadImage" data-type="logo">
+                            <image src="{{ logo_url }}"></image>
+                        </view>
+                        <navigator url="../../../card/companyDetail/index?id={{ userInfo.company_card.id }}">
+                            查看企业名片
+                        </navigator>
+                    </view>
+                </view> -->
+                <view class="ct_box">
+                    <view class="ct">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            公司名称
+                        </view>
+                        <view class="ct_right">
+                            <input placeholder="请输入公司名称" value="{{ formData.company_name }}" placeholder-class="placeholder"  name="company_name"></input>
+                        </view>
+                    </view>
+                    <view class="ct">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            行业
+                        </view>
+                        <picker mode="multiSelector" range="{{ industries }}" value="{{ industry_index }}"  range-key="name" bindchange="changeIndustry" bindcolumnchange="changeIndustryIndex">
+                            <view class="ct_right">
+                                <input placeholder="请选择所在行业" disabled="false" value="{{ industry_text }}" placeholder-class="placeholder"></input>
+                                <span class="icon iconfont iconyoujiantou"></span>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="ct_box">
+                    <view class="ct">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            公司地址
+                        </view>
+                        <view class="ct_right">
+                            <textarea placeholder="请输入地址" value="{{ formData.address_title }}" placeholder-class="placeholder" auto-height maxlength="-1" name="address_title"></textarea>
+                            <span class="icon iconfont icondizhi1" bindtap="getChooseLocation"></span>
+                        </view>
+                    </view>
+                    <view class="ct">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            联系电话
+                        </view>
+                        <view class="ct_right">
+                            <input placeholder="请输入联系电话" value="{{ formData.contact_number }}" placeholder-class="placeholder" name="contact_number"></input>
+                        </view>
+                    </view>
+                    <view class="ct">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            企业官网
+                        </view>
+                        <view class="ct_right">
+                            <input placeholder="请输入网址" value="{{ formData.website }}" placeholder-class="placeholder" name="website"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="ct_box">
+                    <view class="ct_introduce">
+                        <view class="ct_left">
+                            <text class="required">*</text>
+                            公司介绍
+                        </view>
+                        <!-- <view class="edit">
+                          <span class="icon iconfont icontianxie"></span>
+                          编辑
+                        </view> -->
+                    </view>
+                    <view class="ct_textarea">
+                        <textarea placeholder="请输入简介" value="{{ formData.introduction }}" placeholder-class="placeholder" maxlength="-1" name="introduction"></textarea>
+                    </view>
+                    <view class="addImg">
+                        <span class="icon iconfont iconicontianjiatupian"></span>
+                        添加图片
+                    </view>
+                    <view class="imgs">
+                        <view class="imgs_box">
+                            <block wx:if="{{ formData.images.length < 9 }}">
+                                <span bindtap="UploadImage" data-type="images">
+                                  <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'></image>
+                                </span>
+                            </block>
+
+                            <block wx:for="{{ formData.images }}" wx:key="index">
+                                <span>
+                                  <image src='{{ item }}'></image>
+                                  <i class="icon iconfont iconshanchu1" data-index="{{ index }}" bindtap="deleteImage"></i>
+                                </span>
+                            </block>
+
+                        </view>
+                    </view>
+                </view>
+                <cover-view class="coverBtn">
+        	          <button hover-class="none" form-type="submit">
+                      <cover-view>保存</cover-view>
+                    </button>
+                    <button bindtap="lookmp" hover-class="none" class="">
+                      <cover-view>预览</cover-view>
+                    </button>
+	              </cover-view>
+                <!-- <view class="button_box">
+                    <button class="btn_submit" form-type="submit">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%BF%9D%E5%AD%98.png"></image>
+                      <view>保存</view>
+                    </button>
+                    <button class="btn_view">
+                        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%A2%84%E8%A7%88.png"></image>
+                      <view>预览</view>
+                    </button>
+                </view> -->
+            </view>
+        </form>
+    </block>
+    <block wx:else>
+        <view class="firmCard">
+            <view class="header">
+                <!-- <view class="header_box">
+                    <span class="icon iconfont iconfanhuix" bindtap="navigatorToUrl" data-url="../../index/index" data-type="tab"></span>
+                    <text class="title">企业名片</text>
+                </view> -->
+            </view>
+        </view>
+        <view class="vip">
+            <view class="vip_box">
+                <view class="vip_text">
+                    完成企业认证后，公司成员可以关联 企业名片，获取更多人脉哦
+                </view>
+            </view>
+            <view class="vip_money">
+                <text>企业会员</text>
+                <view><span>￥</span>{{ business_cost }}</view>
+            </view>
+        </view>
+        <view class="pay">支付方式</view>
+        <view class="pay_box">
+            <view class="pay_view">
+                <view class="pay_left">
+                    <span class="icon iconfont iconweixin"></span>
+                    微信支付
+                </view>
+                <view class="pay_edit">
+                    <span class="icon iconfont iconxuanzhongx"></span>
+                </view>
+            </view>
+        </view>
+        <button class="btn1" bindtap="toWechatPayment">立即开通</button>
+        <!-- 提现密码输入 -->
+        <view wx-if="{{mask}}" class="pwd_box">
+            <view :class="{{bott}}" class="masks">
+                <view class="pwd_six_title">
+                    <view bindtap="maskss" class="icon iconfont iconshanchu1" style="color: #CCCCCC;"></view>
+                    <view>请输入支付密码</view>
+                </view>
+                <view class="pwd_six_box">
+                    <view class="box">
+                        <view class="box_border">
+                            <text wx-if="{{array.length > 0}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box_border">
+                            <text wx-if="{{array.length > 1}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box_border">
+                            <text wx-if="{{array.length > 2}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box_border">
+                            <text wx-if="{{array.length > 3}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box_border">
+                            <text wx-if="{{array.length > 4}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box_border" style="border-right: 1rpx solid #bfbfbf;">
+                            <text wx-if="{{array.length > 5}}" class="pwd_hide">●</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="number">
+                    <view bindtap="getPassword" data-value="1" class="password" style="border-left: 0;">1</view>
+                    <view bindtap="getPassword" data-value="2" class="password">2</view>
+                    <view bindtap="getPassword" data-value="3" class="password">3</view>
+                    <view bindtap="getPassword" data-value="4" class="password" style="border-left: 0;">4</view>
+                    <view bindtap="getPassword" data-value="5" class="password">5</view>
+                    <view bindtap="getPassword" data-value="6" class="password">6</view>
+                    <view bindtap="getPassword" data-value="7" class="password" style="border-left: 0;">7</view>
+                    <view bindtap="getPassword" data-value="8" class="password">8</view>
+                    <view bindtap="getPassword" data-value="9" class="password">9</view>
+                    <view bindtap="reset" class="password" style="background: #EEEEEE;color: #fff;"></view>
+                    <view bindtap="getPassword" data-value="0" class="password">0</view>
+                    <view bindtap="backspace" class="password" style="background: #EEEEEE;color: #fff;"><span class="icon iconfont iconcs-sc-1" style="font-size: 50rpx;color: #FFFFFF;"></span></view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

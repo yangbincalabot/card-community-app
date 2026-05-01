@@ -1,0 +1,17 @@
+<!--pages/erweima/index.wxml-->
+<view class='main'>
+  <view class='er'>
+    <view class='img'>
+      <image src='{{ codeImage }}'></image>
+    </view>
+    <view class='btn'>
+      <button bindtap="downloadFile">保存二维码</button>
+    </view>
+  </view>
+  <view class='text'>
+    <view class='tui'><i></i>推广说明</view>
+    <view class='content'>
+        {{ description }}
+    </view>
+  </view>
+</view>

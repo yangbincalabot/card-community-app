@@ -1,0 +1,57 @@
+<!--pages/discover/apply/confirm/index.wxml-->
+<view class='main' hidden='{{is_hidden}}' >
+  <view class='title1'>活动信息</view>
+  <view class='content'>
+    <view class='c'>
+      <view class='c1'>
+        <view class='img'>
+          <image src='{{activityDetail.cover_image}}'></image>
+        </view>
+        <view class='text'>
+          <view class='t1'>{{activityDetail.title}}</view>
+          <view class='t2'>{{activityDetail.activity_time}}<i>{{activityDetail.day_of_week}}{{activityDetail.time_division}}</i></view>
+          <view class='t3'>{{activityDetail.address_title}}{{activityDetail.exact_address}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='ct'>
+    <view class='amount'>
+      报名人信息<i>共{{total_people}}人（男{{total_man_num}}人，女{{total_woman_num}}人）</i>
+    </view>
+    <view class='amount_content'  wx:for='{{new_group}}' wx:key='item' wx:for-item='item' >
+      <view class='c1'>{{item.name}}
+      <i class='i1' wx:if='{{activityDetail.fee>0}}'>￥{{activityDetail.fee}}</i>
+      <i class='i1' wx:else>免费</i>
+      <i class='i2'>X{{item.choose.length}}人</i></view>
+      <view class='people'>
+        <view class='title'>报名人</view>
+        <view class='people_msg'>
+          <view class='m'  wx:for="{{item.choose}}" wx:key='ikey' wx:for-item='ikey'>
+            {{ikey.name}}<i class="icon iconfont {{ikey.sex==1?'iconnan':'iconnv'}} i1" style="color:{{ikey.sex==1?'rgb(117,187,252)':'rgb(252,117,148)'}}"></i>{{ikey.phone}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='pay_c'>
+      <view class='pay' wx:if='{{total_price>0}}'>待支付：<i>{{total_price}}</i>元</view>
+      <view class='pay' wx:else><i>免费</i></view> 
+    </view>
+  </view>
+  <view class='name_content'>
+    <view class='name'>
+      <view class='n1'>紧急联系人</view>
+      <text class='n2'> {{postData.urgent_contact}}</text>    
+    </view>
+  </view>
+  <view class='phone_content'>
+    <view class='phone'>
+      <view class='p1'>联系人手机</view>
+      <text class='p2'>{{postData.phone}}</text>    
+    </view>
+  </view>
+  <view class='payment' bindtap="payment" >
+    确定
+  </view>
+</view>
+

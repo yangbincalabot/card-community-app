@@ -1,0 +1,762 @@
+/* pages/commoditybox/commodityDetails/index.wxss */
+page{
+    background-color: #f5f7f9;
+  }
+  .commodityDetails-box{
+    position: relative;
+  }
+  .commodityDetails-bg image{
+    width: 100%;
+    height: 650rpx;
+  }
+  
+  .banner{
+    height: 650rpx;
+    position: relative;
+  }
+  swiper{
+    height: 100%;
+  }
+  .banner image{
+    width: 100%;
+    height: 650rpx;
+  }
+  .commodityDetails-pod{
+    position: absolute;
+    top: 600rpx;
+    left: 0rpx;
+    
+  }
+  .pod-top{
+    margin: 0 25rpx;
+    background-color: #fff;
+    border-radius: 15rpx;
+    padding: 0 25rpx;
+    width: 650rpx;
+  }
+  .pod-top-fx{
+    padding-top: 20rpx;
+    margin-bottom: 25rpx;
+    text-align: right;
+  }
+  .pod-top-fx image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+  }
+  .pod-top-name{
+    font-size: 30rpx;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25rpx;
+  }
+  .pod-top-tit{
+    font-size: 24rpx;
+    color: #adadad;
+    text-align: center;
+    margin-bottom: 25rpx;
+  }
+  .pod-top-jg{
+    font-size: 35rpx;
+    color: #ff8a00;
+    text-align: center;
+    font-weight: 800;
+  }
+  .pod-top-zl{
+    width: 500rpx;
+    margin: 0 auto;
+    padding: 60rpx 0 90rpx 0;
+  }
+  .pod-top-list{
+    display: flex;
+    /* width: 500rpx; */
+    white-space:nowrap;
+    justify-content: center;
+  }
+  .pod-top-zl scroll-view{
+    width: 500rpx;
+  }
+  .pod-top-list view{
+    width: 100rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background-color: #f5f5f5;
+    flex-shrink: 0;
+    margin-right: 40rpx;
+    border-radius: 15rpx
+  }
+  .pod-top-zl view{
+    width: 100rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background-color: #f5f5f5;
+    flex-shrink: 0;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+    border-radius: 15rpx;
+    display: inline-block;
+  }
+  .active{
+    width:185rpx !important;
+    height: 60rpx;
+    color: #fff;
+    background: linear-gradient(to right,#fda502,#ff7d00);
+  }
+  .pod-top-cn{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 45rpx 45rpx;
+    color: #555555;
+    font-size: 26rpx;
+  }
+  .pod-top-cn-left{
+    display: flex;
+    align-items: center;
+  }
+  .pod-top-cn .pod-top-cn-bz{
+    width: 35rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+  }
+  .pod-top-cn .pod-top-cn-dian{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .pod-top-cn .pod-top-cn-t1{
+    margin-right: 35rpx;
+  }
+  .pod-top-cn-right .icon-jiantouzuo{
+    font-size: 26rpx;
+  }
+  .pod-comment{
+    background-color: #fff;
+    margin: 20rpx 0;
+    padding: 35rpx 25rpx;
+  }
+  .pod-comment .pod-comment-tit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pod-comment-tit .pod-comment-tit-left{
+    font-size: 28rpx;
+    color: #333333;
+  }
+  .pod-comment-tit .pod-comment-tit-right{
+    font-size: 24rpx;
+    color: #ff6f21;
+    align-items: center;
+  }
+  .pod-comment-tit .pod-comment-tit-right .icon-jiantouzuo{
+    font-size: 22rpx !important;
+    color: #ff6f21;
+    margin-left: 5rpx;
+  }
+  .pod-comment-tab-xx{
+    display: flex;
+    align-items: center;
+    margin-top: 30rpx;
+  }
+  .pod-comment-tab-xx image{
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+    margin-bottom: 10rpx;
+  }
+  .pod-comment-tab-pj{
+    font-size: 26rpx;
+    line-height: 45rpx;
+    margin-bottom: 20rpx;
+  }
+  .pod-comment-tab-sj{
+    color:#999999
+  }
+  .pod-parameter{
+    background-color: #fff;
+    padding: 25rpx;
+  }
+  .pod-parameter-v{
+    display: flex;
+  }
+  .pod-parameter-v view{
+    width: 50%;
+    padding-left: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #c5c5c5;
+    color: #c5c5c5;
+  }
+  .pod-parameter .pod-parameter-v:nth-of-type(1) view,.pod-parameter .pod-parameter-v:nth-of-type(2) view{
+    border-bottom: 0;
+  }
+  .pod-parameter .pod-parameter-v:nth-of-type(1) view:nth-of-type(1),.pod-parameter .pod-parameter-v:nth-of-type(2) view:nth-of-type(1),.pod-parameter .pod-parameter-v:nth-of-type(3) view:nth-of-type(1){
+    border-right: 0;
+  }
+  .pod-parameter-img image{
+     width: 100%;
+     height: 900rpx;
+     display: block;
+  }
+  .pod-recommend{
+    background-color: #fff;
+    padding: 20rpx 25rpx 120rpx;
+    margin-top: 20rpx;
+  }
+  .pod-recommend-tit{
+    background: url('http://szdbi.oss-cn-shenzhen.aliyuncs.com/shuiguozhibo/mine_bj_03.png') no-repeat;
+    background-size: 100% 100%;
+    width: 140rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 60rpx;
+  }
+  
+  .pod-recommend .goods-box-list{
+    display: flex;
+  }
+  .pod-recommend .goods-box-list .commodity-tab{
+    margin-right: 35rpx;
+  }
+  .pod-recommend .goods-box-list scroll-view{
+    width: 700rpx;
+  }
+  .goods-list-scroll{
+    display: flex;
+  }
+  
+  .commodity-tab .commodity-tab-img image{
+    width: 210rpx;
+    height: 210rpx;
+  }
+  .commodity-tab .commodity-tab-name{
+   font-size: 24rpx;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+   margin-bottom: 15rpx;
+   width: 210rpx;
+   height: 38px;
+  }
+  .commodity-tab .commodity-tab-xx{
+   display: flex;
+   justify-content: space-between;
+  }
+  .commodity-tab-xx-left{
+   color: #ff9f42;
+   font-size: 22rpx;
+  }
+  .commodity-tab-xx-right{
+   font-size: 22rpx;
+   height: 32rpx;
+   line-height: 32rpx;
+   color: #fff;
+   background: linear-gradient(to right,#D62919,#eb3727);
+   padding-left: 10rpx;
+   padding-right: 10rpx;
+   border-radius: 15rpx;
+  }
+  .commodity-tab-xx .icon-jia{
+    color: #96be73;
+    font-size: 28rpx;
+  }
+  .commodityDetails-bar{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
+  }
+  .commodityDetails-bar-sc,.commodityDetails-bar-gwc{
+    width: 120rpx;
+    text-align: center;
+  }
+  .commodityDetails-bar-sc .icon-shoucang,.commodityDetails-bar-gwc .icon-gou_wu_che2{
+    margin-top: 10rpx !important;
+    margin-bottom: 5rpx;
+  }
+  .commodityDetails-bar-sc-text,.commodityDetails-bar-gwc-text{
+    font-size: 20rpx;
+  }
+  .commodityDetails-bar .gwc-btn{
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 250rpx;
+    text-align: center;
+    background-color: #D62919;
+    color: #fff;
+    font-size: 28rpx;
+  }
+  .commodityDetails-bar  .gm-btn{
+    height: 100rpx;
+    line-height: 100rpx;
+    flex: 1;
+    text-align: center;
+    background-color: #D62919;
+    color: #fff;
+    font-size: 28rpx;
+  }
+  
+  .indexChange{
+    position: absolute;
+    bottom: 60rpx;
+    right: 30rpx;
+    z-index: 2;
+    padding: 0 10rpx;
+    border-radius: 30rpx;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 32rpx;
+    text-align: center;
+  }
+  .pod-top-fx .shareBtn{
+    width: 100rpx;
+    height: 40rpx;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    background-color:rgba(0,0,0,0) ;
+    border-radius: 8rpx;
+    /* line-height: 42rpx; */
+    /* margin-left: 10rpx; */
+    /* background: #e6e6e6; */
+    color: #9A9A9A;
+    /* background: url(http://szdbi.oss-cn-shenzhen.aliyuncs.com/shuiguozhibo/fx.png) no-repeat  center 100% 100%; */
+  }
+  
+  .rich-img{
+    width: 100%;
+    height: auto;
+  }
+  video{
+    width: 100%;
+    height: 650rpx;
+  }
+  
+  .banner .medioSwitch {
+    position: absolute;
+    bottom: 60rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .banner .medioSwitch .item {
+    font-size: 23rpx;
+    color: #000000;
+    text-align: center;
+    /* padding: 6rpx 16rpx; */
+    background: #FFFFFF;
+    border-radius: 20rpx;
+    width: 100rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+  }
+  
+  .banner .medioSwitch .video {
+    margin-right: 18rpx;
+  }
+  
+  .banner .medioSwitch .item.activemedio {
+    background: #D62919;
+    color: #fff;
+    border: none !important
+  }
+  
+  .priceDesc{
+    margin-top: 20rpx;
+    background: #fff;
+    padding: 30rpx;
+    font-weight: bold;
+  }
+  .priceDesc text{
+    font-size: 28rpx;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15rpx;
+  }
+  .priceDesc .desc{
+    font-size: 24rpx;
+    color: #666;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+  }
+  .priceDesc .desc.none{
+    display: none;
+  }
+  .priceDesc i{
+    font-size: 25rpx;
+    color: #000;
+    margin-right: 6rpx;
+    margin-bottom: 10rpx;
+  }
+  .loadMore{
+    font-size: 25rpx;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    padding: 10rpx 0;
+  }
+  
+  .pop-up{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .pop-share{
+    width: 750rpx;
+    height: 365rpx;
+    background: #ffffff;
+    border-radius: 40rpx 40rpx 0 0;
+    position: relative;
+  }
+  .share_title{
+    margin-top: 39rpx;
+      text-align: center;
+      font-size: 36rpx;
+      /* color: #; */
+      font-weight: bold;
+  }
+  .share_hint{
+    width: 630rpx;
+    height: 1rpx;
+    background: #E5E5E5;
+    margin: 26rpx auto;
+  }
+  .share_btn{
+    width: 500rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 62rpx;
+  }
+  .share_btn button{
+    width: 240rpx;
+    font-size: 24rpx;
+    color: #999999;
+    background: #ffffff;
+    line-height: 60rpx;
+    margin:0;
+    padding: 0;
+  }
+  .iconshanchu1{
+    position: absolute;
+    top: 55rpx;
+    right: 55rpx;
+    font-size: 50rpx;
+    color: #666666;
+  }
+  .share_btn button image{
+    width: 64rpx;
+    height: 64rpx;
+  }
+  .pop-up-posters{
+    width: 690rpx;
+    z-index: 999;
+  }
+  .pop-up-posters .iconshanchu1{
+    font-size: 50rpx;
+    color: #ffffff;
+    text-align: right;
+  }
+  /* .posters_img{
+    width: 540rpx;
+    height: 780rpx;
+    margin: 10rpx auto;
+    background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/xinluzhineng/posters.png) no-repeat;
+    background-size: 100% 100%;  
+    padding-top: 110rpx;
+  } */
+  /* .product-box{
+    width:440rpx;
+    height:585rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0rpx 4rpx 11rpx 0rpx rgba(0, 0, 0, 0.13);
+    border-radius:35rpx;
+    margin: 0 auto;
+  }
+  .product_img{
+    width: 400rpx;
+    height: 400rpx;
+    margin:0 auto;
+    padding-top: 20rpx;
+  } */
+  /* .product_img image{
+    width: 400rpx;
+    height: 400rpx;
+    border-radius: 12rpx;
+  } */
+  .pro_price{
+    font-size: 36rpx;
+    color: #D62919;
+    text-align: center;
+    margin: 11rpx auto;
+  }
+  .product_title{
+    width: 380rpx;
+    margin: 0 auto;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    color: #000000;
+    text-align: center;
+  }
+  .code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32rpx auto;
+  }
+  .code_img image{
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .code_text{
+    font-size: 24rpx;
+    color: #333333;
+    margin-left: 14rpx;
+    line-height: 50rpx;
+  }
+  .code_hint{
+    font-size: 22rpx;
+    color: #999999;
+  }
+  
+  .product-hint{
+    font-size: 22rpx;
+    color: #FFFFFF;
+    margin: 11rpx auto;
+    text-align: center;
+  }
+  .pop-up-posters-box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    z-index: 1011;
+  }
+  .pop-up-posters-box .iconshanchu1{
+    color: #fff;
+  }
+  .pop-up-posters-box image{
+    width: 460rpx;
+    height: 750rpx;
+    display: block;
+    margin: 0 auto;
+  }
+  .pop-up-posters-img{
+    padding-top: 100rpx;
+  }
+  .pop-up-posters-bj{
+    background-color: #fff;
+  }
+  .mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+  }
+  .leaflet-box{
+    position: fixed;
+    top: 100rpx;
+    left: 105rpx;
+    /* background-color: #fff; */
+    z-index: 1000;
+  }
+  .leaflet-box .iconshanchu1{
+    width:50prx;
+    height: 50rpx;
+    color: #fff;
+    position: absolute;
+    right: -65rpx;
+    top: -65rpx;
+    font-size: 50rpx;
+  }
+  .leaflet-img image{
+    width: 540rpx;
+    height: 890rpx;
+  }
+  .leaflet-btn button{
+    width: 540rpx;
+    height: 82rpx;
+    background: #D62919;
+    border-radius: 12rpx;
+    margin-top: 30rpx;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 46rpx;
+  }
+  .leaflet-tit{
+    font-size: 22rpx;
+    color: #FFFFFF;
+    margin: 11rpx auto;
+    text-align: center;
+  }
+  .iconshanchu1 image{
+    width: 45rpx;
+    height: 45rpx;
+  }
+
+  @font-face {
+    font-family: 'iconfont';  /* project id 1772976 */
+    src: url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.eot');
+    src: url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.svg#iconfont') format('svg');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-shoucang1:before {
+    content: "\e662";
+  }
+  
+  .icon-shoucang:before {
+    content: "\e610";
+  }
+  
+  .icon-dian:before {
+    content: "\e60a";
+  }
+  
+  .icon-baozhang:before {
+    content: "\e714";
+  }
+  
+  .icon-jianpanshanchu:before {
+    content: "\e690";
+  }
+  
+  .icon-gou_wu_che2:before {
+    content: "\e619";
+  }
+  
+  .icon-shanchu:before {
+    content: "\e64e";
+  }
+  
+  .icon-arrLeft-fill:before {
+    content: "\e635";
+  }
+  
+  .icon-arrUp-fill-copy:before {
+    content: "\e606";
+  }
+  
+  .icon-jiantouyou:before {
+    content: "\e672";
+  }
+  
+  .icon-xuanzhong:before {
+    content: "\e6af";
+  }
+  
+  .icon-xuanzhongyuandian:before {
+    content: "\e61d";
+  }
+  
+  .icon-gengduo:before {
+    content: "\e605";
+  }
+  
+  .icon-zhibozhong2:before {
+    content: "\e837";
+  }
+  
+  .icon-jia:before {
+    content: "\e6c2";
+  }
+  
+  .icon-arrr:before {
+    content: "\e600";
+  }
+  
+  .icon-arrl:before {
+    content: "\e601";
+  }
+  
+  .icon-arrt:before {
+    content: "\e602";
+  }
+  
+  .icon-search:before {
+    content: "\e603";
+  }
+  
+  .icon-jiantouzuo:before {
+    content: "\e604";
+  }
+  
+  .icon-xuanzex:before {
+    content: "\e64b";
+  }
+  
+  .icon-xuanzhongx:before {
+    content: "\e64d";
+  }
+  
+  .icon-weizhi:before{
+    content: "\e6f8";
+  }
+  
+  .icon-jia1::before{
+    content: "\e698";
+  }
+  .icon-basic-guanbi-big::before{
+    content: "\e6b5";
+  }
+  .icon-kefu::before{
+    content: "\e62d";
+  }
+  
+  .icon-tubiaolunkuo-::before{
+    content: "\e607";
+  }
+  
+  .icon-tishi::before{
+    content: "\e632";
+  }

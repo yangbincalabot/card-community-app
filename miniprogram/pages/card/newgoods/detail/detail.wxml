@@ -1,0 +1,90 @@
+<!--pages/commoditybox/commodityDetails/index.wxml-->
+<view class="container">
+	<view class="commodityDetails-box">
+		<!-- <view class="commodityDetails-bg"><image src="{{resourceUrl+goods.iconPath}}"></image></view> -->
+		<view class="banner">
+			<swiper indicator-dots="{{indicatorDots}}"  current="{{bannerCurrent}}" bindchange="bindchange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+				<block wx:for="{{goods.image}}" wx:key="*this">
+					<swiper-item>
+						<view class="swiper-item">
+							<image  src="{{ item }}"></image>
+						</view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<view class="commodityDetails-pod">
+			<view class="pod-top">
+				<view class="pod-top-fx">
+					<button class="shareBtn"  bindtap="clickShare">
+						<image src="/images/share.png"></image>
+						<view>分享</view>
+					</button>
+				</view>
+				<view class="pod-top-name">{{goods.title}}</view>
+				<view class="pod-top-tit">
+                浏览量: {{ goods.views }}<text style="display: inline-block; width: 30rpx"></text>销量: {{ goods.sales }}</view>
+				<view class="pod-top-jg">¥ {{goods.price}}</view>
+				<!-- <view class="pod-top-zl"></view> -->
+
+	
+			</view>
+		
+			<view class="goodsDetail" style="padding: 35rpx 25rpx;">
+                {{ goods.content }}
+				<block wx:for="{{  goods.images }}" wx:key="index" style="margin-bottom:120rpx">
+                    <image src='{{ item }}'  mode="widthFix"></image>
+                </block>
+			</view>
+				<view class="priceDesc">
+				<text>价格说明</text>
+				<view>
+					<block wx:for="{{priceDesc}}" wx:key="index">
+						<view class="{{1<index && loadMore?'none':''}} desc"><i>{{item.title}}</i>{{item.desc}}</view>
+					</block>
+				</view>
+				<view wx:if="{{loadMore}}" bindtap="loadMore" class="loadMore">查看全部</view>
+			</view>
+			<view class="pod-recommend">
+				<!-- <view class="pod-recommend-tit">
+					推荐产品
+				</view>
+				<view class="goods-box-list">
+					<scroll-view scroll-x="{{true}}">
+						<view class="goods-list-scroll">
+							<block wx:for="{{limitedTimeData}}" wx:item='item' wx:key="key">
+								<view data-goods-id="{{item.id}}" bindtap="commodityDetailsJump" class="commodity-tab">
+									<view class="commodity-tab-img">
+										<image src="{{resourceUrl+item.iconPath}}"></image>
+									</view>
+									<view class="commodity-tab-name">
+										{{item.name}}
+									</view>
+									<view class="commodity-tab-xx">
+										<view class="commodity-tab-xx-left">￥{{item.price}}/{{item.priceName}}</view>
+										<view catchtap="saveShopcart" data-price-id="{{item.priceId}}" class="icon iconfont icon-jia"></view>
+									</view>
+								</view>
+							</block>
+						</view>
+					</scroll-view>
+				</view> -->
+			</view>
+
+			<view class="commodityDetails-bar">
+           <view class="commodityDetails-bar-sc" bindtap="toCart">
+              <view class="icon iconfont icon-shoucang"></view>
+              <view class="commodityDetails-bar-sc-text">收藏</view>
+           </view>
+           <view bindtap="toCart" class="commodityDetails-bar-gwc">
+              <view class="icon iconfont icon-gou_wu_che2"></view>
+              <view class="commodityDetails-bar-gwc-text">购物车</view>
+           </view>
+           <view class="gwc-btn" bindtap="toCart">加入购物车</view>
+           <view class="gm-btn" bindtap="onBuy">立即购买</view>
+        </view>
+		</view>
+	</view>
+  <!-- 分享 -->
+
+</view>

@@ -1,0 +1,66 @@
+<view class="main" hidden="{{ hidden }}">
+  <view class="ct_box">
+    <view class="ct">
+      <view class="ct_left">
+        <image src="{{ association.image }}"></image>
+        <view class="text">
+          <view class="firm"><text>{{ association.name }}</text><text bindtap="addSociety"  wx:if="{{ isJoined === false }}">加入协会</text></view>
+          <view class="firm_ct">企业行业分类 : {{ association.company.industry_name ? association.company.industry_name : '未设置'}}</view>
+          <view class="firm_ct">企业地址：{{ association.company.address_title ? association.company.address_title : '未设置'}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="url">
+    <view class="url_box">
+      企业官网
+      <span bindtap="clipboard" data-value="{{ association.company.website ?  association.company.website : '' }}">{{ association.company.website ?  association.company.website : '未填写' }}</span>
+    </view>
+  </view>
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">协会简介</view>
+    <!-- <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">供需</view> -->
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">服务介绍</view>
+    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">会员墙</view>
+    <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">联系我们</view>
+  </view>
+  <view class="synopsis {{currentTab==0?'show':'hidden'}}">
+    <view class="synopsis-img">
+      <block wx:for="{{ association.images }}" wx:key="index">
+        <image src="{{ item }}"></image>
+      </block>
+    </view>
+    <view class="synopsis-tet">
+       <text>{{ association.desc }}</text>
+    </view>
+  </view>
+  <view class="{{currentTab==1?'show':'hidden'}}">
+    <view class="synopsis-img">
+
+      <block wx:for="{{ association.service_images }}" wx:key="index">
+        <image src="{{ item }}"></image>
+      </block>
+
+    </view>
+    <view class="synopsis-tet">
+      <text>{{ association.service_desc }}</text>
+    </view>
+  </view>
+  <view class="{{currentTab==2?'show':'hidden'}}">
+     <view class="member-list">
+       <block wx:for="{{ association.member_wall }}" wx:key="index">
+        <view class="member-tab"><image src="{{ item }}"></image></view>
+      </block>
+     </view>
+  </view>
+  <view class="{{currentTab==3?'show':'hidden'}}">
+    <view class="contact-box">
+      <view>{{ association.contact_us }}</view>
+    </view>
+  </view>
+
+
+   <!-- <view class="add" >
+        <view class="icon iconfont iconjia1"></view>
+    </view> -->
+</view>

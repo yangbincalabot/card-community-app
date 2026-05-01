@@ -1,0 +1,39 @@
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  width: 726rpx;
+  height: 344rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/account_banner.png) no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  margin: 0 auto;
+}
+.main .header .text{
+  width: 670rpx;
+  padding: 148rpx 0 0 47rpx;
+}
+.main .header .text .text1{
+  font-size: 40rpx;
+  color: rgb(52,52,52);
+}
+.main .header .text .text2{
+  font-size: 60rpx;
+  color: rgb(52,52,52);
+  margin-top: 20rpx;
+}
+.main .account_content{
+
+}
+.main .account_content .a_ct{
+  width: 690rpx;
+  height: 175rpx;
+  border-bottom: 2rpx solid rgb(242,242,242);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 36rpx;
+  color: rgb(52,52,52);
+}

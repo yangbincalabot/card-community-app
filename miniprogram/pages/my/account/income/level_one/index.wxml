@@ -1,0 +1,41 @@
+<view class='main'>
+  <view class='header'>
+    <view class='text'>
+      <view class='text_row1'>
+        <view class='t1'>{{ accountDetail.total_revenue }}</view>
+        <view class='t2'>累计收益（元）</view>
+      </view> 
+      <view  class='text_row2'>
+        <view class='t'>
+          <view class='t1'>{{ accountDetail.reward_money }}</view>
+          <view class='t2'>推荐代理奖励（元）</view>                  
+        </view>
+      </view>     
+    </view>
+  </view>
+  <view class="swiper-tab">
+    <view class='tab'>
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+        已入账
+      </view>
+    </view>    
+  </view> 
+  <view class = "{{currentTab == 0 ? 'show':'hidden'}}" >
+      <scroll-view class='content'>
+        <block wx:for="{{ logs }}" wx:key="index">
+          <view class='c'>
+            <view class='c-left'>
+              <view class='text'>
+                <view class='names'>{{ item.type_text }}</view>
+                <view class='date'>{{ item.remark }}</view>
+                <view class='time'>{{ item.update_at }}</view>
+              </view>
+              <view class='c-right'>
+                <view class='exp'>+{{ item.money }}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class='main'>
+    <view class='title'>
+        仅支持绑定本人的储蓄卡
+    </view>
+    <form bindsubmit="formSubmit">
+    <view class='name_content'>
+        <view class='name'>
+            <view class='n1'>持卡人：</view>
+            <input class='n2' name="card_name" value="{{ formData.card_name }}" placeholder='请输入姓名' placeholder-style='placeholder'></input>
+        </view>
+    </view>
+    <view class='name_content'>
+        <picker range="{{ banks }}" range-key="name" bindchange="changeBank">
+            <view class='name'>
+                <view class='n1'>银行发卡行：</view>
+                <input class='n2' placeholder='请选择' value="{{ select_bank_name }}" disabled='true' placeholder-style='placeholder'></input>
+                <i class='icon iconfont iconyoujiantou'></i>
+            </view>
+        </picker>
+    </view>
+    <view class='name_content'>
+        <view class='name'>
+            <view class='n1'>卡号：</view>
+            <input class='n2' name="card_number" value="{{ formData.card_number }}" placeholder='请输入银行卡号' placeholder-style='placeholder'></input>
+        </view>
+    </view>
+    <view>
+        <button form-type="submit" class="btn">保存</button>
+    </view>
+    <!-- 编辑银行卡下面按钮是删除按钮 -->
+     <view>
+         <button bindtap="deleteBank" type="warn" class='btn'>删除银行卡</button>
+    </view>
+    </form>
+</view>

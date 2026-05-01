@@ -1,0 +1,32 @@
+<!--pages/card/memberRZ/index.wxml-->
+<view class='main' hidden="{{ isHidden }}">
+  <block wx:for="{{ list }}" wx:key="index">
+    <view class="userCard">
+      <view class="card_bg" bindtap="changeUser" data-id="{{ item.id }}">
+        <view class="qiehuan selected" wx:if="{{item.id == currentId}}">已选择</view>
+        <view class="qiehuan" wx:else>切换为此名片</view>
+        <view class="card_ct">
+          <view class="ct1">{{ item.carte.company_name ? item.carte.company_name:'未设置'}}</view>
+          <view class="ct2">{{ (item.carte && item.carte.name )? item.carte.name: item.nickname }}
+            <span>{{ item.carte.position ?item.carte.position:'未设置' }}</span>
+          </view>
+          <view class="ct3">
+            <image src="/images/user_icon1.png"></image>
+            <text>{{ item.carte.phone ? item.carte.phone : '未设置' }}</text>
+          </view>
+          <view class="ct3">
+            <image src="/images/user_icon3.png"></image>
+            <text>{{ item.carte.email ?item.carte.email:'未设置' }}</text>
+          </view>
+          <view class="ct3">
+            <image src="/images/user_icon2.png"></image>
+            <text>{{ item.company_card.address_title?item.company_card.address_title:(item.carte.address_title ?item.carte.address_title : '未设置') }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="sub-btn" bindtap="postMembership">
+       提交
+  </view>
+</view>

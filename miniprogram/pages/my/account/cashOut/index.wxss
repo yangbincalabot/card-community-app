@@ -1,0 +1,168 @@
+/* pages/mine/myaccount/tixian/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 30rpx;
+}
+.main .title{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+}
+.main .bankcard{
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: rgb(102,102,102);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.main .bankcard .add{
+  margin-left: 30rpx;
+}
+.main .bankcard .iconyoujiantou{
+  margin-right: 30rpx;
+}
+.main .title2{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+  margin-top: 20rpx;
+}
+.main .money{
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.main .money .money_account{
+  width: 690rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  font-size: 50rpx;
+  color: rgb(51,51,51);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main .money input{
+  font-size: 50rpx;
+  height: 150rpx;
+  position: relative;
+  right: 80rpx;
+}
+.account_box{
+  width: 690rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 32rpx;
+  color: #FFA011;
+}
+.main .money .account{
+  font-size: 26rpx;
+  color: rgb(153,153,153);
+}
+.main .btn{
+  width: 590rpx;
+  height: 94rpx;
+  background: rgb(80,166,249);
+  border-radius: 10rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 90rpx;
+}
+
+/* 提现秘密css */
+.pwd_box{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  background:rgb(0,0,0,0.5);
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+.pwd_six_title{
+  width: 690rpx;
+  display: flex;
+  margin: 20rpx auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #1e1e1e;
+  position: relative;
+}
+.pwd_six_title .icon{
+  position: absolute;
+  left: 0;
+}
+.pwd_six_box{
+  display: flex;
+  width: 710rpx;
+  justify-content: center;
+  margin:5% auto;
+  text-align: center;
+}
+.box{
+  /* flex: 1; */
+}
+.box_border{
+  width: 110rpx;
+  height: 80rpx;
+  border: 1px solid #bfbfbf;
+  border-right:0;
+  margin: auto;
+  /* line-height:1; */
+}
+.pwd_hide{
+  height: 80rpx;
+  font-size:50rpx;
+  display: flex;
+  line-height: 40rpx;
+  align-items: center;
+  justify-content: center;
+}
+.number{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.password{
+  width: 25%;
+  flex-grow:1;
+  padding: 3%;
+  font-size:40rpx;
+  border: 1px solid #eee;
+  border-bottom: 0;
+  border-right: 0;
+
+}
+
+.password:active{
+  background: #eee;
+}
+/* 密码框 */
+.masks{
+  bottom:0%;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  transition:.5s;
+}
+.bot{bottom: 0;}

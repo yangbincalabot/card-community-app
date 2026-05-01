@@ -1,0 +1,22 @@
+<!--微信授权-->
+
+  <view class='header'>
+    <view  class="wechat-logo">
+      <i class="iconfont iconweixin1 font-size-190"></i>
+    </view>
+  </view>
+
+  <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom notlog' bindtap="notlog" >
+    暂不登录
+  </button>
+  <button class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{ auth_phone }}">
+    授权登录
+  </button>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo" wx:else>
+    授权登录
+  </button>
+<!--<view wx:else>请升级微信版本</view>-->

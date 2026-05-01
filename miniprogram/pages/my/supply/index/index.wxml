@@ -1,0 +1,35 @@
+<!--pages/my/supply/index/index.wxml-->
+<view class='main'>
+  <view class='review'>
+    <block wx:for="{{ list }}" wx:key="item">
+      <view class='review_content' >
+        <view class='review_content_text'>
+          <view class='text'>
+            <view class='title' bindtap='navigateToUrl' data-url="/pages/supply/detail/index?id={{item.id}}">
+              {{ item.content }}
+            </view>
+            <view class='date'>
+              <span> 浏览量<i>{{ item.visits }}</i></span>
+              <span> 点赞量<i>{{ item.likes }}</i></span>
+            </view>
+          </view>
+        </view>
+        <view class='opn'>
+          <view class='btn'>
+            <block wx:if="{{ item.status == 1 }}">
+              <view class='btn1' bindtap="delete" data-id="{{item.id}}">删除</view>
+              <view class='btn2' bindtap='navigateToUrl' data-url="../create/index?id={{item.id}}" >编辑</view>
+            </block>
+            <block wx:elif="{{ item.status == 2 }}">
+              <view class='btn2'>审核中</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view bindtap='navigateToUrl' data-url="../create/index" class="addSupply">
+    <view class="icon iconfont iconjia1"></view>
+  </view>
+</view>
+

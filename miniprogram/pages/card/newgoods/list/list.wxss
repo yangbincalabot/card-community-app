@@ -1,0 +1,142 @@
+page{
+    background-color: #f5f7f9;
+  }
+  .commodityList-nav .scroll-box{
+    display: flex;
+    width: 700rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 25rpx;
+    flex-wrap: nowrap;
+    background-color: #fff;
+  }
+  .commodityList-nav{
+    /* border-top: 1rpx solid #e0e0e0;
+    border-bottom: 1rpx solid #e0e0e0; */
+    margin-top: 2rpx;
+  }
+  
+  .commodityList-nav .scroll-box view{
+    white-space: nowrap;
+    margin-right: 40rpx;
+    padding: 0 10rpx;
+    font-size: 26rpx;
+    color: #333;
+    text-align: center;
+  }
+  .active{
+    font-weight: 800 !important;
+    color: #D62919 !important;
+  }
+  
+  .filter-box{
+    display: flex;
+    height: 80rpx;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60rpx;
+    background-color: #fff;
+    margin: 2rpx 0;
+  }
+  .filter-box-jg{
+    position: relative;
+  }
+  .filter-box-jg .icon-arrLeft-fill{
+    font-size: 26rpx;
+    position: absolute;
+    top: 20rpx;
+    right: -13rpx;
+    color: #333;
+  }
+  .filter-box-jg .icon-arrUp-fill-copy{
+    font-size: 26rpx;
+    position: absolute;
+    top: 33rpx;
+    right: -13rpx;
+    color: #333;
+  }
+  .action{
+    color: #D62919 !important;
+  }
+  .coloraction{
+    color: #D62919 !important;
+  }
+  .filter-box-view{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 15rpx;
+    color: #333;
+  }
+  .commodity-list-box{
+    padding-bottom: 30rpx;
+  }
+  .commodity-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 25rpx;
+    justify-content: space-between;
+  }
+  .commodity-list-tab{
+    width: 336rpx;
+    margin-top: 25rpx;
+    background-color: #fff;
+    padding-bottom: 30rpx;
+  }
+  .commodity-list-tab-ing image{
+    width: 336rpx;
+    height: 335rpx;
+    display: block;
+  }
+  .commodity-list-tab-text{
+    margin-top: 10rpx;
+    line-height: 35rpx;
+    padding: 0 25rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: #333;
+  }
+  .commodity-list-tab-bottom{
+    display: flex;
+    padding: 0 25rpx;
+    justify-content: space-between;
+    margin-top: 25rpx;
+  }
+  .commodity-list-tab-bottom-left text:nth-of-type(1){
+    font-size: 28rpx;
+    color: #ff7200;
+    margin-right: 10rpx;
+  }
+  .commodity-list-tab-bottom-left text:nth-of-type(2){
+    font-size: 22rpx;
+    color: #b7b7b7;
+  }
+  .commodity-list-tab-bottom .icon-gou_wu_che2{
+    font-size: 35rpx;
+    color: #ff7200;
+  }
+  .searchInput{
+    box-sizing: border-box;
+    height: 120rpx;
+    padding: 25rpx 20rpx;
+    background-color: #fff;
+  }
+  .searchInput input{
+    background-color: #f8f8f8;
+    border-radius: 30rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    padding: 0 20rpx;
+  }
+  .commodity-tab-img-tip{
+    background-color: #04ABFF;
+    color: #FFF;
+    padding: 0rpx 10rpx;
+    border-radius: 10rpx;
+    position: absolute;
+    bottom: 0rpx;
+    left: 0rpx;
+  }
+  

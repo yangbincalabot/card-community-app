@@ -1,0 +1,69 @@
+<view class="main" hidden="{{ hidden }}">
+  <view class="ct_box">
+    <view class="ct">
+      <view class="ct_left">
+        <image src="{{ logo_url }}"></image>
+        <view class="text">
+          <view class="firm">{{ companyCard.company_name ? companyCard.company_name : '未设置' }}</view>
+          <view class="firm_ct">行业分类 : {{ companyCard.industry_name ? companyCard.industry_name : '未设置'}}</view>
+          <view class="firm_ct">地址：{{ companyCard.address_title ? companyCard.address_title : '未设置'}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="url">
+    <view class="url_box">
+      企业官网
+      <span bindtap="clipboard" data-value="{{ companyCard.website ?  companyCard.website : '' }}">{{ companyCard.website ?  companyCard.website : '未填写' }}</span>
+    </view>
+  </view>
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">公司介绍</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">供需</view>
+  </view>
+  <view class="{{currentTab==0 ? 'show':'hidden'}}">
+    <view class="introduce">
+      <view class="introduce_ct">
+        {{ companyCard.introduction ?  companyCard.introduction : '未填写' }}
+      </view>
+      <view class="introduce_img">
+        <block wx:for="{{ companyCard.images }}" wx:key="index">
+                    <image src="{{ item }}" mode="widthFix"></image>
+                </block>
+      </view>
+    </view>
+  </view>
+   <view class="{{currentTab==1 ? 'show':'hidden'}}">
+    <view class="supply_box">
+<block wx:for="{{ companySupplies }}" wx:key="index">
+
+      <view class="supply">
+        <view class="supply_left"  bindtap="navigatorToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+          <image src="{{ item.carte.avatar }}"></image>
+        </view>
+        <view class="supply_right">
+          <view class="supply_name" bindtap="navigatorToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">
+             {{ item.carte.name }}
+            <span>{{ item.type_name }}</span>
+          </view>
+          <view class="supply_msg"> <span wx:if="{{ item.carte.position }}">{{ item.carte.position }} | </span>
+                        {{ item.carte.company_name }}</view>
+          <view class="supply_text"  bindtap="navigatorToUrl" data-url="../../supply/detail/index?id={{ item.id }}">{{ item.short_content }}</view>
+          <view class="supply_imgs"  bindtap="navigatorToUrl" data-url="../../supply/detail/index?id={{ item.id }}">
+            <block wx:for="{{ item.images }}" wx:key="index">
+                                <image src="{{ item }}"></image>
+                            </block>
+          </view>
+          <view class="supply_trivia">
+            <view>{{ item.visits }}查看</view>
+            <view class="supply_btn">
+              <view class="supply_btn1"  bindtap="changeLike" data-index="{{ index }}" data-id="{{ item.id }}"><i class="icon iconfont icondianzan"></i>{{ item.likes }}</view>
+              <view class="supply_btn2"  bindtap="onCall" data-index="{{ index }}">联系Ta</view>
+            </view>
+          </view>
+        </view>     
+      </view>
+</block>
+    </view>
+   </view>
+</view>

@@ -1,0 +1,42 @@
+<!--pages/dai/index.wxml-->
+<view class='main'>
+  <view class='header'>
+    <view class='header_one'>
+      <view class='img'>
+        <image src='{{ lowerInfo.to_user.avatar}}'></image>
+      </view>
+      <view class='name'>{{ lowerInfo.to_user.nickname }}</view>
+      <view class='firstname'>真实姓名：{{ lowerInfo.to_user.name }}</view>
+      <view class='job'>{{ lowerInfo.to_user.agent.name }}</view>
+    </view>
+    <view class='header_two'>
+      <view class='row1'>
+        <i class='icon iconfont iconphone_icon'></i>
+        18617176352
+        <span><i class='icon iconfont iconshijian'></i>{{ lowerInfo.to_user.agent_time }}</span>
+      </view>
+      <view class='row2'><i class='icon iconfont icondizhi'></i>{{ lowerInfo.to_user.apply_agents ? lowerInfo.to_user.apply_agents[0]['full_address'] : '' }}</view>
+    </view>
+  </view>
+  <view class='dai_content'>
+    <view class='title'>
+      <view class='left'><view class='l'></view>累计贡献收益：<i>+{{ lowerInfo.to_user.total_revenue }}</i></view>
+    </view> 
+    <view class='content'>
+        <block wx:for="{{ logs }}" wx:key="index">
+          <view class='c'>
+            <view class='c-left'>
+              <view class='text'>
+                <view class='names'>推荐奖励</view>
+                <view class='date'>{{ item.remark }}</view>
+                <view class='time'>{{ item.created_at }}</view>
+              </view>
+              <view class='c-right'>
+                <view class='exp'>+{{ item.money }}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+    </view>
+  </view>  
+</view>

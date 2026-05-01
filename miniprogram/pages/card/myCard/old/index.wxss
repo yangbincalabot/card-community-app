@@ -1,0 +1,234 @@
+/* pages/myCard/myCard.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: rgba(26,26,26, 1)
+}
+.main{
+  background:linear-gradient(180deg,rgba(37,37,37,1) 0%,rgba(26,26,26,1) 100%);
+}
+.card{
+  width: 690rpx;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 120rpx 0 40rpx 0;
+  padding: 28rpx 0;
+  padding-top: 80rpx;
+}
+.card_box{
+  width: 690rpx;
+  height: 330rpx;
+  background: linear-gradient(to bottom right,#0D0D0D,#424242);
+  border-radius: 120rpx 20rpx 0 0;  
+  margin: 0 auto;
+}
+.card_text{
+  width: 570rpx;
+  height: 330rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto; 
+}
+.card_text image{
+  width: 76rpx;
+  height: 76rpx;
+  margin-bottom: 36rpx;
+}
+.btn{
+  margin-bottom: 36rpx;
+  width:206rpx;
+  height:64rpx;
+  border-radius:10rpx;
+  border:2rpx solid rgba(255,193,99,1);
+  font-size: 32rpx;
+  color: #FFC163;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_view{
+  width: 690rpx;
+  background: #ffffff;
+  border-radius: 0 0 120rpx 20rpx;
+  padding-bottom: 32rpx;
+}
+.access{
+  width: 570rpx;
+  margin: 0 auto;
+  text-align: right;
+  padding: 12rpx 0;
+  font-size: 24rpx;
+  color: #A1A1A1;
+}
+.icondianzanliang{
+  margin-right: 5rpx;
+}
+.num{
+  font-size: 24rpx;
+  color: #FFC163;
+}
+.msg{
+  width: 570rpx;
+  margin-left: 68rpx;
+}
+.msg_box{
+  width: 570rpx;
+  display: flex;
+  align-items: center;
+}
+.msg_left image{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 90rpx;
+}
+.line{
+  width: 4rpx;
+  height: 58rpx;
+  background: #979797;
+  margin:0 30rpx 0 20rpx;
+}
+.msg_right{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #929292;
+}
+.name{
+  font-size: 36rpx;
+  color: #000000;
+  line-height: 60rpx;
+}
+.name span{
+  height:34rpx;
+  background:linear-gradient(180deg,rgba(143,143,143,1) 0%,rgba(0,0,0,1) 100%);
+  border-radius:17rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  padding: 5rpx 20rpx; 
+  margin-left: 58rpx;
+}
+.msg_view{  
+  display: flex;
+  align-items: center;
+  margin-left: 100rpx;
+}
+.iconshouji{
+  font-size: 44rpx;
+  color: #FFC163;
+}
+.msg_text{
+  width: 420rpx;
+  margin-left: 34rpx;
+  font-size: 24rpx;
+  color: #898989;
+  border-bottom: 1rpx solid #eeeeee;
+  line-height: 40rpx;
+  padding: 14rpx 0;
+}
+.email{
+  font-size: 32rpx;
+}
+.msg_ct{
+  font-size: 36rpx;
+  color: #000000;
+}
+.add{
+  font-size: 24rpx;
+}
+.iconweixin{
+  font-size: 44rpx;
+  color: #19CE4C;
+}
+.iconyouxiang{
+  font-size:30rpx;
+  color:#0067FB;
+}
+.iconlocation{
+  font-size: 40rpx;
+  color: #333333;
+}
+button{
+  width:454rpx;
+  height:90rpx;
+  background:linear-gradient(180deg,rgba(132,132,132,1) 0%,rgba(0,0,0,1) 100%);
+  border-radius:14rpx;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48rpx;
+}
+.title_left{
+  width:16rpx;
+  height:34rpx;
+  background:rgba(255,193,99,1);
+  border-radius:8rpx;
+  margin-right: 14rpx;
+}
+.title{
+  width: 690rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin: 20rpx auto;
+}
+.firmCard{
+  width:690rpx;
+  height:350rpx;
+  background:url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/card_bg.png) no-repeat;
+  background-size: 100%;
+  border-radius:12rpx;
+  margin: 20rpx auto;
+  text-align: center;
+  font-size: 40rpx;
+  color: #FFFFFF;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.introduce{
+  width:642rpx;
+  min-height:266rpx;
+  background:rgba(43,43,43,1);
+  border-radius:12rpx;
+  border:2rpx solid rgba(151,151,151,1);
+  margin: 20rpx auto;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  padding: 42rpx 24rpx;
+}
+.imgs{
+  width: 690rpx;
+  margin: 20rpx auto;
+}
+.imgs image{
+  width: 690rpx;
+  border-radius: 14rpx;
+}
+
+.collect_btn{
+  margin-bottom: 36rpx;
+  width:144rpx;
+  height:64rpx;
+  border-radius:10rpx;
+  border:2rpx solid rgba(255,193,99,1);
+  font-size: 32rpx;
+  color: #FFC163;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.share{
+  background:linear-gradient(180deg,rgba(255,202,123,1) 0%,rgba(255,156,6,1) 100%);
+}
+.iconfanhuix{  
+  color: #ffffff;
+}
+.back{
+  padding-top: 57rpx;
+  padding-left: 30rpx;
+}

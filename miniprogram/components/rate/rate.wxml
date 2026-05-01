@@ -1,0 +1,6 @@
+<!--components/rate/rate.wxml-->
+<view class="rate">
+  <block wx:for="{{max}}" wx:key="{{index}}">
+    <image data-index="{{index + 1}}" bindtap="_onClick" src="{{value_select>index?'https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%98%9F1%402x%20(1).png':'https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%98%9F%402x.png'}}"></image>
+  </block>
+</view>

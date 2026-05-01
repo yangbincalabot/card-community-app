@@ -1,0 +1,29 @@
+<view class='main'>
+    <view class='title'>
+        <view class='left'>
+            <view class='l'></view>购买我的商品：
+            <i>{{ total }}</i>人，右边为成交总金额</view>
+    </view>
+    <view class='content'>
+        <block wx:for="{{ orders }}" wx:key="index">
+            <navigator hover-class="none" url="/pages/card/other/index?id={{ item.user.carte.id }}">
+                <view class='c'>
+                    <view class='c-left'>
+                        <view class='img'>
+                            <image src='{{ item.user.avatar }}'></image>
+                        </view>
+                        <view class='text'>
+                            <view class='names'>{{ item.user.nickname }}</view>
+                            <view class='date'>最近成交：{{ item.newest_time }}</view>
+                        </view>
+                    </view>
+                    <view class='c-right'>
+                        <view class='exp'>+{{ item.total_price }}</view>
+                    </view>
+                </view>
+            </navigator>
+
+        </block>
+
+    </view>
+</view>

@@ -1,0 +1,191 @@
+<!--pages/houselist/index.wxml-->
+
+<view class='container'>
+
+    <view class="search-box">
+        <view class="swiper-beijing" bindtap="hideNav" hidden='{{isHidden}}'></view>
+
+        <view class='search'>
+            <view class='search-content'>
+                <view class='text'>
+                    <input placeholder='输入大厦名称搜索' value="{{searchKey}}" bindinput="setSearchInputValue"></input>
+                </view>
+                <view class='submit' bindtap="confirmSearch">搜索</view>
+            </view>
+        </view>
+
+
+        <!-- 下拉菜单   -->
+        <view id="swiper-tab">
+            <view class="swiper-tab">
+                <block wx:for="{{searchTabData}}" wx:key="index" wx:for-item="searchTabDataInfo">
+                    <view class="swiper-tab-list {{currentTab === index ? 'on' : ''}}" data-current="{{index}}" data-type="{{searchTabDataInfo.tab_type}}" bindtap="tabNav">{{searchTabDataInfo.title}}
+                        <i></i>
+                    </view>
+                </block>
+            </view>
+            <swiper current="{{currentTab}}" duration="1000" class="swiper-item" hidden='{{isHidden}}'>
+                <block wx:for="{{searchTabData}}" wx:key="index" wx:for-item="searchTabDataInfo">
+                    <block wx:if="{{searchTabDataInfo.child && searchTabDataInfo.tab_type == 'one_level'}}">
+
+                        <swiper-item>
+                            <view class="location_bottom" hidden="">
+                                <view class="{{(OneLevelData[searchTabDataInfo.type].currentOneLevelColumnId == 0) ? 'add_House' : 'add_city'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="0" bindtap="oneLevelSelectedFirst">不限</view>
+                                <block wx:for="{{searchTabDataInfo.child}}" wx:key="index" wx:for-item="searchTabDataChildInfo">
+                                    <view class="{{(OneLevelData[searchTabDataInfo.type].currentOneLevelColumnId == searchTabDataChildInfo.id) ? 'add_House' : 'add_city'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabDataChildInfo.id}}" bindtap="oneLevelSelectedFirst">{{searchTabDataChildInfo.name}}</view>
+                                </block>
+                            </view>
+                        </swiper-item>
+
+                    </block>
+                    <block wx:elif="{{searchTabDataInfo.child && searchTabDataInfo.tab_type == 'two_level'}}">
+                        <swiper-item>
+                            <view>
+                                <view class='qiehuannier'>
+                                    <view class="navn bc_white">
+                                        <view class="{{(TwoLevelData[searchTabDataInfo.type].currentTwoLevelColumnId == 0) ? 'red' : 'default'}}" bindtap="twoLevelSelectedFirst" data-leveltype="{{searchTabDataInfo.type}}" data-id="0">不限</view>
+                                        <block wx:for="{{TwoLevelData[searchTabDataInfo.type].TwoLevelColumnFirstData}}" wx:key="index" wx:for-item="searchTabDataChildInfo">
+                                            <view class="{{(TwoLevelData[searchTabDataInfo.type].currentTwoLevelColumnId == searchTabDataChildInfo.id) ? 'red' : 'default'}}" bindtap="twoLevelSelectedFirst" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabDataChildInfo.id}}">{{searchTabDataChildInfo.title}}</view>
+                                        </block>
+                                    </view>
+                                    <view id="rights">
+
+                                        <view class="show">
+                                            <view class="{{(TwoLevelData[searchTabDataInfo.type].currentTwoLevelSecondColumnId == 0) ? 'add_adress' : 'add_city'}}" data-id="0" data-leveltype="{{searchTabDataInfo.type}}" data-type="{{searchTabDataSecondInfo.type}}" bindtap="twoLevelSelectedSecond">不限</view>
+                                            <block wx:for="{{TwoLevelData[searchTabDataInfo.type].TwoLevelColumnSecondData}}" wx:key="index" wx:for-item="searchTabDataSecondInfo">
+                                                <view class="{{(TwoLevelData[searchTabDataInfo.type].currentTwoLevelSecondColumnId == searchTabDataSecondInfo.id) ? 'add_adress' : 'add_city'}}" data-id="{{searchTabDataSecondInfo.id}}" data-leveltype="{{searchTabDataInfo.type}}" data-type="{{searchTabDataSecondInfo.type}}"
+                                                    bindtap="twoLevelSelectedSecond">{{searchTabDataSecondInfo.name}}</view>
+                                            </block>
+                                        </view>
+
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                    <block wx:elif="{{searchTabDataInfo.child && searchTabDataInfo.tab_type == 'three_level'}}">
+                        <swiper-item>
+                            <view class="shaixuan">
+                                <view class='f_center'>
+                                    <block wx:for="{{ThreeLevelData[searchTabDataInfo.type].ThreeLevelColumnFirstData}}" wx:key="id" wx:for-item="searchTabDataChildInfo">
+                                        <view class="chose-txt {{(ThreeLevelData[searchTabDataInfo.type].currentThreeLevelColumnId == searchTabDataChildInfo.id) ? 'btn-primary' : 'btn-default'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabDataChildInfo.id}}" bindtap="threeLevelSelectedFirst">
+                                            <!--                                <view class="chose-txt" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabDataChildInfo.id}}" bindtap="threeLevelSelectedFirst">-->
+                                            <text class="chose-p">{{searchTabDataChildInfo.title}}</text>
+                                        </view>
+                                    </block>
+                                </view>
+                            </view>
+
+                            <view>
+                                <view class='qiehuannier'>
+                                    <view class="navn bc_white">
+                                        <view class="{{(ThreeLevelData[searchTabDataInfo.type].currentThreeLevelSecondColumnId == 0) ? 'red' : 'default'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="0" bindtap="threeLevelSelectedSecond">不限</view>
+                                        <block wx:for="{{ThreeLevelData[searchTabDataInfo.type].ThreeLevelColumnSecondData}}" wx:key="index" wx:for-item="searchTabDataChildInfo">
+                                            <view class="{{(ThreeLevelData[searchTabDataInfo.type].currentThreeLevelSecondColumnId == searchTabDataChildInfo.id) ? 'red' : 'default'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabDataChildInfo.id}}" bindtap="threeLevelSelectedSecond">{{searchTabDataChildInfo.name}}</view>
+                                        </block>
+                                    </view>
+                                    <view id="rights">
+                                        <view class="{{'show'}}">
+                                            <view class="{{(ThreeLevelData[searchTabDataInfo.type].currentThreeLevelThirdColumnId == 0) ? 'add_adress' : 'add_city'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="0" bindtap="threeLevelSelectedThird" data-name="北京">不限</view>
+                                            <block wx:for="{{ThreeLevelData[searchTabDataInfo.type].ThreeLevelColumnThirdData}}" wx:key="index_a" wx:for-item="searchTabSecondDataChildInfo">
+                                                <view class="{{(ThreeLevelData[searchTabDataInfo.type].currentThreeLevelThirdColumnId == searchTabSecondDataChildInfo.id) ? 'add_adress' : 'add_city'}}" data-leveltype="{{searchTabDataInfo.type}}" data-id="{{searchTabSecondDataChildInfo.id}}" bindtap="threeLevelSelectedThird"
+                                                    data-name="北京">{{searchTabSecondDataChildInfo.name}}</view>
+                                            </block>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+
+                    <block wx:elif="{{searchTabDataInfo.child && searchTabDataInfo.tab_type == 'more'}}">
+                        <swiper-item class="shaixuankuang">
+
+                            <block wx:for="{{searchTabDataInfo.child}}" wx:key="index" wx:for-item="searchTabDataChildInfo">
+                                <view class="shaixuan gengduo">
+                                    <span class="shuaixuantiaojian">{{searchTabDataChildInfo.title}}</span>
+                                    <view class="chose-txt {{(MoreSearchData[searchTabDataChildInfo.type].currentMoreId == 0) ? 'btn-primary' : 'btn-default'}}" data-leveltype="{{searchTabDataInfo.tab_type}}" data-type="{{searchTabDataChildInfo.type}}" data-id="0" bindtap="moreSelected">
+                                        <text class="chose-p">不限</text>
+                                    </view>
+                                    <block wx:for="{{searchTabDataChildInfo.child}}" wx:key="key" wx:for-item="searchTabSecondDataChildInfo">
+                                        <view class="chose-txt {{(MoreSearchData[searchTabDataChildInfo.type].currentMoreId == searchTabSecondDataChildInfo.id) ? 'btn-primary' : 'btn-default'}}" data-leveltype="{{searchTabDataInfo.tab_type}}" data-type="{{searchTabDataChildInfo.type}}" data-id="{{searchTabSecondDataChildInfo.id}}"
+                                            bindtap="moreSelected">
+                                            <text class="chose-p">{{searchTabSecondDataChildInfo.name}}</text>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+
+                            <view class="qingkong">
+                                <span class="tianjian" bindtap="resetMoreParams">清除条件</span>
+                                <p class="queren" bindtap="confirmSearch">确认</p>
+                            </view>
+                        </swiper-item>
+                    </block>
+
+                </block>
+            </swiper>
+        </view>
+    </view>
+
+
+
+
+    <view class='box_list'>
+
+
+        <block wx:for="{{buildings}}" wx:key="id" wx:for-item="buildingInfo">
+
+
+            <block wx:if="{{buildingInfo.type == 1}}">
+                <view class='box' data-id="{{buildingInfo.id}}" data-url="/pages/index/building/rent_info/index" bindtap="navigatorToUrl">
+                    <image src='{{ResourceRootUrl}}{{buildingInfo.airscape_url}}'></image>
+                    <view class='Introduction'>
+                        <view class='right'>
+                            <h2>{{buildingInfo.title_other}}</h2>
+                            <view class='area'>
+                                <i class="iconfont icon-location"></i>{{buildingInfo.trading_title}}</view>
+                            <view class='model'>
+                                <i class="iconfont icon-mayishangchengdaizhifudengicon10"></i>{{buildingInfo.acreage_min}}-{{buildingInfo.acreage_max}}m²</view>
+                            <view class='distance'>
+                                <i class="iconfont icon-ditie"></i>「{{buildingInfo.metro_title}}」 约 {{buildingInfo.metro_distance}} 米</view>
+                        </view>
+                        <view class='left '>
+                            <view class='price_info'>
+                                <span class="price">￥{{buildingInfo.rent_price_min}}</span>元/㎡*月起</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{buildingInfo.type == 2}}">
+                <view class='box' data-id="{{buildingInfo.id}}" data-url="/pages/index/building/distribution_info/index" bindtap="navigatorToUrl">
+                    <image src='{{ResourceRootUrl}}{{buildingInfo.airscape_url}}'></image>
+                    <view class='Introduction'>
+                        <h2>{{buildingInfo.title_other}}
+                            <span>{{buildingInfo.property_type_title}}</span>
+                        </h2>
+                        <view class='right'>
+                            <view class='area'>
+                                <i class="iconfont icon-location"></i>{{buildingInfo.trading_title}}</view>
+                            <view class='model'>
+                                <i class="iconfont icon-mayishangchengdaizhifudengicon10"></i>{{buildingInfo.acreage_min}}-{{buildingInfo.acreage_max}}m²</view>
+                        </view>
+                        <view class='left '>
+                            <view class='price_info'>
+                                <span class="price">￥{{buildingInfo.building_distribution.average_price}}</span>元/㎡起</view>
+                        </view>
+                    </view>
+                    <view class='yongjin-box'>
+                        <em>佣</em>佣金：
+                        <span class="kan">{{isLogin ? buildingInfo.building_distribution.commission : '登录查看'}}</span>
+                    </view>
+                </view>
+            </block>
+
+        </block>
+    </view>
+
+
+
+
+</view>

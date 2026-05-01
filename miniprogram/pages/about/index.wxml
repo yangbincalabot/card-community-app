@@ -1,0 +1,10 @@
+<view class='main'>
+<!-- <navbar show-zw="{{showZw}}" bg-color="rgba(#fff,0)" page-name=""></navbar> -->
+<!--  <view class='text'>{{ about.title }}</view>-->
+  <view class='img'>
+  <image src='{{ about.image }}'></image>
+  </view>
+  <view class='content'>
+    <rich-text nodes="{{ about.content }}"></rich-text>
+  </view>
+</view>

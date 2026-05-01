@@ -1,0 +1,31 @@
+<wxs module="tools" src="../../utils/tools.wxs"></wxs>
+<view class="user">
+    <!-- <my-rate class="myrate" bindmarkChange="markChange" value_select="{{ item.stars||2 }}" data-cid="{{ item.from_user.carte.id }}" data-fid="{{ item.from_user_id }}"></my-rate> -->
+    <view class="rate">
+                <block wx:for="{{item.stars}}" wx:key="{{index}}">
+                  <image src="{{starsImg}}" role="img"></image>
+                </block>
+              </view>
+    <view class="user_ct">
+        <view class="user_img" bindtap="navigatorToUrl">
+            <view class="user_image">
+                <image src="{{ item.from_user.carte ? item.from_user.carte.avatar : item.from_user.avatar }}"></image>
+                <span wx:if="{{ item.from_user.perfect > 1 }}">待完善</span>
+            </view>
+            <view class="user_name">
+                <view class="name">{{ item.from_user.carte ? (item.from_user.carte.name?item.from_user.carte.name:item.from_user.carte.phone) : (item.from_user.nickname?item.from_user.nickname:item.from_user.phone) }}</view>
+                <view class="add_time">{{ item.created_at }}</view>
+                <view class="add_time" wx:if="{{ item.type === 1}}">{{ item.address_title }}</view>
+                <view class="add_time" wx:elif="{{ item.type === 2}}">来自名片广场</view>
+                <view class="add_time" wx:elif="{{ item.type === 3}}">来自{{ item.share_user.carte ? item.share_user.carte.name : item.share_user.nickname }}的分享</view>
+                <view class="add_time">
+                    <!-- 标签： -->
+                    <text wx:if="{{ item.from_user.tag && item.from_user.tag.title }}">{{ tools.interceptionString(item.from_user.tag.title, 18) }}</text>
+                    <text wx:else>未设置</text>
+                </view>
+            </view>
+        </view>
+        <view class="add_user" wx:if="{{ item.is_adding === 1 }}">已添加</view>
+        <view class="add_user accept" wx:elif="{{ item.is_adding === -1 }}" bindtap="accept" data-id="{{ item.id }}">接受</view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/reviewList/index/index.wxml-->
+<view class='main'>
+  <view class='review'>
+    <view class='footer'>
+      <view class='foot' wx:for='{{listsData}}' wx:for-item='item' wx:key='item'  bindtap="navigateToUrl" data-url="../detail/index?id={{item.id}}">
+        <view class='igms'>
+          <image src='{{item.cover_image}}'  mode='aspectFill'></image>
+        </view>
+        <view class='text'>{{item.title}}</view>
+      </view>
+    </view>    
+  </view>
+</view>

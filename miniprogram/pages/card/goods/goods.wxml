@@ -1,0 +1,47 @@
+<view class='main'>
+    <view class='page_row' bindtap="suo">
+        <view class="search">
+            <view class="df search_arr">
+                <input class="" placeholder="搜索商品" value="{{searchValue}}" placeholder-style='font-size:28rpx;color:rgb(178,178,178);text-align:center' bindinput="changeKeyword"></input>
+            </view>
+        </view>
+        <view class='sousuo' bindtap="onSearch">搜索</view>
+    </view>
+
+    <view class="scroll_box_two" style="margin-top:20rpx">
+        <view class="item_list_two">
+            <view class="item_book_text">默认排序</view>
+        </view>
+        <!-- <view class="item_list_two">
+            <view class="item_book_text">销量</view>
+        </view>
+        <view class="item_list_two">
+            <view class="item_book_text" style='display:flex;'>价格
+                <view class='price_box'>
+                    <i class='icon iconfont iconshengxu' style="font-size:15rpx"></i>
+                    <i class='icon iconfont iconjiangxu' style="font-size:15rpx"></i>
+                </view>
+            </view>
+        </view>
+        <view class="item_list_two">
+            <view class="item_book_text">发售时间</view>
+        </view> -->
+    </view>
+    <view class='product'>
+        <block wx:for="{{ goods }}" wx:key="index">
+            <navigator url="/pages/card/goodsDetail/goodsDetail?id={{ item.id }}" hover-class="none">
+                <view class='pro'>
+                    <view class='img'>
+                        <image src='{{ item.image }}' mode="aspectFill"></image>
+                    </view>
+                    <view class='text'>{{ item.title }}</view>
+                    <view class='price'>
+                        <view>
+                            <i>￥</i>{{ item.price }}</view>
+                        <view>销量{{ item.sales }}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</view>

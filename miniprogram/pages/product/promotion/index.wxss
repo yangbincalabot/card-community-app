@@ -1,0 +1,138 @@
+/* pages/sales/index.wxss */
+page{	
+    background: #ffeb8f;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background: #ffeb8f;
+    position: relative;
+}
+.main .bg image{
+    width: 750rpx;
+    height: 1206rpx;
+}
+.main .content{
+    width: 750rpx;
+    height: 100%;
+    z-index: 1;
+    margin-top: -664rpx;
+    margin-bottom: 30rpx;
+}
+.main .content .search{
+    width: 670rpx;
+    height: 70rpx;
+    border:1rpx solid rgb(230,230,234);
+    margin: 0 auto;
+    border-radius: 90rpx;
+}
+.main .content .search .search_in{
+    width: 670rpx;
+    height: 70rpx;
+    background: #fff;
+    border-radius: 90rpx;
+}
+.search .text_box{
+    /* padding:0 1.1rem; */
+    display: flex;
+    position: relative;
+}
+.search .text_box input{
+    border-radius: 90rpx;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 150rpx;
+}
+.search .text_box .suo{
+    width: 150rpx;
+    height: 70rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: rgb(255,189,60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 35rpx 35rpx 0;
+    position: absolute;
+    right: 0;
+}
+.search .text{
+    width:670rpx;
+    border:none;
+    height:70rpx;
+    outline:none;
+    font-size:28rpx;
+    /* padding:.25rem 0; */
+    color:#333;
+    background: #fff;
+    display:block;
+    text-align: center;
+}
+.search .submit{
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background:#fd9d21 url(http://m.eqguquan.com/images/search-btn.png) no-repeat center center;
+    background-size: 60%;border:none;
+    border-top-right-radius: 90rpx;
+    -webkit-border-top-right-radius: 90rpx;
+    border-bottom-right-radius: 90rpx;
+    -webkit-border-bottom-right-radius: 90rpx;
+    border-bottom-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+}
+.search_box_focus{
+    padding-left: 3.25rem;
+}
+.main .content .product{
+    width: 750rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.main .content .product .pro{
+    width: 330rpx;
+    height: 436rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx rgba(0,0,0,0.13);
+    margin: 15rpx 0 15rpx 30rpx;
+    background: #fff;
+}
+.main .content .product .pro image{
+    width: 330rpx;
+    height: 300rpx;
+    border-radius: 10rpx 10rpx 0 0;
+}
+.main .content .product .pro .text{
+    font-size: 26rpx;
+    color: rgb(53,53,53);
+    margin: 0 15rpx 0 10rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.main .content .product .pro .price{
+    display: flex;
+    align-items: center;
+    margin: 10rpx 15rpx 30rpx 10rpx;
+}
+.main .content .product .pro .price :nth-child(1) i{
+    color: rgb(255,25,25);
+    font-size: 22rpx;
+}
+.main .content .product .pro .price :nth-child(1){
+    color: rgb(255,25,25);
+    font-size: 32rpx;
+}
+.main .content .product .pro .price :nth-child(2){
+    color: rgb(153,153,153);
+    font-size: 28rpx;
+    text-decoration: line-through;
+    margin-left: 10rpx;
+
+}

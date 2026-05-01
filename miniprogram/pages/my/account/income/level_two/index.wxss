@@ -1,0 +1,133 @@
+/* pages/mine/myaccount/income/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  width: 750rpx;
+  height: 350rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/income_bg.png) no-repeat;
+  background-size: 100%;  
+  padding-top: 40rpx;
+}
+.main .header .text{
+  width: 572rpx;
+  height: 253rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.main .header .text .text_row1{
+  color: rgb(51,51,51);
+}
+.main .header .text .text_row1 .t1{
+  font-size: 60rpx;
+}
+.main .header .text .text_row1 .t2{
+  font-size: 36rpx;
+}
+.main .header .text .text_row2{
+  display: flex;
+  justify-content: space-between;
+  color: rgb(51,51,51);
+  margin-top: 40rpx;
+  line-height: 50rpx;
+}
+.main .header .text .text_row2 .line{
+  width: 1rpx;
+  height: 80rpx;
+  background: rgb(51,51,51);
+}
+.main .header .text .text_row2 .t .t1{
+  font-size: 42rpx;
+}
+.main .header .text .text_row2 .t .t2{
+  font-size: 26rpx;
+}
+.swiper-tab{
+  width: 750rpx;
+  height: 100rpx;
+  text-align: center;     
+  background: #fff;  
+}
+.tab{
+  width: 690rpx;
+  height: 100rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+   /* align-items: center; */
+  color: rgb(53,53,53);
+  font-size: 30rpx;
+  text-align: center;  
+  margin: 0 auto;
+}
+.swiper-tab-item{
+    height: 60rpx;
+    color:#353535;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+  border-radius: 3rpx;
+  border-width:6rpx;
+  border-bottom-style: solid;
+  border-bottom-color:  rgb(255,227,0);
+  overflow: hidden;           
+}
+.juzhong{
+  margin: 0 auto;
+}
+.domain{
+  background-color: #fff;
+  height: 100%;
+  margin:0 20rpx;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.main .content{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 120rpx;
+}
+.main .content .c{  
+  width: 690rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgba(0,0,0,0.1);
+}
+.main .content .c .c-left{
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c .c-left .text{
+  margin: 20rpx;
+  line-height: 50rpx;
+}
+.main .content .c .c-left .text .names{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c .c-left .text .date{
+  font-size: 26rpx;
+  color: rgb(102,102,102);
+}
+.main .content .c .c-left .text .time{
+  font-size: 24rpx;
+  color: rgb(102,102,102);
+}
+.main .content .c .c-right{
+  font-size: 36rpx;
+  color: rgb(255,25,25);
+  margin-right: 20rpx;
+}

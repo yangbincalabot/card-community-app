@@ -1,0 +1,202 @@
+/* pages/discover/apply/confirm/index.wxss */
+page{
+  background: #f5f5f5;
+}
+.main {
+  width: 750rpx;
+  height: 100%;
+}
+.main .title1{
+  font-size: 28rpx;
+  color: rgb(136,136,136);
+  padding: 30rpx 0 0 30rpx;
+}
+.main .content{
+  margin-top: 20rpx;
+  margin-bottom: 0;
+}
+.main .content .c{
+  width: 750rpx;
+  height: 100%;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.main .content .c .c1{
+  display: flex;
+}
+.main .content .c .c1 .img{  
+  width: 180rpx;
+  height: 160rpx;
+  margin: 30rpx 20rpx 30rpx 30rpx;
+}
+.main .content .c .c1 image{
+  width: 180rpx;
+  height: 160rpx;
+  border-radius: 5rpx;
+}
+.main .content .c .c1 .text{
+  margin: 30rpx 28rpx 20rpx 0;
+}
+.main .content .c .c1 .text .t1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.main .content .c .c1 .text .t2{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+  margin: 20rpx 0;
+}
+.main .content .c .c1 .text .t2 i{
+  margin-left: 20rpx;
+}
+.main .content .c .c1 .text .t3{
+  color: rgb(51,51,51);
+  border-radius: 5rpx;
+  font-size: 28rpx;
+  /* text-align: center; */
+}
+.main .ct{
+  width: 750rpx;
+  /* height: 570rpx; */
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.main .ct .amount{
+  width: 690rpx;
+  height: 90rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  display: flex;
+  align-items: center;
+}
+.main .ct .amount i{
+  font-size: 26rpx;
+  color: rgb(136,136,136);
+  margin-left: 20rpx;
+}
+.main .ct .amount_content{
+  width: 690rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  margin: 0 auto;
+  position: relative;
+}
+.main .ct .amount_content .c1{
+  font-size: 32rpx;
+  color: rgb(51,51,51);  
+  margin: 30rpx 0;
+}
+.main .ct .amount_content .c1 .i1{
+  font-size: 32rpx;
+  color: rgb(255,25,25);
+  margin-left: 20rpx;
+}
+.main .ct .amount_content .c1 .i2{
+  color: rgb(136,136,136);
+  font-size: 26rpx;
+  position: absolute;
+  right: 0;
+}
+.main .ct .amount_content .people{
+  display: flex;
+}
+.main .ct .amount_content .people .title{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .ct .amount_content .people .people_msg{
+  margin-left: 20rpx;
+}
+.main .ct .amount_content .people .people_msg .m{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  margin-bottom: 20rpx; 
+}
+.main .ct .amount_content .people .people_msg .m .i1{
+  font-size: 30rpx;
+  color: rgb(117,187,252);
+  margin: 0 20rpx;
+}
+.main .ct .amount_content .people .people_msg .m .i2{
+  font-size: 30rpx;
+  color: rgb(252,117,148);
+  margin: 0 20rpx;
+}
+.main .ct .pay_c{
+  width: 690rpx;
+  height: 90rpx;
+  position: relative;
+  margin: 0 auto;
+}
+.main .ct .pay{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  margin: 30rpx 30rpx 30rpx 0;
+  position: absolute;
+  right: 0;
+}
+.main .ct .pay i{
+  font-size: 36rpx;
+  color: rgb(255,25,25);
+}
+.main .name_content{
+  width: 100%;
+  background: #fff;
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .name .n1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .name .n2{
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.main .phone_content{
+  width: 100%;
+  background: #fff;  
+}
+.main .phone{
+  width: 690rpx;
+  height: 100rpx;
+  /* border-bottom: 1rpx solid rgb(229,229,229); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 120rpx;  
+}
+.main .phone .p1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .phone .p2{
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.main .payment{
+  width: 750rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  background: rgb(254,191,0);
+  font-size: 32rpx;
+  color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

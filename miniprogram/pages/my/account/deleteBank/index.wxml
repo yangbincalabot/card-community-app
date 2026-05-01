@@ -1,0 +1,27 @@
+<view class='main'>
+  <form bindsubmit="formSubmit">
+
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>持卡人：</view>
+          <input class='n2' value="{{ userBank.card_name }}" disabled placeholder-style='font-size: 30rpx;color: rgb(153,153,153)'></input>
+        </view>
+      </view>
+      <view class='name_content'>
+          <view class='name'>
+            <view class='n1'>银行发卡行：</view>
+            <input class='n2' value="{{ userBank.bank.name }}"  disabled placeholder-style='font-size: 30rpx;color: rgb(153,153,153)'></input>
+          </view>
+      </view>
+      <view class='name_content'>
+        <view class='name'>
+          <view class='n1'>卡号：</view>
+          <input class='n2'   value="{{ userBank.card_number }}" disabled placeholder-style='font-size: 30rpx;color: rgb(153,153,153)'></input>
+        </view>
+      </view>
+      <view class='btn'>
+        <button bindtap="deleteBank" type="warn">删除</button>
+      </view>
+
+  </form>
+</view>

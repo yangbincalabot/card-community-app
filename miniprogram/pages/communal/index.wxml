@@ -1,0 +1,20 @@
+<view class='main'>
+    <view class='banner'>
+        <image src='{{ banner.image }}'></image>
+    </view>
+    <view class='content'>
+        <block wx:for="{{ communals }}" wx:key="index">
+            <view class='public' bindtap="navigatorToUrl" data-url="communalDetail/index?id={{ item.id }}">
+                <view class='p2'>
+                    <view class='img'>
+                        <image src='{{ item.image }}'></image>
+                    </view>
+                    <view class='text'>
+                        <view>{{ item.title }}</view>
+                        <view>{{ item.created_at }}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

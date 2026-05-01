@@ -1,0 +1,14 @@
+<view class='main'>
+  <view class='pay'>
+    <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/pay_icon.png'></image>
+    <view class='p1'>支付成功</view>
+    <!-- <view class='p2'>订单号：223654564655</view>
+    <view class='p3'>支付金额：1989.00元</view> -->
+    <navigator open-type="navigateBack"  hover-class="none">
+        <view class='back'>返回</view>    
+    </navigator>
+    <navigator hover-class="none" url="/pages/my/orders/list/list">
+        <view class='check'>查看订单</view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/my/activity/create/index.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class='main'>
+  <view class='header'>
+    <text>活动图片</text>
+    <view  bindtap="UploadImage" >
+      <image wx:if='{{formSelectParams.cover_image}}' src='{{formSelectParams.cover_image}}'></image>
+      <image wx:else src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'></image>
+    </view>
+  </view>
+  <view class='dual'>
+    <view class='dual_text'>
+      <text>活动名称</text>
+      <input placeholder='必填' name='title' value='{{ActivityAll.title}}' placeholder-class='placeholderStyle'></input>
+    </view>
+    <view class='dual_text'>
+      <text>活动时间</text>
+        <picker mode="multiSelector" value="{{dateTime_1}}" data-type='1'  bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_1}}" style='margin-left: 80rpx;'>
+          <view class="tui-picker-detail">
+            <span wx:if='{{formSelectParams.activity_time}}'>{{dateTimeArray_1[0][dateTime_1[0]]}}-{{dateTimeArray_1[1][dateTime_1[1]]}}-{{dateTimeArray_1[2][dateTime_1[2]]}} {{dateTimeArray_1[3][dateTime_1[3]]}}:{{dateTimeArray_1[4][dateTime_1[4]]}}</span>
+            <span wx:else>请选择</span>
+            <i class='icon iconfont iconyou'></i>
+          </view>
+        </picker>
+    </view>
+  </view>
+  <view class='dual'>
+    <view class='dual_text'>
+      <text>活动地址</text>
+      <input placeholder='请选择' value='{{current_address_title}}'  bindinput="changeAddressTitle"></input>
+      <i class='icon iconfont iconyou' bindtap="getChooseLocation"></i>
+    </view>
+  </view>
+  <view class='dual'>
+    <view class='dual_text'>
+      <text>报名结束时间</text>
+      <picker mode="multiSelector" value="{{dateTime_3}}" data-type='3' bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_3}}">
+          <view class="tui-picker-detail">
+            <span wx:if='{{formSelectParams.apply_end_time}}'>{{dateTimeArray_3[0][dateTime_3[0]]}}-{{dateTimeArray_3[1][dateTime_3[1]]}}-{{dateTimeArray_3[2][dateTime_3[2]]}} {{dateTimeArray_3[3][dateTime_3[3]]}}:{{dateTimeArray_3[4][dateTime_3[4]]}}</span>
+            <span wx:else>请选择</span>
+            <i class='icon iconfont iconyou'></i>
+          </view>
+        </picker>
+    </view>
+  </view> 
+   <view class='dual'>
+    <view class='dual_text'>
+      <text>内容</text>
+      <input placeholder='请填写' name='content'></input>
+    </view>
+  </view>
+  <view class='dual'>
+    <view class='dual_text'>
+      <text>设置组别</text>
+      <input placeholder=''  disabled='true' style='width:50%'></input>
+      <i style='color:rgb(254,191,0);text-decoration: underline;'><view bindtap='navigateToUrl' data-url='../group/index'>添加组别</view></i>
+    </view>
+    <view class='dual_text' wx:for = '{{groupList}}' wx:key='item'>
+      <i class='icon iconfont iconjian' bindtap='removeGroup' data-key='{{index}}'  style='margin-left:30rpx;color:rgb(253,114,95)'></i>
+      <text style='width:60%;' wx:if='{{item.type == 2}}'>{{item.name}}（不限制年龄大小，性别）</text>
+      <text style='width:60%;' wx:else>{{item.name}}（{{item.start}}-{{item.end}}岁）</text>
+      <input value='{{item.value}}' bindinput='changeGroup' data-key='{{index}}'    style='width:10%;' placeholder-style='text-align:right;color:rgb(136,136,136)'></input>
+      <view>人</view>
+    </view>
+  </view>
+
+  <view class='textarea'>
+    <view class='btn_bottom' wx:if="{{is_submit}}">
+        <button class='btn1' >保存草稿</button>
+        <button class='btn2' >立即发布</button>
+      </view>
+    <view class='btn_bottom' wx:else >
+        <button class='btn1' form-type="submit" bindtap='changeEditType' data-type='1'>保存草稿</button>
+        <button class='btn2' form-type="submit" bindtap='changeEditType' data-type='2'>立即发布</button>
+    </view>    
+  </view>
+</view>
+</form>

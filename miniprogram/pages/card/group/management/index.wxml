@@ -1,0 +1,27 @@
+<!--pages/card/group/management/index.wxml-->
+<view class="main">
+    <view class="title">群组名称</view>
+    <view class="input_box">
+        <input  maxlength="30" name="title" bindinput="changeTitle" value="{{ title }}" placeholder="请输入群组名称" placeholder-style="color:#9D9D9D"></input>
+    </view>
+    <view class="title">成员</view>
+    <view class="staff">
+        <view class="staff_view">
+            <block wx:for="{{ list }}" wx:key="item">
+              <view class="staff_box" bindtap="operating"  data-id="{{ item.carte.id }}">
+                  <image src="{{ item.carte.avatar }}"></image>
+                  <view class="name">{{ item.carte.name }}</view>
+                  <span class="icon iconfont iconshanchu1" wx:if="{{ is_delete }}"></span>
+              </view>
+            </block>
+            <view class="operation" bindtap="navigateToUrl" data-url="../create/index?id={{ id }}">
+                <image src="/images/add.png"></image>
+            </view>
+            <view  class="operation" bindtap="changeDelete">
+                <image src="/images/del.png"></image>
+            </view>
+        </view>
+    </view>
+    <button class="btn1" bindtap="toSubmit">保存</button>
+    <button class="btn2" bindtap="deleteGroup">删除群组</button>
+</view>

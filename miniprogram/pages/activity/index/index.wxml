@@ -1,0 +1,76 @@
+<!--pages/activity/index/index.wxml-->
+<view class="main">
+  <scroll-view scroll-y="true"   scroll-into-view="{{intoScroll}}" style="height:{{windowHeight}}px">
+    <view class="search">
+      <view class="search_input">
+        <input placeholder="搜索" bindinput="changeSearch" bindconfirm="searchBtn" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+      </view>
+    </view>
+    <view scroll-x="true" id="list" class="active-switch">
+      <view class="switch-container">
+        <view class="active-item" class="{{ currentTap == index ? 'focus' : 'active-item'}}" wx:for="{{tabList}}" wx:key="item">
+          <view class="item" bindtap="tabsChange" data-index="{{index}}">
+            <block wx:if="{{index == 3}}">
+              <block wx:if="{{ type == 0 }}">{{item.title}}</block>
+              <block wx:if="{{ type == 1 }}">活动</block>
+              <block wx:if="{{ type == 2 }}">会务</block>
+              <span class="icon iconfont iconjiangxu"></span>
+            </block>
+            <block wx:else>
+              {{item.title}}
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{downShow}}">
+     <view wx:if="{{downShow}}" class="mask-pod" bindtap="maskyc"></view>
+      <view class="icon iconfont iconshengxu"></view>
+      <view class="down">
+        <view class="{{ type == 0 ? 'active': '' }}" bindtap="changeType" data-type="0">
+          <image src="/images/active_icon1.png"></image>
+          <text>全部</text>
+        </view>
+        <view class="{{ type == 1 ? 'active': '' }}" bindtap="changeType" data-type="1">
+          <image src="/images/active_icon2.png"></image>
+          <text>只看活动</text>
+        </view>
+        <view class="{{ type == 2 ? 'active': '' }}" bindtap="changeType" data-type="2">
+          <image src="/images/active_icon3.png"></image>
+          <text>只看会务</text>
+        </view>
+      </view>
+    </view>
+    <view  class="ct_box">
+      <view class="ct" wx:for="{{ list }}" wx:key="item">
+        <view class="ct_msg" bindtap="toDetail" data-type="{{ item.type }}" data-id="{{ item.id }}">
+          <view class="msg_left {{ item.type == 2 ? 'meeting':'' }}">
+            <image src="{{ item.cover_image }}"></image>
+            <text>{{ item.type_show }}{{ item.status_show }}</text>
+          </view>
+          <view class="msg_right">
+            <view class="msg_title">{{ item.title }}</view>
+            <view class="msg_text">
+              <span class="icon iconfont iconshijian"></span>
+              <text>{{ item.activity_time }}</text>
+            </view>
+            <view class="msg_text">
+              <span class="icon iconfont iconlocation"></span>
+              <text>{{ item.address_title }}</text>
+            </view>
+          </view>
+        </view>
+        <view class="all">
+          <view class="imgs" wx:if="{{ item.apply.length }}">
+            <block wx:for="{{ item.apply }}" wx:key="item">
+              <image src="{{ item.carte.avatar }}"></image>
+            </block>
+          </view>
+          <text>{{ item.apply.length }}人已报名</text>
+          <span wx:if="{{ item.list_display }}">{{ item.list_display }}</span>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

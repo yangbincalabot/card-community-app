@@ -1,0 +1,232 @@
+/* pages/my/activity/index/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #ffffff;
+  display: flex;
+  flex-flow: row;
+  font-size: 32rpx;
+  justify-content: space-around;
+}
+.swiper-tab-item{
+  /* width: 50%;  */
+  color:#A1A1A1;
+}
+.active{
+  color:#373737;
+  border-bottom: 1rpx solid #373737;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.content{
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.ct_view{
+  width: 100%;
+}
+/* 我参与的 */
+.review_content{
+  width: 750rpx;
+  background: #fff;
+  margin: 20rpx auto;
+  padding: 20rpx 0;
+}
+.review_content .order{
+  width: 690rpx;
+  height: 65rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  font-size: 28rpx;
+  color: #A1A1A1;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.review_content .order :nth-child(2){
+  color: #FF9107;
+}
+.review_content .review_content_text{
+  width: 690rpx;
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+}
+.review_content .review_content_text .text{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.review_content .review_content_text .text .title{
+  font-size: 28rpx;
+  color: #2F2F2F;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.review_content .review_content_text .text .title i{
+  width: 100rpx;
+  height: 36rpx;
+  color: rgb(58,200,253);
+  font-size: 26rpx;
+  border: 1rpx solid rgb(58,200,253);
+  border-radius: 5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+.review_content .review_content_text .text .date{
+  font-size: 28rpx;
+  color: #A1A1A1;
+  display: flex;
+  margin-top: 15rpx;
+}
+.review_content .review_content_text .text .date :nth-child(2){
+  margin-left: 80rpx;
+}
+/* 我创建的 */
+.active_box{
+  width: 100%;
+  background: #ffffff;
+}
+.active_view{
+  width: 690rpx;
+  margin: 20rpx auto;
+  padding: 20rpx 0;
+}
+.ct{
+  width: 690rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f5f5f5;
+  padding-bottom: 20rpx;
+}
+.ct .img{
+  width: 148rpx;
+  height: 148rpx;
+}
+.ct .img image{
+  width: 148rpx;
+  height: 148rpx;
+}
+.text{
+  width: 530rpx;
+  margin-left: 20rpx;
+  line-height: 50rpx;
+}
+.ct_title{
+  font-size: 28rpx;
+  color: #2F2F2F;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ct_time{
+  font-size: 24rpx;
+  color: #A1A1A1;
+}
+.ct_status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ct_num{
+  font-size: 24rpx;
+  color: #A1A1A1;
+}
+.ct_sta{
+  height:42rpx;
+  background:#FFA011;
+  border-radius:14rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  width: 690rpx;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+button{
+  height:56rpx;
+  line-height: 56rpx;
+  background: rgb(80,166,249);
+  border-radius:14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin: 0;
+  margin-left: 20rpx;
+}
+.add{
+  position: fixed;
+  z-index: 999;
+  right: 40rpx;
+  bottom: 340rpx;
+}
+.iconjia1{
+  font-size: 80rpx;
+  color: #FFA011;
+}
+/* 新增按钮 */
+.activeShow{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  background:rgb(0,0,0,0.5);
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add_box{
+  width:680rpx;
+  height:216rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 10px 0px rgba(134,134,134,0.5);
+  border-radius:14rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.addActive,.meeting{
+  width:154rpx;
+  height:154rpx;
+  border-radius: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addActive{
+  background:#373737;
+}
+.meeting{
+  background:#FFA011;
+}

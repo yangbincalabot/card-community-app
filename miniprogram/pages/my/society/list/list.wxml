@@ -1,0 +1,56 @@
+<view class="main" hidden="{{ isHidden }}">
+    <view class="show" wx:if="{{ associations && associations.length > 0 }}">
+        <view class='content'>
+            <view class="ct_view">
+                <block wx:for="{{ associations }}" wx:key="index">
+                    <view class="active_box">
+                        <view class="active_view">
+                            <view class="associa_image" bindtap="goDetail" data-index="{{ index }}">
+                                <view class="ct">
+                                    <view class="img">
+                                        <image src="{{item.image}}"></image>
+                                    </view>
+                                    <view class="text">
+                                        <view class="ct_title">{{item.name}}</view>
+                                        <view class="ct_time">创建时间：{{item.created_at}}</view>
+                                        <view class="ct_status">
+                                            <view class="ct_num">状态：{{item.status_text}}{{ item.status == 1 && item.remark ? '(' + item.remark + ')' : '' }}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            
+                            <view class="btn" wx:if="{{  item.status == 2 }}">
+                                <button bindtap="delete" data-index="{{ index }}" data-id="{{ item.id }}"  hover-class="none">删除</button>
+                                <navigator url="../update/update?id={{ item.id }}" hover-class="none">
+                                    <button  hover-class="none">编辑</button>
+                                </navigator>
+
+                                <navigator url="../role/index?aid={{ item.id }}" hover-class="none">
+                                    <button  hover-class="none">角色</button>
+                                </navigator>
+
+                                <navigator url="../application/application?aid={{ item.id }}" hover-class="none">
+                                    <button  hover-class="none">申请</button>
+                                </navigator>
+
+                                
+                                <navigator url="../audit/index?pid={{ item.id }}" hover-class="none">
+                                    <button  hover-class="none">审核</button>
+                                </navigator>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+    </view>
+    <view wx:else>
+        <navigator  class="add" url="../create/create" hover-class="none">
+            <view class="icon iconfont iconjia1"></view>
+        </navigator>
+    </view>
+    
+
+</view>

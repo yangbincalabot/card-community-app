@@ -1,0 +1,34 @@
+<!--pages/my/activity/review/create/index.wxml-->
+<view class='main'>
+  <view class='header'>
+    <text>封面图片</text>
+    <view  bindtap="UploadImage" >
+      <image wx:if='{{postData.cover_image}}' src='{{postData.cover_image}}'></image>
+      <image wx:else src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'></image>
+    </view>
+  </view>
+  
+  <form bindsubmit="formSubmit">
+    <view class='text'>
+      <text>回顾标题</text>
+      <input placeholder='必填' bindinput='changeTitle' name='title' value='{{postData.title}}'></input>
+    </view>
+    <view class='textarea'>
+      <view class='t'>
+        <text>详情内容</text>
+        <i style='color:rgb(254,191,0);text-decoration: underline;'><view bindtap='navigateToContent'>添加详情内容</view></i>        
+      </view>
+			<view  class='text_box'  bindtap='navigateToContent'>
+					<rich-text nodes="{{contentNode}}"></rich-text>
+				</view>	
+      <view class='btn_bottom' wx:if="{{is_submit}}">
+          <button class='btn1'  >保存草稿</button>
+          <button class='btn2'  >立即发布</button>
+      </view>
+      <view class='btn_bottom' wx:else>
+          <button class='btn1' bindtap='draft' >保存草稿</button>
+          <button class='btn2' bindtap='release' >立即发布</button>
+      </view>    
+    </view>
+  </form>
+</view>

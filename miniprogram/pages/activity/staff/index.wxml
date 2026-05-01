@@ -1,0 +1,47 @@
+<!--pages/activity/staff/index.wxml-->
+<view class="main" hidden="{{ mainHidden }}">
+  <view class="head_title">
+    <text wx:if="{{ type == 2 }}">与会方({{ apply_num }}人)</text>
+    <text wx:else>报名人({{ apply_num }}人)</text>
+  </view>
+  <view>
+    <view class="ct_box">
+      <block wx:for="{{ list }}" wx:key="item">
+        <view class="ct">
+          <image src="{{ item.carte.avatar }}" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}"></image>
+          <view class="text">
+            <view class="title"  bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.carte.id }}">{{ item.carte.name }}
+              <span>{{ item.carte.position ?item.carte.position:'' }}</span>
+            </view>
+            <view>{{ item.carte.company_name ?item.carte.company_name:'' }}</view>
+          </view>
+          <block wx:if="{{ type == 2 }}">
+            <block wx:if="{{ self_uid  && self_uid == item.carte.uid}}">
+              <view class="yuyue_no yuyue_self">
+                <text class="yuyue_text">本人</text>
+              </view>
+            </block>
+            <block wx:elif="{{ item.selected }}">
+              <view class="yuyue_yes" bindtap="reserveStore" data-id="{{ item.carte.id }}">
+                <text class="yuyue_text">已预约换名片</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="yuyue_no" bindtap="reserveStore" data-id="{{ item.carte.id }}">
+                <text class="yuyue_text">预约换名片</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer_item" wx:for="{{footerList}}" wx:key="item">
+      <view class="imgBox" bindtap="navigateToUrl" data-url="{{ item.url }}">
+        <image src="{{item.icon}}"></image>
+      </view>
+      <view class="textt">{{item.text}}</view>
+    </view>
+  </view>
+</view>

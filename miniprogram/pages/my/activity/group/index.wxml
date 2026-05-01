@@ -1,0 +1,30 @@
+<!--pages/my/activity/group/index.wxml-->
+<!--pages/enroll/enrolldetail/index.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='main'>
+		<view class='content_view'>
+			<view class='title'>
+				<view class='left'><view class='l'></view>请勾选报名年龄组别，并设置名额限制</view>
+			</view>
+			<view class='name_content' wx:for="{{list}}" wx:key='item'>
+				<view class='name'>
+					<view style='display:flex;'>
+						<view class='icon'  bindtap='checkboxChange' data-id='{{item.id}}' data-key='{{index}}'>
+							<icon type="success" color="rgb(255,227,0)" wx:if='{{item.checked}}'></icon>
+							<icon type="circle" wx:else></icon>
+						</view>            
+						<view class='n1'  bindtap='checkboxChange' data-key='{{index}}'>
+							<text style='min-width:100rpx'>{{item.name}}</text>
+							<span wx:if='{{item.type == 2}}' style="text-align: center;">（不限制年龄大小，性别)</span>
+							<span wx:else>（{{item.start}}-{{item.end}}岁）</span>
+						</view>
+					</view>            
+					<input class='n2' placeholder='请输入名额限制' name='group_{{item.id}}' data-key='{{index}}' value='{{item.value}}' bindinput='changeInput'  placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'>女</input>    
+				</view>
+			</view>
+		</view>    
+    <button  form-type="submit" class='payment'>
+      确定
+    </button>
+  </view>
+</form>

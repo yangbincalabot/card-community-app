@@ -1,0 +1,338 @@
+/* pages/card/applyJoin/index.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.applyJoin-nav{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  font-size: 36rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+.applyJoin-nav view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  position: relative;
+}
+.applyJoin-nav image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 25rpx;
+}
+.merber-info{
+  line-height: 90rpx;
+  color: #B9B9B9;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+}
+.toll-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
+.toll-list .toll-tab{
+  border: 1rpx solid #ddd;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 335rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+}
+.tollAction{
+  border: 1rpx solid #18A137 !important;
+  color: #18A137;
+}
+/* pages/card/memberRZ/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 30rpx;
+}
+.main .title{
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: rgb(153,153,153);
+}
+.main .card{
+  width: 690rpx;
+  height: 100%;
+  margin: 0 auto;
+}
+.main .card .card_content{
+  width: 690rpx;
+  height: 90rpx;
+  background: rgb(255,254,255);
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.main .card .card_content .logo{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 40rpx 30rpx;
+}
+.main .card .card_content .logo image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.main .card .card_content .content{
+  line-height: 60rpx;
+  width: 100%;
+}
+.main .card .card_content .content .bank_title{
+  display: inline-block;
+  width: 48%;
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+}
+.main .card .card_content .content .bank_title_right{
+  font-size: 28rpx;
+  color: rgb(51,51,51);
+  display: inline-block;
+  width: 48%;
+  text-align: right;
+}
+.main .card .card_content .content .name_account{
+  font-size: 28rpx;
+  color: rgb(102,102,102);
+}
+.main .card .card_content .content .name_account i{
+  margin-left: 145rpx;
+}
+.main .btn{
+  width: 590rpx;
+  height: 94rpx;
+  background: rgb(254,191,0);
+  border-radius: 10rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 90rpx;
+  margin-bottom: 38rpx;
+}
+
+.main .add_btn{
+  width: 590rpx;
+  height: 94rpx;
+  background: rgb(254,191,0);
+  border-radius: 10rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 50rpx;
+}
+
+/* .selected{ */
+/* border: 1rpx solid rgb(254,191,0); */
+/* } */
+
+.userCard{
+position: relative;
+width: 100%;
+}
+.card_bg{
+width: 690rpx;
+height: 360rpx;
+margin: 20rpx auto 0 auto;
+background: url("https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/card_icon1.png") no-repeat;
+background-size: 100%;
+color: #ffffff;
+display: flex;
+align-items: center;
+border-radius: 18rpx;
+}
+.card_ct{
+width: 560rpx;
+margin: 0 auto;
+}
+.ct1{
+font-size: 34rpx;
+line-height: 70rpx;
+}
+.ct2{
+font-size: 42rpx;
+line-height:70rpx;
+margin-bottom: 10rpx;
+}
+.ct2 span{
+font-size: 32rpx;
+margin-left: 40rpx;
+}
+.ct3{
+font-size: 28rpx;
+line-height: 40rpx;
+display: flex;
+align-items: center;
+margin: 10rpx 0;
+width: 100%;
+}
+.ct3 text{
+opacity: 0.7;
+}
+.ct3 image{
+width: 35rpx;
+height: 35rpx;
+margin-right: 20rpx;
+}
+.right_item {
+line-height: 120rpx;
+text-align: center;
+color: #fff;
+font-weight: 500;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 20rpx;
+flex-direction: column;
+}
+
+
+.OCRscan{
+background: #50a6f9;
+color: #ffffff;
+border: 1px solid #8dbffc;
+flex-direction: row;
+width: 690rpx;
+height: 280rpx;
+margin: 40rpx auto 80rpx auto;
+}
+.OCRscan image{
+margin-right: 20rpx;
+width: 50rpx;
+height: 50rpx;
+display: inline-block;
+overflow: hidden;
+}
+
+.qiehuan{
+position: absolute;
+right: 38rpx;
+top: 6rpx;
+font-size: 28rpx;
+}
+
+.userCard .selected{
+color: rgb(254,191,0);
+}
+.sub-btn{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #50A6F9;
+  font-size: 40rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+}
+.xh-info{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 30rpx;
+}
+.xh-info .xh-info-left{
+  width: 224rpx;
+  height: 150rpx;
+}
+.xh-info .xh-info-left image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.xh-info-right{
+  margin-left: 20rpx;
+}
+.xh-info-right view:nth-of-type(1){
+  font-size: 36rpx;
+  font-weight: 800;
+}
+.xh-info-right view:nth-of-type(2){
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 15rpx;
+  border: 1rpx solid #bbb;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+  margin-top: 15rpx;
+  color: #bbb;
+}
+.applyJoin-Avatar{
+  background-color: #fff;
+  padding: 30rpx;
+  margin: 10rpx 0;
+}
+.applyJoin-Avatar-tit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.applyJoin-Avatar-jia{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx dashed #bbb;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.applyJoin-Avatar-jia image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.applyJoin-reason{
+  background-color: #fff;
+  margin: 10rpx 0;
+  padding: 10rpx 30rpx;
+}
+.applyJoin-reason-tit{
+  font-size: 34rpx;
+  font-weight: 800;
+}
+.applyJoin-reason textarea{
+  font-size: 26rpx;
+  border: 1rpx solid #ddd;
+  height: 300rpx;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 10rpx;
+}
+.notice{
+  background-color: #fff;
+  padding: 15rpx 30rpx;
+}
+.notice-tit{
+  font-size: 36rpx;
+  font-weight: 800;
+  line-height: 40rpx;
+}
+.notice-content{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+
+.footer{
+  padding: 10rpx;
+}

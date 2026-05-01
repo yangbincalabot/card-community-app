@@ -1,0 +1,148 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- style="height:{{heightDate}}rpx" -->
+    <scroll-view scroll-into-view="{{toView}}" class="md-scroll" scroll-y="true" scroll-with-animation="true">
+        <view class="entire-box">
+            <view class="index-bg">
+                <view class="placeholder-view">
+                </view>
+                <view class="ps-box" style="display: none;">
+                    <view class="ps-box-img-one">
+                        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/jubang/ing-sy-psz.png"></image>
+                    </view>
+                    <view class="ps-box-img-two">
+                        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/jubang/icon-sy-dw.png"></image>
+                    </view>
+                    <view class="ps-box-text overfl" style="max-width:300rpx">{{address}}</view>
+                    <view class="icon iconfont icon-arrt"></view>
+                </view>
+                <view class="find-box">
+                    <view class="find-box-input">
+                        <view class="icon iconfont icon-search"></view>
+                        <input class="find-box-input-text" placeholder="请输入搜索关键词" bindinput="changeKeyword" bindconfirm="onSearch"></input>
+                    </view>
+                </view>
+                <view class="carousel-box">
+                    <view class='carousel-content'>
+                        <swiper class='carousel_swiper' indicator-dots="true" indicator-color="#f4f4f4"
+                            indicator-active-color="#D62919" autoplay="true" interval='2000' circular='true'>
+                            <block wx:for="{{homeBanners}}" wx:item='item' wx:key="index" wx:index="index">
+                                <swiper-item data-url='{{item.pathImg}}'>
+                                    <image class="carouselImg" src='{{item}}' mode='aspectFill'></image>
+                                </swiper-item>
+                            </block>
+                        </swiper>
+                    </view>
+                </view>
+            </view>
+
+            <view class="banner-box">
+                <view class="banner-box-list">
+                    <!-- 固定 -->
+                    <block wx:for="{{navs}}" wx:key="index">
+                        <view class="banner-box-tab" data-page-path="{{item.toPage}}?cid={{ cid }}" bindtap="toPage">
+                            <view>
+                                <image src="{{item.iconPath}}"></image>
+                            </view>
+                            <view class="banner-box-tab-text">{{item.name}}</view>
+                        </view>
+                    </block>
+                    <view class="banner-box-tab" bindtap="notOpen">
+                        <view>
+                            <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/jubang/icon-sy-zb.png"></image>
+                        </view>
+                        <view class="banner-box-tab-text">直播</view>
+                    </view>
+                </view>
+            </view>
+   
+
+
+            <view class="active">
+                <block wx:for="{{actives}}" wx:key="index" >
+                    <view class="limitedTime-box" id="timeLimit" style="position:relative;">
+                        <view class="together-box-top-gd" data-id="{{item.id}}" bindtap="toActiveList">
+                            <text>更多商品</text>
+                            <view class="icon iconfont icon-jiantouzuo"></view>
+                        </view>
+                        <view class="goods-tit">
+                            <view>{{item.mainTitle}}</view>
+
+                        </view>
+                        <view class="goods-xiao-tit">
+                            <!-- 精&nbsp;&nbsp;&nbsp;&nbsp;选&nbsp;&nbsp;&nbsp;&nbsp;热&nbsp;&nbsp;&nbsp;&nbsp;销&nbsp;&nbsp;&nbsp;&nbsp;商&nbsp;&nbsp;&nbsp;&nbsp;品 -->
+                            <text decode="{{true}}">{{item.subTitle}}</text>
+                        </view>
+                        <!-- <view class="limitedTime-img">
+                            <image src="{{item.iconPath}}"></image>
+                        </view> -->
+                        <view class="goods-box-list">
+                            <!-- <scroll-view scroll-x="{{true}}"> -->
+                            <view class="goods-list-scroll">
+                                <block wx:for="{{item.goodsViews}}" wx:item='item' wx:key="key">
+                                    <view wx:if="{{index<9}}" class="commodity-tab" data-goods-id="{{item.id}}"
+                                        bindtap="commodityDetailsJump">
+
+                                        <view style="position:relative;" class="commodity-tab-img">
+                                            <image src="{{item.image}}"></image>
+                                            <view wx:if="{{item.saleStatus==='PRE_SALE'}}"  class="commodity-tab-img-tip">预售</view>
+                                        </view>
+                                        <view class="commodity-tab-name">
+                                            {{item.title}}
+                                        </view>
+                                        <view class="commodity-tab-xx">
+                                            <view class="commodity-tab-xx-left">￥{{item.price}}
+                                            </view>
+                                            <!-- <view catchtap="saveShopcart" data-price-id="{{item.priceId}}"
+                                                class="icon iconfont icon-jia">
+                                            </view> -->
+                                        </view>
+                                    </view>
+                                </block>
+                            </view>
+                            <!-- </scroll-view> -->
+                        </view>
+                    </view>
+                </block>
+            </view>
+
+            <view class="recommend-box">
+                <swiper class="swiper">
+                    <swiper-item class="swiper-item" data-index="{{index}}" wx:for="{{goodsTypes}}" wx:key="index"
+                        bindtap="toCurrent">
+                        <view class="swiper-item-til {{index==indexNav?'action':''}}">{{item.name}}</view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="recommend-list">
+                <view class="recommend-tab" wx:for="{{goods}}" wx:key="index" data-goods-id="{{item.id}}"
+                    bindtap="commodityDetailsJump">
+                    <image class="recommend-tab-img" src="{{item.image}}"></image>
+                    <view class="recommend-tab-name">
+                        {{item.title}}
+                    </view>
+                    <view class="recommend-tab-jg">
+                        <view class="tab-jg-left">
+                            <text>¥{{item.price}}</text>
+                            <text wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                        </view>
+                        <view class="tab-jg-right">
+                            已售：<span>{{item.sales}}</span>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </scroll-view>
+
+    <view class="weui-demo-dialog {{show?'weui-demo-dialog_show':''}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog__wrp">
+            <image bindtap="gotoCouponPage" src="{{couponPosterImage}}" mode="aspectFit" style="max-width:100%;" />
+            <image mode="aspectFill" bindtap="closeDialog" src="http://admin.nfdays.com/upload/close.png"
+                class="dialog_colseImg" />
+        </view>
+    </view>
+
+</view>

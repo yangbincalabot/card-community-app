@@ -1,0 +1,73 @@
+<!--pages/discover/detail/index.wxml-->
+<view class='main'>
+  <view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <!-- <block wx:for="{{imgUrls}}"> -->
+        <swiper-item>
+          <image src="{{activityDetail.cover_image}}" class="slide-image" style='height:100%;width:100%' />
+        </swiper-item>
+      <!-- </block> -->
+    </swiper>
+  </view>
+  <view class='text'>
+    <view class='title'>{{activityDetail.title}} </view>
+    <view class='price'>
+      <view class='p1' wx:if='{{activityDetail.fee > 0}}'>￥{{activityDetail.fee}}</view>
+      <view class='p1' wx:else>免费</view>
+      <view class='p2'>{{activityDetail.people_current_num}}人已报名</view>
+    </view>
+    <view class='text2'>
+      <view class='t1'><i class="icon iconfont iconshijian"></i>{{activityDetail.activity_time}} {{activityDetail.day_of_week}}  {{activityDetail.time_division}}</view>
+      <view class='t1'><i class="icon iconfont icondizhi"></i>{{activityDetail.address_title}}{{activityDetail.exact_address}}</view>
+    </view>
+  </view> 
+  <view class='size'>
+    <view class='s1'>主办方</view>
+    <view class='s2'>{{activityDetail.store.name}}<i class="icon iconfont icontel-line" bindtap='playPhone' data-phone='{{activityDetail.store.contact_mobile}}' ></i></view>
+  </view>
+  <view class='prodetail'>
+    <view class='tit'>活动详情</view>
+    <view class='img'>
+      <view class='imgs'>
+        <rich-text nodes="{{contentNode}}"></rich-text>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='f1'>
+      <button class='shou' open-type='share'>
+        <view class='button_join'>
+					<i class='icon iconfont iconfenxiang1'></i>
+        	<view>分享</view>
+				</view>
+      </button>
+			<button class='shou' wx:if='{{collectionStatus}}'  bindtap='clickCollection' style='width:74rpx;'>
+        <view class='button_join'>
+					<i class='icon iconfont iconshoucang1' style='color:#febf00;'></i>
+        	<view>已收藏</view>
+				</view>
+      </button>
+			<button class='shou' wx:else  bindtap='clickCollection' style='width:74rpx;'>
+        <view class='button_join'>
+					<i class='icon iconfont iconshoucang'></i>
+        	<view>收藏</view>
+				</view>
+      </button>
+       <!-- <view class='ke' wx:else  bindtap='clickCollection'>
+        <view><i class='icon iconfont iconshoucang'></i></view>
+        <view>收藏</view>
+      </view>
+       <view class='ke' wx:else  bindtap='clickCollection'>
+        <view><i class='icon iconfont iconshoucang'></i></view>
+        <view>收藏</view>
+      </view> -->
+    </view>
+    <view class='f2'  wx:if='{{activityDetail.apply_condition.status == 1}}' bindtap='navigateToUrl' data-url='../apply/group/index?id={{activityDetail.id}}&fromDetail=1'>
+      <view>立即报名</view>
+    </view>
+    <view class='f2'  wx:else >
+      <view>{{activityDetail.apply_condition.msg}}</view>
+    </view>
+  </view>
+</view>
+

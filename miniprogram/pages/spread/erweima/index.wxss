@@ -1,0 +1,51 @@
+/* pages/erweima/index.wxss */
+.main{
+  width: 750rpx;
+}
+.main .er{
+  width: 671rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.main .er .img{
+  width: 614rpx;
+  height: 603rpx;
+  /* border: 1rpx solid #ccc; */
+  margin: 0 auto;
+}
+.main .er .img image{
+  width: 614rpx;
+  height: 603rpx;
+}
+.main .er .btn{
+  margin-top: 50rpx;
+}
+.main .er button{
+  width: 590rpx;
+  height: 94rpx;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: #fff;
+  background: rgb(254,191,0);
+}
+.main .text{
+  margin-left: 30rpx;
+  margin-top: 60rpx; 
+}
+.main .text .tui{
+  width: 670rpx;
+  font-size: 28rpx;
+  color: rgb(136,136,136);  
+  margin: 0 auto;
+}
+.main .text .tui .i{
+  margin-left: 30rpx;
+}
+.main .text .content{
+  width: 670rpx;
+  height: 368rpx;
+  font-size: 24rpx;
+  color: rgb(136,136,136);
+  margin: 0 auto;
+  margin-top: 20rpx;
+}

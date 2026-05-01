@@ -1,0 +1,75 @@
+<!--pages/scenarioIndex/scenarioIndex.wxml-->
+<view class="main">
+  <view class="swiper">
+    <swiper duration="1000">
+      <block wx:for="{{ list }}" wx:key="index">
+        <swiper-item>
+          <view class="sCard" bindtap="goChangeCard" data-id="{{ item.id }}" data-cid="{{ item.carte.id }}">
+            <image class="sCard_code" src="{{ item.qrcode }}"></image>
+            <view class="sCard_text">
+              <view class="sCard_firm">{{ item.carte.company_name ? item.carte.company_name:'' }}</view>
+              <view class="sCard_user">{{ item.carte.name ? item.carte.name:item.nickname }}<span>{{ item.carte.position ?item.carte.position:'未设置' }}</span></view>
+              <view class="sCard_tel"><image src="../../images/sTel.png"></image>
+                            <text>{{ item.carte.phone ? item.carte.phone : '未设置' }}</text>
+                          </view>
+              <view class="sCard_email"><image src="../../images/sEmail.png"></image>{{ item.carte.email ?item.carte.email:'未设置' }}</view>
+              <view class="sCard_site"><image src="../../images/sSite.png"></image>{{ item.company_card.address_title
+                                            ?item.company_card.address_title:(item.carte.address_title ?
+                                            item.carte.address_title : '未设置') }}</view>
+            </view>    
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>  
+  <view class="sContent">
+    <view class="sContent_box blue">
+      <view bindtap="navigateToUrl" data-url="/pages/card/cardSquare/index">
+        <image src="../../images/sContact.png"></image>
+        <view class="sContact">人脉</view>
+        <view class="sContactInfo">发现和定制专属人脉</view>
+      </view>      
+    </view>
+    <view class="sContent_box green">
+      <view  bindtap="navigateToUrl" data-url="/pages/activity/index/index">
+        <image src="../../images/sActive.png"></image>
+        <view class="sContact">参会活动</view>
+        <view class="sContactInfo">找到优质商务会议及活动</view>
+      </view>      
+    </view>
+    <view class="sContent_box green">
+      <view bindtap="navigateToUrl" data-url="/pages/supply/index/index">
+        <image src="../../images/sNeed.png"></image>
+        <view class="sContact">供需</view>
+        <view class="sContactInfo">挖掘客户、满足商业需求</view>
+      </view>      
+    </view>
+    <view class="sContent_box blue">
+      <view bindtap="navigateToUrl" data-url="/pages/card/camera/index">
+        <image src="../../images/sScanCard.png"></image>
+        <view class="sContact">扫名片</view>
+        <view class="sContactInfo">自动存储重要联系人信息</view>
+      </view>      
+    </view>
+    <view class="sContent_box blue">
+      <view bindtap="navigateToUrl" data-url="/pages/card/index/index">
+        <image src="../../images/sCardBag.png"></image>
+        <view class="sContact">名片夹</view>
+        <view class="sContactInfo">重要联系人信息在这里</view>
+      </view>      
+    </view>
+    <view class="sContent_box green">
+      <view bindtap="navigateToUrl" data-url="/pages/my/index/index">
+        <image src="../../images/sMine.png"></image>
+        <view class="sContact">个人中心</view>
+        <view class="sContactInfo">管理个人、参会、供需等信息</view>
+      </view>      
+    </view>
+  </view>
+  <view class="change" bindtap="redirectToUrl" data-url="/pages/index/index">
+    <view>
+      <image src="../../images/sChange.png"></image>
+      <view>首页</view> 
+    </view>  
+  </view>
+</view>

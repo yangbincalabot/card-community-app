@@ -1,0 +1,119 @@
+/* pages/dai/index.wxss */
+.main{
+  width: 750rpx;
+  height: 100%;
+}
+.main .header{
+  width: 690rpx;
+  height: 435rpx;
+  background: url(https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/dai_banner.png) no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  line-height: 50rpx;
+}
+.main .header .header_one{
+  height: 288rpx;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.main .header .header_one image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 90rpx;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.35);
+  margin-top: 60rpx;
+}
+.main .header .header_one .name{
+  font-size: 32rpx;
+  color: rgb(51,51,51);
+}
+.main .header .header_one .firstname{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .header .header_one .job{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  position: absolute;
+  right: 15rpx;
+  top: 93rpx;
+}
+.main .header .header_two{
+  margin-left: 30rpx;
+}
+.main .header .header_two .row1{
+  font-size: 28rpx;
+  color: rgb(102,102,102);
+}
+.main .header .header_two .row1 span{
+  margin-left: 100rpx;
+}
+.main .header .header_two .row2{
+  font-size: 28rpx;
+  color: rgb(102,102,102);
+}
+.main .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;  
+  padding: 30rpx 20rpx;
+}
+.main .title .left{
+  display: flex;  
+  font-size: 30rpx;
+  color: #000;
+}
+.main .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+   background:  rgb(255,227,0);
+   margin-right: 20rpx;
+   margin-top: 6rpx;
+}
+.main .title .left i{
+  color: rgb(255,25,25);
+  font-size: 30rpx;
+}
+.main .content{
+  width: 690rpx;
+  height: 160rpx;
+  margin: 0 auto;
+}
+.main .content .c{  
+  display: flex;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.1);
+  /* background-size: 100%; */
+}
+.main .content .c .c-left{
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .c .c-left .text{
+  margin: 20rpx;
+  line-height: 60rpx;
+}
+.main .content .c .c-left .text .names{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .content .c .c-left .text .date{
+  font-size: 26rpx;
+  color: rgb(102,102,102);
+}
+.main .content .c .c-left .text .time{
+  font-size: 24rpx;
+  color: rgb(102,102,102);
+}
+.main .content .c .c-right{
+  font-size: 36rpx;
+  color: rgb(255,25,25);
+  margin-right: 20rpx;
+}

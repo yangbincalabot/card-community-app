@@ -1,0 +1,226 @@
+<!--pages/card/other/index.wxml-->
+<view class="main">
+  <view  class="{{perfectShow?'show':''}} headFix perfect">
+    <view bindtap="toEdmit" class="desc overflow2">编辑完善名片回递名片给{{ cardDetail.company_name ?cardDetail.company_name:'' }}{{ cardDetail.name ? cardDetail.name:'' }}，点击进入编辑页面</view>
+    <image bindtap="closePerfect" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%88%A0%E9%99%A4%20(4).png"></image>
+  </view>
+   <view class="{{scrollFlag?'show':''}} 'headFix'">
+                  <view class="imgBox">
+                    <image src="{{ cardDetail.avatar }}"></image>
+                  </view>
+                  <view class="desc">
+                    <view>{{ cardDetail.name }}</view>
+                    <view>{{ cardDetail.company_name }}</view>
+                  </view>
+                  <button class="btn" open-type="share">分享名片</button>
+                </view>
+  <view>
+    <view class="card">
+      <view class="card_box">
+        <view class="card_text">
+          <!-- <image src="/images/mycode.png"></image> -->
+          <view class="icon iconfont icontongxunlu nexticon" bindtap='addPhone' ></view>
+        </view>
+        <block wx:if="{{ userInfo && userInfo.id !== cardDetail.uid }}">
+          <block wx:if="{{ is_attention === false }}">
+            <view class="collect_btn" bindtap="clickAttention">收藏</view>
+          </block>
+          <block wx:else>
+            <view class="collect_btn" bindtap="clickAttention">已收藏</view>
+          </block>
+        </block>
+      </view>
+      <view class="card_view">
+        <view wx:if="{{scrollFlag}}" class="headFix">
+          <view class="imgBox">
+            <image src="{{ userInfo.carte.avatar }}"></image>
+          </view>
+          <view class="desc">
+            <view>{{ userInfo.carte.name }}</view>
+            <view>{{ userInfo.carte.company_name }}</view>
+          </view>
+
+          <block wx:if="{{ is_send === false }}">
+            <button class="btn" bindtap="edit">发名片</button>
+          </block>
+          <block wx:else>
+            <button class="btn">已递名片</button>
+          </block>
+          
+        </view>
+        <view class="access">
+          <view class="num">
+            <span class="icon iconfont icondianzanliang"></span>{{ cardDetail.visits }}
+          </view>
+          <view>访问量</view>
+        </view>
+        <view class="msg">
+          <view class="msg_box">
+            <view class="msg_left">
+              <image src="{{ cardDetail.avatar }}"></image>
+            </view>
+            <view class="msg_right">
+              <view>
+                <view class="name">{{ cardDetail.name }}
+                  <span>{{ cardDetail.position ? cardDetail.position:'未设置'}}</span>
+                </view>
+                <view>{{ cardDetail.company_name }}</view>
+              </view>
+            </view>
+          </view>
+          <block wx:if="{{ is_open }}">
+            <button class="msg_view" hover-class="msg_bg" bindtap='playPhone' data-cid="{{ cardDetail.id }}" data-phone='{{ cardDetail.phone }}'>
+              <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E7%94%B5%E8%AF%9D.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">
+                  {{ cardDetail.phone ? cardDetail.phone : '未设置' }}
+                </view>
+              </view>
+            </button>
+            <!-- <button class="msg_view" hover-class="msg_bg"  bindtap="addPhone" data-phone='{{ cardDetail.phone }}'>
+              <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E7%94%B5%E8%AF%9D.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">
+                  {{ cardDetail.phone ? cardDetail.phone : '未设置' }}
+                </view>
+              </view>
+            </button> -->
+            <button class="msg_view" hover-class="msg_bg" bindtap="clipboard" data-value="{{ cardDetail.wechat ?  cardDetail.wechat : '' }}">
+              <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%BE%AE%E4%BF%A1.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.wechat ? cardDetail.wechat: '未设置' }}
+                </view>
+              </view>
+            </button>
+            <button class="msg_view" hover-class="msg_bg" bindtap="clipboard" data-value="{{ cardDetail.email ?  cardDetail.email : '' }}">
+              <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%82%AE%E7%AE%B1.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.email ? cardDetail.email: '未设置' }}
+                </view>
+              </view>
+            </button>
+            <button class="msg_view" bindtap="openMap" hover-class="msg_bg">
+              <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%9C%B0%E5%9D%80.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.company_card.address_title ?cardDetail.company_card.address_title:(cardDetail.address_title ? cardDetail.address_title : '未设置') }}
+                </view>
+              </view>
+            </button>
+          </block>
+          <block wx:else>
+            <button class="msg_view" hover-class="msg_bg">
+              <image src="/images/tel.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">
+                  {{ cardDetail.phone ? cardDetail.phone : '未设置' }}
+                </view>
+              </view>
+            </button>
+            <button class="msg_view" hover-class="msg_bg">
+              <image src="/images/name.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.wechat ? cardDetail.wechat: '未设置' }}
+                </view>
+              </view>
+            </button>
+            <button class="msg_view" hover-class="msg_bg">
+              <image src="/images/email.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.email ? cardDetail.email: '未设置' }}
+                </view>
+              </view>
+            </button>
+            <button class="msg_view" hover-class="msg_bg">
+              <image src="/images/site.png"></image>
+              <view class="msg_text">
+                <view class="msg_ct">{{ cardDetail.company_card.address_title ?cardDetail.company_card.address_title:(cardDetail.address_title ? cardDetail.address_title : '未设置') }}
+                </view>
+              </view>
+            </button>
+          </block>
+        </view>
+
+        <block wx:if="{{ cardDetail.uid === 0 }}">
+          <view class="btnAll">
+            <button class="btn1" bindtap="navigatorToUrl" data-url="/pages/card/create/index?id={{ cardDetail.id }}">编辑名片
+            </button>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="btnAll" wx:if="{{ !footHide }}">
+            <button class="btn1" bindtap="navigatorToUrl" data-url="../../my/card/editCard/index">编辑名片
+            </button>
+            <button class="btn2" open-type="share">分享此名片</button>
+          </view>
+          <view class="btnAll" wx:else>
+            <block wx:if="{{ is_send === false }}">
+              <button class="btn1" bindtap="edit">发名片</button>
+            </block>
+            <block wx:else>
+              <button class="btn1">已递名片</button>
+              <!-- <button class="btn1" bindtap='addPhone'>添加通讯录</button> -->
+            </block>
+            <button class="btn2" open-type="share">分享此名片</button>
+          </view>
+        </block>
+
+        <view class="bounced" wx:if="{{pop}}">
+          <view class="pop_box">
+            <view class="pop_title">添加留言</view>
+            <input bindinput="inputMessage" placeholder="请输入留言内容" placeholder-style="font-size:26rpx;color:#999999"></input>
+            <view class="send_btn">
+              <button class="btn1" bindtap="cancel">取消</button>
+              <button class="btn2" bindtap="confirm">确定</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view style="backgroud:red;width:100%;height:400px;"></view> -->
+
+
+    <view class="title edit_title">
+      <view style="display:flex;align-items: center;">
+        <view class="title_left"></view>
+        个人介绍
+      </view>              
+      <!-- <view class="edit">
+        <span class="icon iconfont iconbianji1"></span>
+        编辑
+      </view> -->
+    </view>
+    <view class="introduce">
+      {{ cardDetail.introduction ? cardDetail.introduction: '未填写' }}
+    </view>
+    <view class="title edit_title">
+      <view style="display:flex;align-items: center;">
+        <view class="title_left"></view>
+        相册
+      </view>              
+      <!-- <view class="edit">
+        <span class="icon iconfont iconshangchuan"></span>
+        上传更多
+      </view> -->
+    </view>
+    <view class="imgs">
+      <block wx:for="{{ cardDetail.images }}" wx:key="item">
+        <image src="{{ item }}" bindtap="previewImages" data-src="{{item}}" data-index="{{index}}"></image>
+      </block>
+    </view>
+    <view class="footer_select" wx:if="{{ cardDetail.cid }}">
+      <view class="select_ct" bindtap="gotoGoods">
+        <view class="icon iconfont iconshangcheng"></view>
+        <view>商城</view>
+      </view>
+      <view class="select_ct" bindtap="navigatorToUrl" data-url="/pages/card/companyDetail/index?id={{ cardDetail.cid }}&tab=1">
+        <view class="icon iconfont iconfabuxuqiu"></view>
+        <view>供需</view>
+      </view>
+      <view class="select_ct"  bindtap="navigatorToUrl" data-url="/pages/card/companyDetail/index?id={{ cardDetail.cid }}"  hover-class="none">
+                <view class="icon iconfont iconguanwang"></view>
+                <view>官网</view>
+              </view>
+    </view>
+  </view>
+</view>

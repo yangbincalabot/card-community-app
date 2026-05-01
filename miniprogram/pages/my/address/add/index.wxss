@@ -1,0 +1,55 @@
+.content{
+	width: 750rpx;
+}
+.name{
+	width: 690rpx;
+	height: 100rpx;
+	border-bottom: 1rpx solid rgb(229,229,229);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+.title{
+	font-size: 30rpx;
+	color: rgb(102,102,102);
+	width: 200rpx;
+}
+input{
+	display: flex;
+	align-items: center;
+	margin-left: 20rpx;
+}
+.placeholderStyle{
+	font-size: 30rpx;
+	color: rgb(153,153,153);
+}
+.iconyou{
+	color: rgb(229,229,229);
+}
+.address{
+	width: 690rpx;
+	height: 200rpx;
+	border-bottom: 1rpx solid rgb(229,229,229);
+	margin: 0 auto;
+	display: flex;
+}
+.address .title{
+	margin-top: 15rpx;
+}
+.address_on-off{
+	width: 690rpx;
+	height: 100rpx;
+	border-bottom: 1rpx solid rgb(229,229,229);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	font-size: 30rpx;
+	color: rgb(102,102,102);
+	justify-content: space-between;
+}
+.btn button{
+	margin-top: 90rpx;
+	background-color: rgb(254,191,0);
+	color: #fff;
+	width: 560rpx;
+}

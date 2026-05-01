@@ -1,0 +1,65 @@
+<!--pages/discover/apply/index/index.wxml-->
+<view class='main' hidden='{{is_hidden}}'>
+  <view class='title1'>活动信息</view>
+  <view class='content'>
+    <view class='c'>
+      <view class='c1'>
+        <view class='img'>
+          <image src='{{activityDetail.cover_image}}'></image>
+        </view>
+        <view class='text'>
+          <view class='t1'>{{activityDetail.title}}</view>
+          <view class='t2'>{{activityDetail.activity_time}}<i>{{activityDetail.day_of_week}}{{activityDetail.time_division}}</i></view>
+          <view class='t3'>{{activityDetail.address_title}}{{activityDetail.exact_address}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='title2'>
+    <view class='t1'>报名组别</view>
+    <view class='t2' bindtap='navigateToUrl' data-url='../group/index?id={{activityDetail.id}}'><i class='icon iconfont iconjia'></i>增加组别</view>
+  </view>
+  <view class='ct' wx:for='{{new_group}}' wx:key='item' wx:for-item='item'>
+    <view class='text'>
+      <view class='t1'>{{item.name}}</view>
+      <view class='t2'>{{item.activity_time}}<i>{{item.day_of_week}}{{item.time_division}}</i></view>
+      <view class='t3' wx:if='{{item.type == 2}}'><i>要求</i>不限制年龄大小，性别</view>
+      <view class='t3' wx:else><i>要求</i>出生日期{{item.birthday}}</view>
+      <view class='t4'><i>剩余</i>{{item.remainder}}</view>
+      <view class='btn'><i class='icon iconfont iconcuowu' bindtap='removeGroup' data-index='{{index}}' ></i></view>
+    </view>
+    <view class='amount'>
+      <view class='en'>报名人（男{{item.man_num>0?item.man_num:0}}人，女{{item.woman_num>0?item.woman_num:0}}人）</view>
+      <view class='add' bindtap='navigateToUrl' data-url='../choose/index?group_id={{item.id}}&activity_id={{id}}&remainder={{item.remainder}}'>添加报名人</view>
+    </view>
+    <view class='name' wx:for="{{item.choose}}" wx:key='ikey' wx:for-index="choose_index" wx:for-item='ikey'>
+      <view class='en'><i class='icon iconfont iconjian i1' bindtap='removeChoose' data-choose_id='{{ikey.id}}' data-sex='{{ikey.sex}}' data-group_id='{{item.id}}' data-key='{{choose_index}}' data-group_key='{{index}}' ></i>{{ikey.name}}<i class="icon iconfont {{ikey.sex==1?'iconnan':'iconnv'}} i2"  style="color:{{ikey.sex==1?'rgb(117,187,252)':'rgb(252,117,148)'}}" ></i>{{ikey.phone}}</view>
+      <!-- <view class='add'  bindtap='navigateToUrl' data-url='../addApplicant/index?id={{ikey.id}}' ><i class='icon iconfont iconyou'></i></view> -->
+    </view>
+  </view>
+  
+  <view class='title3'>紧急联系人</view>
+  <view class='name_content'>
+    <view class='name'>
+      <view class='n1'>紧急联系人</view>
+      <input class='n2' placeholder='请输入领队或紧急联系人姓名' bindinput='changeContact'  value='{{postData.urgent_contact}}'   placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>    
+    </view>
+  </view>
+  <view class='phone_content'>
+    <view class='phone'>
+      <view class='p1'>联系人手机</view>
+      <input class='p2' placeholder='请输入联系人手机号码' bindinput='changePhone' value='{{postData.phone}}'  placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>    
+    </view>
+  </view>
+  <view class='title4'>注意事项</view>
+  <view class='title4_content'>
+    <rich-text nodes="{{contentNode}}"></rich-text>
+  </view>
+  <view class='footer'>
+    <view class='money'>共<i>{{total_people}}</i>人， <span wx:if='{{activityDetail.fee > 0}}'>合计<text>￥{{total_price}}</text>元</span><span wx:else>免费</span> </view>
+    <view class='pay'  bindtap='nextStep' >
+      <view class='p'>下一步</view>
+    </view>    
+  </view>
+</view>
+

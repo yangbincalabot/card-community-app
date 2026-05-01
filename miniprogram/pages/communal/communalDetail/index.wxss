@@ -1,0 +1,38 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.main .text{
+  width: 670rpx;
+  font-size: 34rpx;
+  color: #000000;
+  margin: 16rpx auto;
+  font-weight: bold;
+}
+.date{
+  width: 670rpx;
+  font-size: 28rpx;
+  color: #808080;
+  margin: 16rpx auto;
+  margin-bottom: 50rpx;
+}
+.main .img{
+  width: 670rpx;
+  height: 290rpx;
+  margin: 26rpx auto;
+}
+.main .img image{
+  width: 670rpx;
+  height: 290rpx;
+}
+.main .content{
+  width: 670rpx;
+  word-wrap: break-word;
+  word-break: normal;
+  text-indent: 2em;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 50rpx;
+}

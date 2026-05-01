@@ -1,0 +1,530 @@
+/**index.wxss**/
+page{
+    background-color: #f5f7f9;
+  }
+  .index-bg{
+    background: url('http://szdbi.oss-cn-shenzhen.aliyuncs.com/jubang/ing-sy-bj.png') no-repeat;
+    background-size: 100% 85%;
+  }
+  .placeholder-view{
+    height: 40px;
+    width: 100%;
+    background: none;
+  }
+  .gray {  
+    -webkit-filter: grayscale(100%);  
+    -moz-filter: grayscale(100%);  
+    -ms-filter: grayscale(100%);  
+    -o-filter: grayscale(100%);  
+    filter: grayscale(100%);  
+    filter: gray;  
+  }
+  
+  .ps-box{
+    padding: 0 25rpx;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+  }
+  .ps-box .ps-box-img-one image{
+    width: 100rpx;
+    height: 30rpx;
+  }
+  .ps-box .ps-box-img-two image{
+    width: 24rpx;
+    height: 28rpx;
+  }
+  .ps-box .ps-box-img-two{
+    margin-left: 15rpx;
+    margin-right: 7rpx;
+    padding-bottom: 3rpx;
+  }
+  .ps-box-text{
+    color: #fff;
+    padding-bottom: 7rpx;
+    font-size: 24rpx;
+  }
+  .ps-box .icon-arrt{
+    font-size: 20rpx;
+    margin-left: 7rpx;
+    color: #fff;
+    padding-bottom: 5rpx;
+  }
+  .find-box{
+    /* background-color: #fff; */
+    height: 60rpx;
+    padding: 25rpx 25rpx 20rpx;
+    margin-top: 30rpx;
+  }
+  .find-box .find-box-input{
+    width: 100%;
+    height: 100%;
+    border-radius: 30rpx;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .find-box-input .icon-search{
+     font-size: 24rpx;
+     margin:5rpx 10rpx 0 0;
+     color: #b3b3b3;
+  }
+  .find-box-input-text{
+     color: #b3b3b3;
+     font-size: 24rpx;
+  }
+  .carousel-box{
+    padding: 15rpx 25rpx 20rpx;
+    /* background-color: #fff; */
+    margin-top: 10rpx;
+    
+  }
+  .carousel-content{
+    /* box-shadow:0 5px 5px #e9e9e9; */
+  }
+  .carousel-box .carousel_swiper .carouselImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 15rpx;
+  }
+  .banner-box{
+    background-color: #fff;
+    padding-top: 15rpx;
+    padding-bottom: 10rpx;
+  }
+  .banner-box .banner-box-tab{
+    width: 20%;
+    text-align: center;
+    padding-bottom: 20rpx;
+  }
+  .banner-box .banner-box-tab .banner-box-tab-text{
+    font-size: 24rpx;
+  }
+  .banner-box-list{
+    padding: 0 30rpx;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+  }
+  .banner-box .banner-box-tab image{
+    width: 80rpx;
+    height: 80rpx;
+  }
+  .together-box{
+    background-color: #fff;
+    margin-top: 10rpx;
+    padding: 0 25rpx;
+  }
+  .together-box-top{
+    padding-top: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .together-box-top-img .img-01{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 15rpx;
+  }
+  .together-box-top-img .img-02{
+    width: 120rpx;
+    height: 30rpx;
+    margin-bottom: 5rpx;
+    margin-right: 30rpx;
+  }
+  .together-box-top-img .img-03{
+    width:160rpx;
+    height: 35rpx;
+  }
+  .active .together-box-top-gd{
+    position: absolute;
+    top: 90rpx;
+    right: 30rpx;
+  }
+  .together-box-top-gd{
+    display: flex;
+    align-items: center;
+  }
+  .together-box-top-gd text{
+    font-size: 24rpx;
+    color: #ababab;
+  }
+  .together-box-top-gd .icon-jiantouzuo{
+    font-size: 18rpx;
+    color: #ababab;
+    margin-top: 4rpx;
+    margin-left: 5rpx;
+  }
+  .commodity-tab{
+    width: 210rpx;
+    /* height: 330rpx; */
+    margin-top: 20rpx;
+    /* height: 47%; */
+    margin-right: 34rpx;
+  }
+  .commodity-tab:nth-of-type(3n){
+    margin-right: 0;
+  }
+  /* .commodity-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  } */
+  .commodity-tab .commodity-tab-img image{
+     width: 210rpx;
+     height: 210rpx;
+  }
+  .commodity-tab-img-tip{
+    background-color: #04ABFF;
+    color: #FFF;
+    padding: 0rpx 10rpx;
+    border-radius: 10rpx;
+    position: absolute;
+    bottom: 0rpx;
+    left: 0rpx;
+  }
+  
+      /* bottom: 0rpx; */
+  .commodity-tab .commodity-tab-name{
+    font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 15rpx;
+    height: 66rpx;
+  }
+  .commodity-tab .commodity-tab-xx{
+    display: flex;
+    justify-content: space-between;
+  }
+  .commodity-tab-xx-left{
+    color: #FF6935;
+    font-size: 22rpx;
+  }
+  .commodity-tab-xx-right{
+    font-size: 22rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #fff;
+    background: linear-gradient(to right,#FE2D21,#FF873F);
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    border-radius: 15rpx;
+  }
+  .carousel-commodity{
+    width: 100%;
+    padding-bottom: 40rpx;
+  }
+  .carousel-commodity swiper{
+    height: 770rpx;
+  }
+  .carousel-commodity swiper-item{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    height: 95%  !important;
+  }
+  .carousel-commodity swiper .wx-swiper-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+  }
+  .limitedTime-box{
+    background-color: #fff;
+    margin-top: 10rpx;
+    padding: 0 25rpx 40rpx;
+  }
+  .goods-tit{
+    display: flex;
+    justify-content: center;
+    padding-top: 40rpx;
+    /* position: relative; */
+  }
+  .goods-tit view{
+    width: 240rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+    font-size: 30rpx;
+    text-align: center;
+    background: url('http://szdbi.oss-cn-shenzhen.aliyuncs.com/jubang/ing-sy-fjx-1.png') no-repeat;
+    background-size: 100% 35%;
+    background-position: 50%;
+    font-weight: 700;
+    font-family: "Microsoft YaHei UI";
+  }
+  .goods-xiao-tit{
+    display: flex;
+    justify-content: center;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+    letter-spacing: 6px;
+  }
+  .goods-xiao-tit text{
+    font-size: 22rpx;
+    color: #a9a9a9;
+  }
+  .limitedTime-img{
+    width: 100%;
+    height: 190rpx;
+  }
+  .limitedTime-img image{
+    height: 100%;
+    width: 100%;
+  }
+  .commodity-tab-xx{
+    height: 32rpx;
+    align-items: center;
+  }
+  .commodity-tab-xx .icon-jia{
+    color: #FF1818;
+    font-size: 28rpx;
+  }
+  .limitedTime-box .goods-box-list{
+    display: flex;
+    /* height: 375rpx; */
+    /* flex-wrap: nowrap; */
+  }
+  .limitedTime-box .goods-box-list .commodity-tab{
+    /* margin-right: 35rpx; */
+  }
+  .limitedTime-box .goods-box-list scroll-view{
+    height: 380rpx;
+  }
+  .goods-list-scroll{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .weui-demo-dialog {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .weui-demo-dialog_show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .dialog_colseImg{
+    margin-top: 40rpx;
+    width: 60rpx;
+    height: 60rpx;
+  }
+  
+  .weui-dialog__wrp{
+    flex-direction: column;
+    margin:auto;
+  }
+  
+  .recommend-box{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 80rpx;
+    background-color: #fff;
+    margin: 20rpx 0;
+  }
+  .recommend-box swiper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  .recommend-box swiper swiper-item{
+    width: 140rpx !important;
+    height: 80rpx !important;
+    text-align: center;
+  }
+  .action{
+    height: 79rpx;
+    border-bottom: 1rpx solid #FE181A;
+    color: #FE181A;
+  }
+  .recommend-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20rpx;
+  }
+  .recommend-list .recommend-tab{
+    width: 350rpx;
+    border: 1rpx solid #eee;
+    background-color: #fff;
+    padding-bottom: 15rpx;
+    margin-bottom: 10rpx;
+  }
+  .recommend-list .recommend-tab image{
+    width: 99%;
+    height: 350rpx;
+    display: block;
+  }
+  .recommend-tab-name{
+    width: 310rpx;
+    padding: 0 20rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 26rpx;
+    margin: 10rpx 0 15rpx;
+  }
+  .recommend-tab-jg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+  }
+  .recommend-tab .tab-jg-left text:nth-of-type(1){
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #FF6935;
+    margin-right: 15rpx;
+  }
+  .recommend-tab .tab-jg-left text:nth-of-type(2){
+    color: #A5A5A5;
+    text-decoration:line-through;
+  }
+  .recommend-tab .tab-jg-right{
+    color: #A5A5A5;
+  }
+  .entire-box{
+    padding-bottom: 10rpx;
+  }
+  
+  
+  
+  
+  @font-face {
+    font-family: 'iconfont';  /* project id 1772976 */
+    src: url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.eot');
+    src: url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1772976_4yu33vrq6q9.svg#iconfont') format('svg');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-shoucang1:before {
+    content: "\e662";
+  }
+  
+  .icon-shoucang:before {
+    content: "\e610";
+  }
+  
+  .icon-dian:before {
+    content: "\e60a";
+  }
+  
+  .icon-baozhang:before {
+    content: "\e714";
+  }
+  
+  .icon-jianpanshanchu:before {
+    content: "\e690";
+  }
+  
+  .icon-gou_wu_che2:before {
+    content: "\e619";
+  }
+  
+  .icon-shanchu:before {
+    content: "\e64e";
+  }
+  
+  .icon-arrLeft-fill:before {
+    content: "\e635";
+  }
+  
+  .icon-arrUp-fill-copy:before {
+    content: "\e606";
+  }
+  
+  .icon-jiantouyou:before {
+    content: "\e672";
+  }
+  
+  .icon-xuanzhong:before {
+    content: "\e6af";
+  }
+  
+  .icon-xuanzhongyuandian:before {
+    content: "\e61d";
+  }
+  
+  .icon-gengduo:before {
+    content: "\e605";
+  }
+  
+  .icon-zhibozhong2:before {
+    content: "\e837";
+  }
+  
+  .icon-jia:before {
+    content: "\e6c2";
+  }
+  
+  .icon-arrr:before {
+    content: "\e600";
+  }
+  
+  .icon-arrl:before {
+    content: "\e601";
+  }
+  
+  .icon-arrt:before {
+    content: "\e602";
+  }
+  
+  .icon-search:before {
+    content: "\e603";
+  }
+  
+  .icon-jiantouzuo:before {
+    content: "\e604";
+  }
+  
+  .icon-xuanzex:before {
+    content: "\e64b";
+  }
+  
+  .icon-xuanzhongx:before {
+    content: "\e64d";
+  }
+  
+  .icon-weizhi:before{
+    content: "\e6f8";
+  }
+  
+  .icon-jia1::before{
+    content: "\e698";
+  }
+  .icon-basic-guanbi-big::before{
+    content: "\e6b5";
+  }
+  .icon-kefu::before{
+    content: "\e62d";
+  }
+  
+  .icon-tubiaolunkuo-::before{
+    content: "\e607";
+  }
+  
+  .icon-tishi::before{
+    content: "\e632";
+  }

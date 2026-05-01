@@ -1,0 +1,6 @@
+<picker mode="multiSelector" range="{{ dataSheets }}" range-key="{{ rangeKey }}" value="{{ index }}" bindcolumnchange="changeColumnChange" bindchange="changeValue">
+    <view class="item">
+        地域
+        <span class="icon iconfont iconjiangxu"></span>
+    </view>
+</picker>

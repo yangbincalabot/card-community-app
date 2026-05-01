@@ -1,0 +1,101 @@
+<!--pages/card/societyIndex/societyIndex.wxml-->
+<view class="main">
+  <view class="navbar custom-class" style='height:{{navHeight}}px;background-color:{{bgColor}};color:{{color}}'>
+  <view wx:if="{{showNav}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;'>
+      <image class="navbar-action_item"  catchtap="navBack" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E8%BF%94%E5%9B%9E%20.png"></image>
+      <span class="navbar-action-wrap-span"></span><image class="navbar-action_item last" catchtap="toIndex"  src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/home.png"></image>
+      <span class="navbar-action-wrap-span"></span><image class="navbar-action_item last" catchtap="toFootprint"  src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/jiaoyinzujifangke%402x.png"></image>
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px'>
+    {{pageName}}
+  </view>
+  </view>
+  <view style="height:{{navHeight}}px;width:100%;" wx:if="{{showZw}}"></view>
+  <view class="mask-top"></view>
+  <view class="search">
+    <!-- <view class="mask"></view> -->
+    <!-- <view class="top_head" bindtap="back">
+      <span class="icon iconfont iconfanhuix" bindtap="back"></span>
+    </view> -->
+  </view>
+  <view class="society-nav-pow">
+     <view class="society-nav-box">
+          <view class="society-nav-tit">
+             <image  src="{{ societyDetail.image }}"></image>
+             <text>{{ societyDetail.name }}</text>
+          </view>
+          <view class="society-nav-list">
+             <view class="society-nav-one">
+                  <!-- ?id={{ item.id }} -->
+                  <view class="society-nav-tab" bindtap="navigatorToUrl" data-url="../societyDetail/societyDetail?id={{ id }}">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-jianjie%402x.png"></image>
+                      <text>简介</text>
+                  </view>
+                  <view class="society-nav-tab" bindtap="navigatorToUrl" data-url="../memberUnit/index?id={{ id }}">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-damwei%402x.png"></image>
+                      <text>会员单位</text>
+                  </view>
+                  <view class="society-nav-tab" bindtap="navigatorToUrl" data-url="../memberRZ/index?id={{ id }}">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-renzeng%402x.png"></image>
+                      <text>会员认证</text>
+                  </view>
+                  <view class="society-nav-tab" bindtap="navigatorToUrl" data-url="../applyJoin/index?id={{ id }}">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-shenqing%402x.png"></image>
+                      <text>入会申请</text>
+                  </view>
+             </view>
+             <view class="society-nav-two">
+                  <view class="society-nav-tab">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-sahngcheng.png"></image>
+                      <text>商城</text>
+                  </view>
+                  <view class="society-nav-tab">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-gongxu.png"></image>
+                      <text>供需</text>
+                  </view>
+                  <view class="society-nav-tab">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-xueyuan.png"></image>
+                      <text>商学院</text>
+                  </view>
+                  <view class="society-nav-tab">
+                      <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/icon-lianxi.png"></image>
+                      <text>联系</text>
+                  </view>
+             </view>
+          </view>
+     </view>
+  </view>
+  <view class="society-apply-cutover">
+     <view class="action">全部</view>
+     <view>推荐</view>
+  </view>
+  <view class="ct_box">
+    <view class="ct" wx:for="{{ activitylist }}" wx:key="item">
+      <view class="ct_msg" bindtap="toDetail" data-type="{{ item.type }}" data-id="{{ item.id }}">
+        <view class="msg_left  {{ item.type == 2 ? 'meeting':'' }}">
+          <image src="{{ item.cover_image }}"></image>
+          <text>{{ item.type_show }}{{ item.status_show }}</text>
+        </view>
+        <view class="msg_right">
+          <view class="msg_title">{{ item.title }}</view>
+          <view class="msg_text">
+            <span class="icon iconfont iconshijian"></span>
+            <text>{{ item.activity_time }}</text>
+          </view>
+          <view class="msg_text">
+            <span class="icon iconfont iconlocation"></span>
+            <text>{{ item.address_title }}</text>
+          </view>
+        </view>
+      </view>
+      <view class="all">
+        <view class="imgs" wx:if="{{ item.apply.length }}">
+          <block wx:for="{{ item.apply }}" wx:key="item">
+            <image src="{{ item.carte.avatar }}"></image>
+          </block>
+        </view>
+        <text>{{ item.apply.length }}人已报名</text>
+      </view>
+    </view>
+  </view>
+</view>

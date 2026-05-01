@@ -1,0 +1,82 @@
+<view class='main'>
+    <view class='title'>
+        到账银行卡
+    </view>
+    <form bindsubmit="formSubmit">
+        <view bindtap="navigatorToUrl" data-url="../bank/index?type=cashOut" class='bankcard'>
+            <view class='add'>{{ select_bank_name }}</view>
+            <view class='icon iconfont iconyoujiantou'></view>
+        </view>
+    <view class='title2'>
+        提现金额
+    </view>
+    <view class='money'>
+        <view class='money_account'>￥<input name="money" value="{{ formData.money ? formData.money : '' }}" type="digit"></input></view>
+        <view class="account_box">
+            <view class='account'>可提现金额  {{ userBalance.balance.money }}元</view>
+            <block wx:if="{{ userBalance.balance.money > 0}}">
+                <view bindtap="onAllMoney">全部提现</view>
+            </block>
+        </view>
+    </view>
+    <view>
+        <button form-type="submit" class='btn'>立即提现</button>
+    </view>
+    </form>
+</view>
+
+<!-- 提现密码输入 -->
+<view wx-if="{{mask}}" class="pwd_box">
+    <view :class="{{bott}}" class="masks">
+        <view class="pwd_six_title">
+            <view bindtap="maskss" class="icon iconfont iconshanchu1" style="color: #CCCCCC;"></view>
+            <view>请输入支付密码</view>
+        </view>
+        <view class="pwd_six_box">
+            <view class="box">
+                <view class="box_border">
+                    <text wx-if="{{array.length > 0}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+            <view class="box">
+                <view class="box_border">
+                    <text wx-if="{{array.length > 1}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+            <view class="box">
+                <view class="box_border">
+                    <text wx-if="{{array.length > 2}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+            <view class="box">
+                <view class="box_border">
+                    <text wx-if="{{array.length > 3}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+            <view class="box">
+                <view class="box_border">
+                    <text wx-if="{{array.length > 4}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+            <view class="box">
+                <view class="box_border" style="border-right: 1rpx solid #bfbfbf;">
+                    <text wx-if="{{array.length > 5}}" class="pwd_hide">●</text>
+                </view>
+            </view>
+        </view>
+        <view class="number">
+            <view bindtap="getPassword" data-value="1" class="password" style="border-left: 0;">1</view>
+            <view bindtap="getPassword" data-value="2" class="password">2</view>
+            <view bindtap="getPassword" data-value="3" class="password">3</view>
+            <view bindtap="getPassword" data-value="4" class="password" style="border-left: 0;">4</view>
+            <view bindtap="getPassword" data-value="5" class="password">5</view>
+            <view bindtap="getPassword" data-value="6" class="password">6</view>
+            <view bindtap="getPassword" data-value="7" class="password" style="border-left: 0;">7</view>
+            <view bindtap="getPassword" data-value="8" class="password">8</view>
+            <view bindtap="getPassword" data-value="9" class="password">9</view>
+            <view bindtap="reset" class="password" style="background: #EEEEEE;color: #fff;"></view>
+            <view bindtap="getPassword" data-value="0" class="password">0</view>
+            <view bindtap="backspace" class="password" style="background: #EEEEEE;color: #fff;"><span class="icon iconfont iconcs-sc-1" style="font-size: 50rpx;color: #FFFFFF;"></span></view>
+        </view>
+    </view>
+</view>

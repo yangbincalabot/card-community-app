@@ -1,0 +1,7 @@
+<!--pages/about/index.wxml-->
+<view class='main'>
+  <view class='text'>代理加盟服务协议</view>
+  <view class='content'>
+    <rich-text nodes="{{ service_agreement }}"> </rich-text>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class='main'>
+    <view class="show">
+        <scroll-view class='content'>
+            <block wx:for="{{ logs }}" wx:key="index">
+                <view class='c'>
+                    <view class='c-left'>
+                        <view class='text'>
+                            <view class='names'>出售商品收入</view>
+                            <view class='date'>{{ item.user.nickname }} 购买了{{ item.remark }}</view>
+                            <view class='time'>{{ item.created_at }}</view>
+                        </view>
+                        <view class='c-right'>
+                            <view class='exp'>+{{ item.money }}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>

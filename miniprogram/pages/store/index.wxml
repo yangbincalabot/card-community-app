@@ -1,0 +1,42 @@
+<view class='main'>
+  <view class='header'>
+    <view class="back">
+      <i class="icon iconfont icondizhi1"></i>
+      {{ city }}
+    </view>
+    <view class='page_row'>
+      <view class="search">
+        <view class="df search_arr">
+          <input class="" bindblur="changeName" placeholder="搜索门店" value="{{name}}" placeholder-style='font-size:28rpx;color:rgb(178,178,178);text-align:center' ></input>
+        </view>
+      </view>
+      <view class='sousuo' bindtap="onSearch">搜索</view>
+    </view>
+  </view>
+  <view class='near'>
+    <view class='content'>
+        <block wx:for="{{ stores }}" wx:key="index">
+            <view class='c' bindtap="navigateToUrl" data-url="detail/index?id={{ item.id }}">
+              <view class='img'>
+                <image src='{{ item.image }}' mode='aspectFill'></image>
+              </view>
+              <view class='text'>
+                <view class='text_content'>
+									<span>{{ item.name }}</span>
+									<i wx:if="{{ item.user.type == 4}}">服务商</i>
+								</view>
+                <view>{{ item.full_address }}</view>
+                <view>
+                    <block wx:if="{{ item.distance < 1 }}">
+                      {{ item.distance * 1000 }}m
+                    </block>
+                    <block wx:else>
+                      {{ item.distance }}km
+                    </block>
+                </view>
+              </view>
+            </view>
+        </block>
+    </view>
+  </view>
+</view>

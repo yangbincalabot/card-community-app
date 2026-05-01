@@ -1,0 +1,171 @@
+<!--pages/card/index/index.wxml-->
+<view class="main" hidden="{{ isHidden }}">
+    <view class="search">
+        <view class="search_input">
+            <input placeholder="搜索" bindinput="changeSearch" bindconfirm="searchBtn" placeholder-class="color:#B5B5B5;text-align: center;"></input>
+        </view>
+    </view>
+    <scroll-view scroll-y style="height: {{windowHeight}}px" scroll-into-view="{{alpha}}">
+        <view class="ct_box">
+            <view class="ct" bindtap="navigateToUrl" data-url="../cardSquare/index">
+                <image src="/images/card_icon1.png"></image>
+                <view class="text">
+                    <view class="title">名片广场</view>
+                    <view>拓宽你的人脉</view>
+                </view>
+            </view>
+
+
+            <!-- wx:if="{{ !user.aid  || user.aid == 0 }}" -->
+            <view class="ct"  bindtap="navigateToUrl" data-url="../societySquare/societySquare">
+                <image src="/images/mine_icon9.png"></image>
+                <view class="text">
+                    <view class="title">协会广场</view>
+                    <view>增添你的财富</view>
+                </view>
+            </view>
+
+
+            <view class="ct" bindtap="navigateToUrl" data-society_name="{{ otherDetail.society_name }}" data-url="../society/index?aid={{ otherDetail.society_id }}">
+                <image src="{{ otherDetail.society_logo }}"></image>
+                <view class="text">
+                    <view class="title">{{ otherDetail.society_name }}</view>
+                    <view>{{ otherDetail.company_num }}个协会会员</view>
+                </view>
+            </view>
+
+            <!-- 显示关联的协会 -->
+            <block wx:for="{{ otherDetail['application'] }}" wx:key="index">
+                <view class="ct" bindtap="navigateToUrl" data-society_name="{{ item.name }}" data-url="../society/index?aid={{ item.id }}">
+                    <image src="{{ item.image }}"></image>
+                     <view class="text">
+                        <view class="title">{{ item.name }}</view>
+                        <view>{{ item.company_num }}个协会会员</view>
+                     </view>
+                </view>
+            </block>
+            
+            <view class="ct" wx:if="{{ otherDetail.company_name }}" bindtap="navigateToUrl" data-url="../company/index">
+                <image src="{{ otherDetail.company_logo }}"></image>
+                <view class="text">
+                    <view class="title">{{ otherDetail.company_name }}</view>
+                    <view>{{ otherDetail.colleague_num }}个同事</view>
+                </view>
+            </view>
+            <view class="ct" bindtap="navigateToUrl" data-url="../group/index/index">
+                <image src="/images/card_icon4.png"></image>
+                <view class="text">
+                    <view class="title">群组</view>
+                    <view>{{ otherDetail.group_num }}个分类群组</view>
+                </view>
+            </view>
+        </view>
+        <view class="alphabet">
+            <view class="alphabet-list">
+                <!-- 开始 -->
+                <view wx:for="{{list}}" wx:key="unique" id="{{item.alphabet}}" class="section-item">
+                    <view class="section-item-header">
+                        {{item.alphabet}}
+                    </view>
+                    <view class="card_box" wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex">
+                        <movable-area>
+                            <movable-view out-of-bounds="true" direction="horizontal" x="{{cell.xmove}}" inertia="true" data-index="{{index}}" data-son-index="{{cellIndex}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindchange="handleMovableChange">
+                                <view class="card_view">
+                                    <view class="rate">
+                                        <block wx:for="{{cell.stars}}" wx:key="index">
+                                            <image src="{{starsImg}}" role="img"></image>
+                                        </block>
+                                    </view>
+                                    <view class="card" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ cell.id }}">
+                                        <image src="{{cell.avatar}}"></image>
+                                        <view class="card_text">
+                                            <view class="card_title">
+                                                <view>{{cell.name ?cell.name:cell.phone}}
+                                                    <span>{{cell.position ?cell.position:''}}</span>
+                                                </view>
+                                            </view>
+                                            <view class="company_name">{{cell.company_name}}</view>
+                                        </view>
+                                     </view>
+                                      <view class="iconview">
+                                        <view class="icon iconfont icontel" bindtap='playPhone' data-cid="{{ cell.id }}" data-phone='{{ cell.phone }}'></view>
+                                      </view>
+                                 </view>
+                              </movable-view>
+                          </movable-area>
+            
+                          <view class="collect-btn" bindtap="collectBtn" data-index="{{index}}" data-son-index="{{cellIndex}}" data-cid="{{ cell.id }}">
+                              {{cell.special?"已收藏":"收藏"}}
+                          </view>
+                          <view class="delete-btn" bindtap="deleteBtn"  data-cid="{{ cell.id }}">删除</view>
+          </view>
+
+         
+
+        </view>
+        <!-- 结束 -->
+      </view>
+      <view class="num">{{ num ? num:0 }}位联系人</view>
+    </view>
+  </scroll-view>
+  <view data-id="selector" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" catchtouchend='handlerEnd' class="alphanet-selector {{addBg?'bg':''}}">
+    <view data-ap="{{item.alphabet}}" data-index="{{index}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+      {{item.alphabet}}
+    </view>
+    <view wx:if="{{addBg}}" class="show-alpha" style="top:{{showAlpha}}px;">
+      {{alpha}}
+    </view>
+  </view>
+
+  <!-- 底部tab -->
+  <view class="tabbar">
+    <view data-index='one' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E4%B8%AA%E4%BA%BA%E6%94%B6%E8%97%8F.png"></image>
+      </view>
+      <view class="tabbar-item-text">个人收藏</view>
+    </view>
+    <view data-index='two' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%9C%80%E8%BF%91%E8%81%94%E7%B3%BB.png"></image>
+      </view>
+      <view class="tabbar-item-text">最近联系</view>
+    </view>
+    <view data-index='three' bindtap="bind_tabbar" class="tabbar_item">
+      <!-- 箭头 -->
+
+      <!-- 创建弹出层 -->
+      <!-- <view class="mask-box" wx:if="{{showMask}}" bindtap="maskClick"></view> -->
+      <view wx:if="{{menu_show}}" class="create">
+        <view class="item" bindtap="navigateToUrl" data-url="/pages/card/camera/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/OCR.png"></image>
+          <view>OCR</view>
+        </view>
+        <view class="item" bindtap="navigateToUrl" data-url="/pages/card/create/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%88%9B%E5%BB%BA%E5%90%8D%E7%89%87.png"></image>
+          <view>创建名片</view>
+        </view>
+        <view class="item" style="position:relative;" bindtap="navigateToUrl" data-url="/pages/card/group/index/index">
+          <image src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%88%9B%E5%BB%BA%E7%BE%A4%E7%BB%84.png"></image>
+          <view>创建群组</view>
+          <view class="sanjiao"></view>
+        </view>
+      </view>
+      <view class="imgBox">
+        <image class="addImg" src="https://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E6%8C%89%E9%92%AE.png"></image>
+      </view>
+    </view>
+    <view data-index='four' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%9C%B0%E5%9B%BE.png"></image>
+      </view>
+      <view class="tabbar-item-text">地图</view>
+    </view>
+    <view data-index='five' bindtap="bind_tabbar" class="tabbar_item">
+      <view class="imgBox">
+        <image src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/tabar%E7%94%B5%E8%AF%9D.png"></image>
+      </view>
+      <view class="tabbar-item-text">电话</view>
+    </view>
+  </view>
+</view>

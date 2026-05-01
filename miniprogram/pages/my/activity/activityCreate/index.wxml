@@ -1,0 +1,126 @@
+<!--pages/my/activity/activityCreate/index.wxml-->
+<view class="main">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="imgs">
+        <image src="{{ formParams.cover_image }}"></image>
+        <span class="imgBtn" bindtap="UploadImage">更换封面</span>
+    </view>
+    <view class="input_box">
+        <input placeholder="请输入活动标题" name="title" value="{{ detail.title }}" placeholder-style="font-size:28rpx;color:#A1A1A1"></input>
+    </view>
+    <view class="text">
+        <textarea placeholder="请描述您的详细供需信息..." name="content" value="{{ detail.content }}" placeholder-style="font-size:28rpx;color:#949494"></textarea>
+    </view>
+    <view class="img">
+        <view class="img_box">
+          <span>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png' bindtap="moreUploadImage"></image>
+          </span>
+          <block wx:for="{{ formParams.images }}" wx:key="item"  wx:for-index="imageKey">
+              <span>
+                    <image src='{{ item }}'></image>
+                    <i class="icon iconfont iconshanchu1" data-id="{{imageKey}}" bindtap="DeleteImage"></i>
+              </span>
+          </block>
+        </view>
+    </view>
+        <view class="ct_view">
+            <view class="ct">
+                <view class="ct_left">
+                    <text>承办方</text>
+                </view>
+                <view class="ct_right jia_ct_right" bindtap="navigateToUrl" data-url="../choose/index">
+                    <span class="icon iconfont iconjia"></span>
+                </view>
+            </view>
+            <block wx:for="{{ undertakeList }}" wx:key="item">
+                <view class="ct_msg">
+                    <view class="ct_text">
+                        <view class="ct_text1 company_name">
+                            <span class="icon iconfont iconjinzhi" bindtap="deleteUndertake" data-id="{{ item.id }}"></span>
+                            <span>{{ item.company_name }}</span>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    <view class="ct_view">
+        <view class="ct">
+            <view class="ct_left">
+                <text>活动开始时间</text>
+            </view>
+            <picker mode="multiSelector" value="{{dateTime_1}}" data-type='1'  bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_1}}" style='margin-left: 80rpx;'>
+                <view class="tui-picker-detail ct_right">
+                    <span wx:if='{{formParams.activity_time}}'>{{dateTimeArray_1[0][dateTime_1[0]]}}-{{dateTimeArray_1[1][dateTime_1[1]]}}-{{dateTimeArray_1[2][dateTime_1[2]]}} {{dateTimeArray_1[3][dateTime_1[3]]}}:{{dateTimeArray_1[4][dateTime_1[4]]}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker>
+        </view>
+        <view class="ct">
+            <view class="ct_left">
+                <text>活动结束时间</text>
+            </view>
+            <picker mode="multiSelector" value="{{dateTime_3}}" data-type='3'  bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_3}}" style='margin-left: 80rpx;'>
+                <view class="tui-picker-detail ct_right">
+                    <span wx:if='{{formParams.activity_end_time}}'>{{dateTimeArray_3[0][dateTime_3[0]]}}-{{dateTimeArray_3[1][dateTime_3[1]]}}-{{dateTimeArray_3[2][dateTime_3[2]]}} {{dateTimeArray_3[3][dateTime_3[3]]}}:{{dateTimeArray_3[4][dateTime_3[4]]}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker>
+        </view>
+        <view class="ct">
+            <view class="ct_left">
+                <text>报名截止时间</text>
+            </view>
+            <picker mode="multiSelector" value="{{dateTime_2}}" data-type='2' bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray_2}}">
+                <view class="tui-picker-detail ct_right">
+                    <span wx:if='{{formParams.apply_end_time}}'>{{dateTimeArray_2[0][dateTime_2[0]]}}-{{dateTimeArray_2[1][dateTime_2[1]]}}-{{dateTimeArray_2[2][dateTime_2[2]]}} {{dateTimeArray_2[3][dateTime_2[3]]}}:{{dateTimeArray_2[4][dateTime_2[4]]}}</span>
+                    <span wx:else>请选择</span>
+                    <i class='icon iconfont iconyoujiantou'></i>
+                </view>
+            </picker>
+        </view>
+        <view class="ct address">
+            <view class="ct_left">
+                <text>地址</text>
+            </view>
+            <view class="ct_right">
+                <textarea placeholder="请选择" class="text_address"  wx:if="{{ current_address_title }}" bindinput="changeAddressTitle" value="{{ current_address_title }}" placeholder-class="placeholder" auto-height ></textarea>
+                <textarea placeholder="请选择" wx:else  auto-height bindtap="getChooseLocation" disabled></textarea>
+                <span class="icon iconfont iconyoujiantou" bindtap="getChooseLocation"></span>
+            </view>
+        </view>
+    </view>
+    <view class="ct_view" style="margin-bottom: 120rpx">
+        <view class="ct">
+            <view class="ct_left">
+                <text>规格信息</text>
+            </view>
+            <view class="ct_right jia_ct_right" bindtap="navigateToUrl" data-url="../spe/index">
+                <span class="icon iconfont iconjia"></span>
+            </view>
+        </view>
+        <view class="msg_button">
+        <block wx:for="{{ speList }}" wx:key="item">
+            <view class="ct_msg">
+                <view class="ct_left">
+                    <span class="icon iconfont iconjinzhi" bindtap="deleteSpe" data-id="{{ item.id }}"></span>
+                    <view class="ct_text">
+                        <view>
+                            <text>{{ item.title }}</text>
+                            <span>￥{{ item.price }}</span>
+                        </view>
+                        <view>
+                            <text>限制名额</text>
+                            <span>{{ item.stint }}</span>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        </view>
+    </view>
+    <button  formType="submit" hover-class="none">确认发布</button>
+    </form>
+</view>

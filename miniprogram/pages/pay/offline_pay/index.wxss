@@ -1,0 +1,101 @@
+/* pages/submitorder/index.wxss */
+page{
+    background: #f5f5f5;
+}
+.main{
+    width: 750rpx;
+    height: 100%;
+    background: #f5f5f5;
+    padding-top: 20rpx;
+}
+.main .money{
+    width: 750rpx;
+    height: 100rpx;
+    margin-bottom: 20rpx;
+    background: #fff;
+}
+.main .money .ct{
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30rpx;
+}
+.main .money .ct .c1{
+    font-size: 32rpx;
+    color: rgb(51,51,51);
+}
+.main .money .ct .c2{
+    font-size: 32rpx;
+    color: rgb(51,51,51);
+}
+.main .money .ct .c2 i{
+    color: rgb(255,25,25);
+    margin-right: 5rpx;
+}
+.main .content{
+    width: 750rpx;
+    height: 100%;
+    background: #fff;
+    margin-bottom: 30rpx;
+}
+.main .content .c1{
+    width: 690rpx;
+    height: 106rpx;
+    border-bottom: 1rpx solid rgb(229,229,229);
+    margin: 0 auto;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+    display: flex;
+    align-items: center;
+}
+.main .content .wx{
+    width: 690rpx;
+    height: 106rpx;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+    /* position: relative; */
+    justify-content: space-between;
+}
+.main .content .offline{
+    width: 690rpx;
+    height: 106rpx;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+    /* position: relative; */
+    justify-content: space-between;
+}
+.main .content .zhang{
+    width: 690rpx;
+    height: 106rpx;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30rpx;
+    color: rgb(51,51,51);
+    /* position: relative; */
+    justify-content: space-between;
+}
+.main .payment{
+    width: 750rpx;
+    height: 98rpx;
+    position: fixed;
+    bottom: 0;
+    background: rgb(254,191,0);
+    font-size: 32rpx;
+    color: rgb(255,255,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .note{
+    font-size: 26rpx;
+    color: rgb(136,136,136);
+    margin: 0 0 30rpx 30rpx;
+}

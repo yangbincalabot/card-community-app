@@ -1,0 +1,32 @@
+<!--pages/card/memberUnit/index.wxml-->
+<!--pages/card/society/index.wxml-->
+<view class="main">
+
+  <view class="search">
+    <view class="search_input">
+      <!-- bindinput="changeSearch" bindconfirm="searchBtn" -->
+      <input placeholder="搜索" placeholder-class="color:#B5B5B5;text-align: center;" bindinput="bindinput" bindconfirm="getCompanies" bindblur="getCompanies"></input>
+    </view>
+  </view>
+
+
+  <block wx:for="{{ roles.roleCompanyList }}" wx:key="index">
+    <view class="initial" bindtap="tolists">{{ item.name }}</view>
+    <block wx:for="{{ item.society }}" wx:key="index">
+      <view class='movable-area'>
+        <view class='movable-view'>
+          <view class="movable-view-one">
+            <view class="ct">
+              <image src="{{ item.logo }}"></image>
+              <view class="text">
+                <view class="title">{{ item.company_name }}</view>
+                <view>{{ item.address_title }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+
+</view>

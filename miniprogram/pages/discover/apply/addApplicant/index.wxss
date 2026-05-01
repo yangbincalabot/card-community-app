@@ -1,0 +1,131 @@
+/* pages/discover/apply/addApplicant/index.wxss */
+page{
+  background: #f5f5f5;
+}
+.main{
+  width: 750rpx;
+  height: 100%;
+  background: #f5f5f5;
+  padding-top: 20rpx;
+}
+.main .name_content{
+  width: 100%;
+  background: rgb(255,255,255);
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .name .n1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .name input{
+  width: 60%;
+  font-size: 30rpx;
+  color: #333;
+  text-align: right;
+}
+
+.main .ID_content{
+  width: 100%;
+  background: #fff;
+}
+.main .id{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .id .i1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .id input{
+  width: 60%;
+  font-size: 30rpx;
+  color: #333;
+  text-align: right;
+}
+
+.main .phone_content{
+  width: 100%;
+  background: #fff;
+}
+.main .phone{
+  width: 690rpx;
+  height: 100rpx;
+  /* border-bottom: 1rpx solid rgb(229,229,229); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .phone .p1{
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .phone input{
+  width: 60%;
+  font-size: 30rpx;
+  color: #333;
+  text-align: right;
+}
+.main .payment{
+  width: 750rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  background: rgb(254,191,0);
+  font-size: 32rpx;
+  color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .sex{
+  width: 100%;
+  background: #fff;
+}
+
+.sex .name{
+  width: 690rpx;
+  height: 100rpx;
+  /* border-top: 1rpx solid rgb(229,229,229); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.main .region{
+  width: 100%;
+  background: #fff;
+}
+
+.region .name{
+  width: 690rpx;
+  height: 100rpx;
+  /* border-top: 1rpx solid rgb(229,229,229); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.region picker{
+  font-size: 30rpx;
+  color: rgb(156,156,156);
+}
+
+.xuanzhong{color: #333;}
+button::after{ border: none; }

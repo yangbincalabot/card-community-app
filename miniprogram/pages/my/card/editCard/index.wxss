@@ -1,0 +1,237 @@
+/* pages/my/editCard/editCard.wxss */
+.main{
+  padding-bottom: 120rpx;
+}
+page{
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.ct_box{
+  width: 100%;
+  height: 150rpx;
+  background: #ffffff;
+  font-size: 36rpx;
+  color: #6db3f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ct_view{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  margin: 20rpx auto;
+}
+.ct{
+  width: 690rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #000000;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.ct_left{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.ct_left text{
+  width: 80rpx;
+}
+.placeholder{
+  font-size: 32rpx;
+  color: #cccccc;
+}
+.ct_left input {
+  width: 470rpx;
+  color: #1E1E1E;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+.ct_right{
+  display: flex;
+  align-items: center;
+  color: #6db3f9;
+  /* width: 120rpx; */
+  justify-content: flex-end;
+
+}
+.iconyoujiantou{
+  font-size: 40rpx;
+}
+.iconjia{
+  font-size: 36rpx;
+  color: #6db3f9;
+}
+.ct_right image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 90rpx;
+  margin-right: 20rpx;
+}
+.ct_right text{
+  font-size: 28rpx;
+  color: #FFC163;
+}
+.address{
+  height: 100%;
+  padding: 30rpx 0;
+}
+.address textarea{
+  width: 500rpx;
+  margin-left: 20rpx;
+}
+.button{
+  width: 100%;
+  height: 90rpx;
+  background:#FFC163;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.text{
+  width: 690rpx;
+  margin: 20rpx auto;
+  font-size: 28rpx;
+  color: #B5B5B5;
+  
+}
+.iconpaizhao{
+  font-size: 64rpx;
+  margin-right: 20rpx;
+}
+.iconjinzhi{
+  color: #ff0000;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+}
+.img_box{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.img image{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx 25rpx;
+}
+.img_box span{
+  position: relative;
+}
+.img_box i{
+  position: absolute;
+  right: 10rpx;
+}
+.iconshanchu1{
+  color: #cdcdcd;
+}
+
+.sms_button{
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+.required{
+  color:red;
+  position:absolute;
+  left: -15rpx
+}
+
+.width_auto{
+  width: auto;
+}
+.coverBtn{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  height: 130rpx;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coverBtn button{
+  background: #fff;
+  color: #6db3f9;
+  border-radius: 12rpx;
+  border: 1px solid #6db3f9;
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx; 
+  margin: 0;
+}
+.coverBtn button:last-of-type{
+  /* margin-left: 60rpx; */
+  background: #6db3f9;
+  color: #fff;
+  width: 80%;
+}
+.btn_box{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  height: 90rpx;
+}
+
+
+.switch_box{
+    width: 110rpx;
+    height: 56rpx;
+    border-radius:28rpx;
+    background: #6db3f9;
+    position: relative;
+    color: #fff;
+    line-height: 56rpx;
+    text-align: right;
+    padding:0 20rpx;
+    box-sizing: border-box;
+}
+.switch_box image{
+    width: 51rpx;
+    height: 51rpx;
+    border-radius: 50%;
+    position: absolute;
+    margin: 0;
+    left: 4rpx;
+    transition: left 0.2s;
+    box-shadow: 0 2rpx 12rpx 0 rgba(0,0,0,0.5);
+}
+.switch_box.weirz{
+    background: #c6c6c6;
+    text-align: left;
+}
+.switch_box.weirz image{
+    left: 54rpx;
+}
+.xz-view text{
+  color: #333;
+}
+.xz-view image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 5rpx;
+  margin-left: 15rpx;
+}
+.xz-view view{
+ display: flex;
+ align-content: center;
+}

@@ -1,0 +1,46 @@
+<view class="main">
+    <my-navbar bgColor="{{navBgColor}}"></my-navbar>
+    <view class="map_box">
+        <map id="myMap" style="{{'width:' + width + 'px; height:' +height + 'px'}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="showDetail" scale="{{ scale }}" bindregionchange="bindRegionChange" bindtap="onTapBind"
+            show-location>
+        </map>
+    </view>
+<block wx:if="{{ showDetail }}">
+    <view class="restaurant">
+        <view class="card_box">
+            <view class="card_view">
+                <view class="rate">
+                    <block wx:for="{{cell.carte.stars}}" wx:key="{{index}}">
+                        <image src="{{ starsImg }}" role="img"></image>
+                    </block>
+                </view>
+                <view class="card" bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ cell.carte.id }}">
+                    <image src="{{cell.carte.avatar}}"></image>
+                    <view class="card_text">
+                        <view class="card_title">
+                            <view>{{cell.carte.name ?cell.carte.name:cell.carte.phone}}
+                                <span>{{cell.carte.position ?cell.carte.position:''}}</span>
+                            </view>
+                        </view>
+                        <view class="company_name">{{cell.carte.company_name}}</view>
+                        <view class="site">{{cell.created_at}}
+                            <span wx:if='{{ cell.exchange_type == 1}}'>源自名片广场</span>
+                            <span wx:elif='{{ cell.exchange_type == 4}}'>源自手动添加</span>
+                            <span wx:else>源自名片交换</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="iconview">
+                    <view class="icon iconfont icontel" bindtap='playPhone' data-phone='{{ cell.carte.phone }}'></view>
+                    <view class="icon iconfont icontongxunlu nexticon" bindtap='addPhone' data-item='{{ cell.carte }}'></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+
+    <view class="my_positon" mut-bind:tap="myPosition" style="display: none">
+        <!-- <i class="icon iconfont iconfenlei"></i> -->
+        <image class="img_icon" src="/images/address.png"></image>
+    </view>
+</view>

@@ -1,0 +1,125 @@
+/* pages/my/society/role/index.wxss */
+page{
+  background: #f5f5f5;
+  margin-bottom: 120rpx;
+}
+.box_view{
+  width: 750rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx;
+}
+.box{
+  width: 698rpx;
+  margin: 0 auto;
+}
+.name{
+  width: 698rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 20rpx 0;
+  color: #333333;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.btn{
+  width: 698rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 20rpx 0;
+}
+.btn button{
+  margin: 0 ;
+  padding: 0;
+  width: 160rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-left: 20rpx;
+}
+.btn1{
+  background: rgb( 80,166,249);
+}
+.btn2{
+  background: rgb(58,131,245);
+}
+.btn3{
+  background: #7171FF;
+}
+.btn4 {
+  background: #333333;
+}
+.add{
+  width: 790rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+  font-size: 30rpx;
+  color: rgb( 80,166,249);
+  text-align: center;
+  line-height: 98rpx;
+  box-shadow:3rpx 3rpx 20rpx 0rpx #f5f5f5;
+}
+.showModal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.showModal_box{
+  width: 560rpx;
+  background: #ffffff;
+}
+.showModal_box input{
+  width: 500rpx;
+  font-size: 30rpx;
+  color: #333333;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 30rpx auto;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  border: 1rpx solid #f5f5f5;
+  padding: 10rpx;
+}
+.showModal_btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.cancel,.confirm{
+  width: 50%;
+  border-top: 1rpx solid #f5f5f5;
+}
+.showModal_btn button{
+  width: 50%;
+  border-radius: 0;
+  font-size: 32rpx;
+  height: 100rpx;
+  background: #ffffff;
+  line-height: 100rpx;
+}
+.cancel{
+  border-left: 1rpx solid #f5f5f5;
+  color: #333333;
+}
+.confirm{
+  color: rgb( 80,166,249);
+}
+.title{
+  font-size: 30rpx;
+  color: #333333;
+  width: 500rpx;
+  margin: 0 auto;
+  padding: 30rpx 0 0 0;
+}

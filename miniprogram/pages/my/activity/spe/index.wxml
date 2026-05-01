@@ -1,0 +1,32 @@
+<!--pages/my/activity/spe/index.wxml-->
+<view class="main">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="ct_view">
+            <view class="ct">
+                <view class="ct_left">
+                    <text>规格名称</text>
+                </view>
+                <view class="ct_right">
+                    <input placeholder="请填写规格名" name="title" placeholder-class="placeholder"></input>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text>单价</text>
+                </view>
+                <view class="ct_right">
+                    <input placeholder="请输入单价" name="price" placeholder-class="placeholder"></input>
+                </view>
+            </view>
+            <view class="ct">
+                <view class="ct_left">
+                    <text>名额限制</text>
+                </view>
+                <view class="ct_right">
+                    <input placeholder="请输入限制名额" name="stint" placeholder-class="placeholder"></input>
+                </view>
+            </view>
+        </view>
+        <button formType="submit">保存</button>
+    </form>
+</view>

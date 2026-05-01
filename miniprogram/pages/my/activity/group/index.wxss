@@ -1,0 +1,71 @@
+/* pages/my/activity/group/index.wxss */
+.main{
+  width: 750rpx;
+}
+.content_view{
+	padding-bottom: 160rpx;
+}
+.main .title{
+  width: 680rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;  
+  padding: 30rpx 20rpx;
+}
+.main .title .left{
+  display: flex;  
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+}
+.main .title .left .l{
+  width: 8rpx;
+  height: 30rpx;
+   background:  rgb(255,227,0);
+   margin-right: 20rpx;
+   margin-top: 6rpx;
+}
+.main .name_content{
+  width: 100%;
+  background: rgb(255,255,255);
+}
+.main .name{
+  width: 690rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(229,229,229);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.main .name .n1{
+	width: 370rpx;
+  font-size: 30rpx;
+  color: rgb(51,51,51);
+  display: flex;
+  align-items: center;
+}
+.main .name input{
+  width: 31%;
+  font-size: 30rpx;
+  color: rgb(136,136,136);
+}
+.main .payment{
+  width: 750rpx;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+	border-radius: 0;
+  background: rgb(254,191,0);
+  font-size: 32rpx;
+  color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	z-index: 999;
+}
+button::after{ border: none; }
+
+.icon{
+  margin: 10rpx 20rpx 0 20rpx;
+}

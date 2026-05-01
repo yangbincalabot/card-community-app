@@ -1,0 +1,68 @@
+<!--pages/discover/apply/addApplicant/index.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class='main'>
+  <view class='name_content'>
+    <view class='name'>
+      <view class='n1'>姓名</view>
+      <input class='n2' placeholder='请输入姓名' name='name' value='{{detail.name}}' placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>    
+    </view>
+  </view>
+  <view class='region'>
+    <view class='name'>
+      <view class='n1'>户籍</view>
+      <picker bindchange="bindRegionChange"  range="{{regionArr}}" value="{{region_type==1?0:1}}" range-key='title'>
+      <view class="picker">
+        <span wx:if='{{region_title}}' class='xuanzhong'>{{region_title}}</span>
+        <span wx:else>请选择</span>
+        <i class='icon iconfont iconyou'></i>
+      </view>
+    </picker>
+    </view>
+  </view>
+
+  <view class='ID_content'>
+    <view class='id'>
+      <view class='i1'>身份证号</view>
+      <input class='i2' placeholder='请输入身份证号'  name='identity_number' value='{{detail.identity_number}}'  placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>    
+    </view>
+  </view>
+
+  <view class='sex' hidden='{{sex_hidden}}'>
+    <view class='name'>
+      <view class='n1'>性别</view>
+      <radio-group class="radio-group"  name='sex' >
+        <label class="radio" >
+          <radio value="1" style='font-size:30rpx;margin-right:38rpx;' checked="{{sex_detail == 1?true:false}}" >男</radio>
+          <radio value="2" style='font-size:30rpx;' checked="{{sex_detail == 2?true:false}}"  >女</radio>
+        </label>
+      </radio-group>  
+    </view>
+  </view>
+
+  <view class='sex' hidden='{{sex_hidden}}'>
+    <view class='name'>
+      <view class='n1'>出生日期</view>
+      <picker mode="date" value="{{date}}" start="" end="{{endDate}}" bindchange="bindDateChange">
+        <view class="picker">
+          <span style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'>{{date}}</span>
+          <i class='icon iconfont iconyou'></i>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='phone_content'>
+    <view class='phone'>
+      <view class='p1'>手机号</view>
+      <input class='p2' name='phone' value='{{detail.phone}}'  placeholder='请输入手机号' placeholder-style='text-align: right;font-size: 30rpx;color: rgb(136,136,136)'></input>    
+    </view>
+  </view>
+
+  <button wx:if="{{is_submit}}" class='payment'>
+    确定
+  </button>
+  <button wx:else form-type="submit" class='payment'>
+    确定
+  </button>
+</view>
+</form>

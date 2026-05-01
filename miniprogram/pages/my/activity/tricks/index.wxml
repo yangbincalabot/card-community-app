@@ -1,0 +1,22 @@
+<!--pages/my/activity/tricks/index.wxml-->
+<view class="main">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="text">
+        <textarea placeholder="上传会议会后内容详情（选填）" value="{{ content }}" name="content" placeholder-style="font-size:28rpx;color:#949494"></textarea>
+    </view>
+    <view class="img">
+        <view class="img_box">
+          <span>
+            <image src='https://szdbi.oss-cn-shenzhen.aliyuncs.com/dule/update.png'  bindtap="moreUploadImage"></image>
+          </span>
+           <block wx:for="{{ formParams.images }}"  wx:key="item"  wx:for-index="imageKey">
+              <span>
+                <image src='{{ item }}'></image>
+                <i class="icon iconfont iconshanchu1"  data-id="{{imageKey}}" bindtap="DeleteImage"></i>
+              </span>
+           </block>
+        </view>
+    </view>
+    <button  formType="submit">确认发布</button>
+    </form>
+</view>

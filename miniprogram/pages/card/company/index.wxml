@@ -1,0 +1,28 @@
+<!--pages/card/company/index.wxml-->
+<view class="main" hidden="{{ !isShow }}">
+    <view class="firm">
+        <view>
+            <image src="{{ list.logo }}"></image>
+            <view>{{ list.company_name }}</view>
+            <view class="btn" bindtap="navigateToUrl" data-url="/pages/card/companyDetail/index?id={{ list.id }}">查看主页</view>
+        </view>
+    </view>
+    <view>
+        <view class="initial">该公司成员名片</view>
+        <view class="ct_box">
+            <block wx:for="{{ list.carte }}" wx:key="item">
+                <view class="ct"  bindtap="navigateToUrl" data-url="/pages/card/other/index?id={{ item.id }}">
+                    <image src="{{ item.avatar }}"></image>
+                    <view class="text">
+                        <view class="title">{{ item.name }}<span>{{ item.position ? item.position:'' }}</span></view>
+                        <view>部门：{{ (item.carte_departments && item.carte_departments[0].department) ? item.carte_departments[0].department.name : '未绑定' }}</view>
+                        <block wx:if="{{ userInfo.id === list.uid }}">
+                            <view catchtap="navigateToUrl" data-url="/pages/my/department/bind/index?carte_id={{ item.id }}" wx:if="{{ !(item.carte_departments && item.carte_departments[0].department) }}">绑定部门</view>
+                            <view catchtap="navigateToUrl" data-url="/pages/my/department/bind/index?carte_id={{ item.id }}&id={{ item.carte_departments[0].id }}" wx:else>修改部门</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

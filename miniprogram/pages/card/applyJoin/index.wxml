@@ -1,0 +1,76 @@
+<!--pages/card/applyJoin/index.wxml-->
+<view class='main'>
+    <view class="applyJoin-box">
+        <view class="xh-info">
+            <view class="xh-info-left">
+              <image src="{{ info.image }}"></image>
+            </view>
+            <view class="xh-info-right">
+               <view class="xh-info-name">{{ info.name }}</view>
+               <view class="xh-info-name">{{ info.company.industry ? info.company.industry.name : '未填写' }}</view>
+            </view>
+        </view>
+        <view class="merber-info">会员级别</view>
+        <view class="toll-list">
+            <block wx:for="{{ info.roles }}" wx:key="index">
+                <view bindtap="tollSelect" data-tollIndex="{{ index }}" data-id="{{ item.id }}" class="toll-tab {{tollIndex==index ?'tollAction':''}}">{{ item.name }}({{ item.fee }})/年</view>
+            </block>
+       </view>
+       <view class="applyJoin-nav">
+           <view bindtap="clickSelect" data-index="0">个人会员<image wx:if="{{current==0}}" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%80%89%E6%8B%A9.png"></image></view>
+           <view bindtap="clickSelect" data-index="1">企业会员<image wx:if="{{current==1}}" src="http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E9%80%89%E6%8B%A9.png"></image></view>
+       </view>
+       <view class="applyJoin-Avatar">
+          <view class="applyJoin-Avatar-tit">
+             <text>会员头像</text>
+             <!-- <text>0/1（2M以内）</text> -->
+          </view>
+          <view class="applyJoin-Avatar-jia" bindtap="UploadImage">
+             <image src="{{ avatar_url ? avatar_url : 'http://szdbi.oss-cn-shenzhen.aliyuncs.com/mingpian/%E5%8A%A0%E5%8F%B7.png' }}"></image>
+          </view>
+       </view>
+       <block wx:for="{{ list }}" wx:key="index">
+            <view class="userCard">
+            <view class="card_bg" bindtap="changeUser" data-id="{{ item.id }}">
+                <view class="qiehuan selected" wx:if="{{item.id == currentId}}">已选择</view>
+                <view class="qiehuan" wx:else>切换为此名片</view>
+                <view class="card_ct">
+                <view class="ct1">{{ item.carte.company_name ? item.carte.company_name:'未设置'}}</view>
+                <view class="ct2">{{ (item.carte && item.carte.name )? item.carte.name: item.nickname }}
+                    <span>{{ item.carte.position ?item.carte.position:'未设置' }}</span>
+                </view>
+                <view class="ct3">
+                    <image src="/images/user_icon1.png"></image>
+                    <text>{{ item.carte.phone ? item.carte.phone : '未设置' }}</text>
+                </view>
+                <view class="ct3">
+                    <image src="/images/user_icon3.png"></image>
+                    <text>{{ item.carte.email ?item.carte.email:'未设置' }}</text>
+                </view>
+                <view class="ct3">
+                    <image src="/images/user_icon2.png"></image>
+                    <text>{{ item.company_card.address_title?item.company_card.address_title:(item.carte.address_title ?item.carte.address_title : '未设置') }}</text>
+                </view>
+                </view>
+            </view>
+            </view>
+        </block>
+        <view class="applyJoin-reason">
+           <view class="applyJoin-reason-tit">申请理由</view>
+           <textarea placeholder="请输入理由" bindinput="changeReason" />
+        </view>
+        <view class="footer">
+            <!-- <view class="footer_left">
+                应付金额：{{ application.fee }}
+            </view> -->
+            <!--  data-url="../signUpSuccess/signUpSuccess" 当支付金额等于0 -->
+            <button class="now" bindtap="formSubmit" >立即申请</button>
+        </view>
+        <view class="notice">
+            <view class="notice-tit">入会须知</view>
+            <view class="notice-content">
+               {{ info.instructions }}
+            </view>
+        </view>
+    </view>
+</view>

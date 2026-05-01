@@ -1,0 +1,35 @@
+/* pages/about/index.wxss */
+.main{
+  width: 750rpx;
+  min-height: 1000rpx;  
+  margin: 40rpx auto;
+}
+.main .text{
+  font-size: 36rpx;
+  color: rgb(0,0,0);
+  margin: 20rpx 40rpx;
+  text-align: center;
+}
+.main .img{
+  width: 690rpx;
+  height: 390rpx;
+  margin: 40rpx auto;
+  /* border: 1rpx solid #ccc; */
+}
+.main .img image{
+  width: 690rpx;
+  height: 390rpx;
+}
+.main .content{
+  width: 668rpx;
+  word-wrap: break-word; 
+  word-break: normal;
+  text-indent: 2em;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.content .c{
+  margin-bottom: 50rpx;
+}

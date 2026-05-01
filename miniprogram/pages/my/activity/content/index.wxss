@@ -1,0 +1,77 @@
+/* pages/my/activity/content/index.wxss */
+@import "/utils/assets/iconfont.wxss";
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  padding: 0;
+  background: #ffffff;
+}
+
+.wrapper {
+  padding: 5px;
+}
+
+.iconfont {
+  display: inline-block;
+  padding: 8px 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.toolbar_box{
+	/* position: relative; */
+	width: 720rpx;
+	height: 80rpx;
+	display: flex;
+}
+.toolbar {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background: #ffffff;
+	width: 720rpx;
+	height: 100rpx;
+	display: flex;
+	align-items: center;
+	/* border-bottom: 1rpx solid #ccc; */
+	justify-content: space-around;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+
+.ql-container {
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+	margin-top: 20rpx;
+	border: 1rpx solid #ccc;
+	border-radius: 10rpx;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ql-active {
+  color: #06c;
+}
+
+.container .btn2{
+  width: 710rpx;
+  height: 98rpx;
+  border-radius: 10rpx;
+  color: #fff;
+	margin: 30rpx auto;
+  background: rgb(254,191,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	line-height: 48rpx;
+}

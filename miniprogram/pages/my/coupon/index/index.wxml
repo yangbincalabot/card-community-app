@@ -1,0 +1,52 @@
+<!--pages/mine/mycoupon/index.wxml-->
+<view class='main'>
+    <block wx:if="{{coupons.length > 0}}">
+        <view class='coupon'>
+            <block wx:for="{{coupons}}" wx:key="id" wx:for-item="couponItem">
+
+                <block wx:if="{{couponItem.coupons.type == 'percent'}}">
+                    <view class='c1'>
+                        <view class='text1'>
+                            <view class='text1_box'>
+                                <view>{{couponItem.coupons.value_title}}</view>
+                                <view>{{couponItem.coupons.description}}</view>
+                            </view>
+                        </view>
+                        <view class='text2'>
+                            <view class='text2_box'>
+                                <view>通用券</view>
+                                <view>全场通用</view>
+                                <view wx:if="{{couponItem.coupons.not_after}}">有效期至：{{couponItem.coupons.not_after}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class='c1'>
+                        <view class='text1'>
+                            <view class='text1_box'>
+                                <view>￥{{couponItem.coupons.value_title}}</view>
+                                <view>{{couponItem.coupons.description}}</view>
+                            </view>
+                        </view>
+                        <view class='text2'>
+                            <view class='text2_box'>
+                                <view>通用券</view>
+                                <view>全场通用</view>
+                                <view wx:if="{{couponItem.coupons.not_after}}">有效期至：{{couponItem.coupons.not_after}}</view>
+                            </view>
+                        </view>
+                    </view>
+
+                </block>
+            </block>
+
+        </view>
+    </block>
+    <block wx:else>
+        <view>
+            <view class='none'></view>
+            <view class='none_content'>空空如也，暂无优惠券~</view>
+        </view>
+    </block>
+</view>
